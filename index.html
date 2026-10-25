@@ -10,7 +10,7 @@
 </head>
 <body>
 <header class="header wrap"><a class="brand" href="#home"><span class="brand-symbol">⚙</span><span><b>WARSHA</b><small data-ar="أدوات هندسية بين يديك" data-en="Engineering tools at your fingertips">أدوات هندسية بين يديك</small></span></a>
-<nav><a href="#about" data-ar="عن التطبيق" data-en="About">عن التطبيق</a><a href="#features" data-ar="المميزات" data-en="Features">المميزات</a><a href="#screens" data-ar="لقطات الشاشة" data-en="Screenshots">لقطات الشاشة</a><a href="#download" data-ar="تحميل" data-en="Download">تحميل</a></nav><button id="language">EN</button></header>
+<nav><a href="#about" data-ar="عن التطبيق" data-en="About">عن التطبيق</a><a href="#features" data-ar="المميزات" data-en="Features">المميزات</a><a href="#screens" data-ar="لقطات الشاشة" data-en="Screenshots">لقطات الشاشة</a><a href="#download" id="nav-download" data-ar="تحميل" data-en="Download">تحميل</a></nav><button id="language">EN</button></header>
 <main id="home">
 <section class="hero wrap">
 <div class="hero-copy"><span class="pill"><i></i><span data-ar="رفيقك في الورشة" data-en="Your workshop companion">رفيقك في الورشة</span></span>
@@ -33,5 +33,18 @@
 <article><span class="platform-icon">♟</span><h3>Android</h3><small>APK</small><p data-ar="لأجهزة أندرويد" data-en="For Android devices">لأجهزة أندرويد</p><button disabled data-ar="رابط التحميل قريبًا" data-en="Download link soon">رابط التحميل قريبًا</button></article>
 <article><span class="platform-icon">⊞</span><h3>Windows</h3><small>ZIP</small><p data-ar="حزمة تشغيل الكمبيوتر" data-en="Desktop app package">حزمة تشغيل الكمبيوتر</p><button disabled data-ar="رابط التحميل قريبًا" data-en="Download link soon">رابط التحميل قريبًا</button></article>
 <article><span class="platform-icon">●</span><h3>iOS</h3><small data-ar="نسخة غير مختبرة" data-en="Not tested yet">نسخة غير مختبرة</small><p data-ar="سيتم تحديد طريقة التثبيت بعد اختبار النسخة." data-en="Installation details will follow testing.">سيتم تحديد طريقة التثبيت بعد اختبار النسخة.</p><button disabled data-ar="قريبًا" data-en="Coming soon">قريبًا</button></article></div></section>
-</main><footer class="footer wrap"><a class="brand" href="#home"><span class="brand-symbol">⚙</span><span><b>WARSHA</b><small data-ar="أدوات هندسية بين يديك" data-en="Engineering tools at your fingertips">أدوات هندسية بين يديك</small></span></a><span data-ar="© Warsha. جميع الحقوق محفوظة." data-en="© Warsha. All rights reserved.">© Warsha. جميع الحقوق محفوظة.</span><a href="#home" data-ar="للأعلى ↑" data-en="Back to top ↑">للأعلى ↑</a></footer>
+</main><div class="download-modal" id="download-modal" aria-hidden="true">
+<div class="modal-backdrop" data-close-modal></div>
+<section class="modal-panel" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+<button class="modal-close" type="button" aria-label="Close" data-close-modal>×</button>
+<span class="eyebrow" data-ar="نسخ التطبيق" data-en="APP VERSIONS">نسخ التطبيق</span>
+<h2 id="modal-title" data-ar="اختار نسختك من Warsha" data-en="Choose your Warsha version">اختار نسختك من Warsha</h2>
+<p class="modal-intro" data-ar="اختار المنصة المناسبة لجهازك. روابط التنزيل هتظهر هنا بعد رفع الملفات." data-en="Choose the version for your device. Download links will appear here once the files are uploaded.">اختار المنصة المناسبة لجهازك. روابط التنزيل هتظهر هنا بعد رفع الملفات.</p>
+<div class="modal-versions">
+<article class="modal-version"><span class="modal-icon">▣</span><div><h3>Android</h3><p data-ar="ملف APK للموبايل" data-en="APK package for phones">ملف APK للموبايل</p></div><span class="modal-status" data-ar="قريبًا" data-en="Coming soon">قريبًا</span></article>
+<article class="modal-version"><span class="modal-icon">▰</span><div><h3>Windows</h3><p data-ar="حزمة ZIP للكمبيوتر" data-en="ZIP package for desktop">حزمة ZIP للكمبيوتر</p></div><span class="modal-status" data-ar="قريبًا" data-en="Coming soon">قريبًا</span></article>
+<article class="modal-version"><span class="modal-icon">●</span><div><h3>iOS</h3><p data-ar="نسخة الآيفون غير مختبرة بعد" data-en="iPhone build is not tested yet">نسخة الآيفون غير مختبرة بعد</p></div><span class="modal-status pending" data-ar="غير مختبرة" data-en="Untested">غير مختبرة</span></article>
+</div>
+</section></div>
+<footer class="footer wrap"><a class="brand" href="#home"><span class="brand-symbol">⚙</span><span><b>WARSHA</b><small data-ar="أدوات هندسية بين يديك" data-en="Engineering tools at your fingertips">أدوات هندسية بين يديك</small></span></a><span data-ar="© Warsha. جميع الحقوق محفوظة." data-en="© Warsha. All rights reserved.">© Warsha. جميع الحقوق محفوظة.</span><a href="#home" data-ar="للأعلى ↑" data-en="Back to top ↑">للأعلى ↑</a></footer>
 <script src="script.js?v=20261026-1"></script></body></html>
