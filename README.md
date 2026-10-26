@@ -1,51 +1,27 @@
-# WARSHA — Cinematic Landing Page
+# WARSHA — ورشة
 
-A modern, responsive bilingual (Arabic / English) landing page for the **WARSHA** engineering utility app, rebuilt around the original logo and screenshots.
+Modern, lightweight Arabic/English landing page for the WARSHA workshop app.
 
 ## Run locally
 
-No build step, dependencies, or backend required. Open `index.html` in a browser, or use a local development server:
+Open `index.html` in a browser or serve this directory with `python -m http.server 8000`.
 
-```sh
-python -m http.server 8000
-```
+## Stack
 
-Then visit http://localhost:8000/.
+Plain HTML, CSS and JavaScript. No build step, framework, autoplay background video or runtime dependencies. The website uses existing local brand/app/workshop visuals under `assets/`; Cairo and Manrope load from Google Fonts with system font fallbacks.
 
-## Files
+## Sections
 
-- `index.html` — semantic responsive page, app content and accessible modal
-- `styles.css` — dark industrial design, animations, RTL/LTR layouts, mobile styles
-- `script.js` — bilingual toggle, scroll reveals, mobile navigation, accessible dialog, interactive demonstration calculator, background playback control
-- `assets/warsha-logo.webp` — cropped transparent brand logo supplied by the project owner
-- `assets/warsha-app.webp` — optimized screenshot of the actual WARSHA app
-- `assets/{gears,lathe,drill}.webp` — card images extracted from that screenshot
-- `assets/workshop-loop.mp4` — original **procedurally generated**, seamless looping industrial-motion background video (not footage of a real machine)
-- `assets/workshop-poster.webp` — video fallback poster
+- Responsive hero, featuring the WARSHA brand and in-app screenshot.
+- Intro and three machining-tool cards.
+- Live standard spur-gear pitch diameter demo: `d = m × Z` (module in mm, number of teeth integer).
+- Arabic/English interface toggle, accessible modal showing release status.
+- Subtle scroll reveals, mobile navigation, reduced-motion support.
 
-## Live features
+## Release status
 
-- Arabic / English switch with saved preference
-- Responsive accessible navigation + focus-trapped availability modal
-- Scroll progress, reveal and hover animations
-- Muted autoplay background loop with `prefers-reduced-motion` fallback
-- Live **spur gear pitch-circle diameter** demo: `d = module × number_of_teeth`, with input validation
+This landing page is not the released Android/Windows app. Android and Windows download links are not available, and iOS is untested. Add verified release links only when actual builds are available.
 
-## Important: download links
+## Hosting
 
-**No APK / ZIP / iOS links have been invented.** Download releases in the original repository are not available yet, so the page intentionally shows “Coming soon” and a status modal. Add real release files before enabling actual download buttons.
-
-## Deployment
-
-Replace or upload these files to the root of `warsha-website` on GitHub. Enable GitHub Pages in **Settings → Pages → Deploy from branch → main → /(root)**, or deploy the folder on any static hosting service.
-
-If the site already has Pages enabled, committing `index.html`, `styles.css`, `script.js` and `assets/` to `main` is all that's needed. The code works without a JavaScript bundler.
-
-## Notes
-
-- The hero uses an original abstract motion graphic exported as an MP4 video, so no stock-video copyright or third-party CDN is required.
-- Fonts load from Google Fonts when online, with local system fallbacks.
-- Animations and video respect reduced-motion preferences.
-- Calculator is a demonstration for **standard spur gears** and is not a substitute for professional verification of real machinery settings.
-
-The optional `tools/generate_assets.py` script documents how the reference assets and procedural animation were produced. It requires the user's original upload filenames in `/mnt/data/`, plus Pillow, NumPy and FFmpeg; the generated website does not need it.
+GitHub Pages deploys the repository automatically from `.github/workflows/deploy.yml` after pushes to `main`.

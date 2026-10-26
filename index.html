@@ -1,204 +1,104 @@
 <!doctype html>
 <html lang="ar" dir="rtl">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="theme-color" content="#102b25">
-<meta name="description" content="ورشة — تطبيق يجمع حسابات التروس والمخرطة والمثقاب في مكان واحد.">
-<title>ورشة | WARSHA — كل مليمتر بيفرق.</title>
-<link rel="icon" href="assets/favicon.png" type="image/png">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800;900&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-<style>
-:root{--green:#102c25;--green2:#173b32;--mint:#b4eedc;--paper:#f9faf7;--ink:#1c332c;--muted:#63746d;--border:#dfe8e1;--font:'Cairo',sans-serif}
-*{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:82px}body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--font);-webkit-font-smoothing:antialiased}body.lock{overflow:hidden}a{text-decoration:none;color:inherit}button,input{font:inherit}button{cursor:pointer}button:focus-visible,a:focus-visible,input:focus-visible{outline:3px solid #56d5ab;outline-offset:3px}img{display:block;max-width:100%}.wrap{width:min(1160px,calc(100% - 72px));margin:auto}.intro{background:var(--green);color:#fff;position:relative;overflow:hidden}.intro:after{content:"";position:absolute;width:650px;height:650px;border:1px solid rgba(255,255,255,.055);border-radius:50%;top:-370px;left:-310px;pointer-events:none}.site-nav{position:relative;z-index:10;border-bottom:1px solid rgba(255,255,255,.11)}.nav-row{height:82px;display:flex;align-items:center;justify-content:space-between;gap:28px}.brand img{width:114px;height:60px;object-fit:contain}.links{display:flex;align-items:center;gap:37px}.links a{font-size:13px;font-weight:700;color:#d6e5df;transition:color .2s}.links a:hover{color:var(--mint)}.actions{display:flex;align-items:center;gap:15px}.lang{border:0;background:none;color:#f4fff9;font-size:13px;font-family:Manrope,var(--font);font-weight:800;min-width:37px}.nav-button{background:#d9f6e8;border:0;border-radius:100px;padding:11px 22px;color:#102c25;font-size:12px;font-weight:900;white-space:nowrap;transition:background .2s}.nav-button:hover{background:#fff}.hamburger{display:none;width:38px;height:38px;background:none;border:1px solid #527166;border-radius:10px;color:white;font-size:22px}
-.hero{display:grid;grid-template-columns:1.05fr .95fr;min-height:630px;align-items:center;gap:35px;padding:64px 0 70px}.hero-copy{z-index:2}.eyebrow{display:inline-flex;align-items:center;gap:11px;border:1px solid rgba(187,248,216,.22);border-radius:100px;padding:8px 15px;color:#c9eee0;font-size:12px;font-weight:800;margin-bottom:24px}.eyebrow i{width:7px;height:7px;border-radius:50%;background:#a4eacb}.hero h1{font-size:clamp(48px,5.4vw,79px);font-weight:900;line-height:1.38;letter-spacing:-2px;margin:0 0 13px}.hero h1 em{font-style:normal;color:var(--mint)}.hero p{color:#bdd0c7;font-size:15px;line-height:2.1;max-width:520px;margin:0 0 29px;font-weight:600}.hero-buttons{display:flex;align-items:center;flex-wrap:wrap;gap:14px}.btn{display:inline-flex;align-items:center;justify-content:center;gap:18px;min-height:53px;padding:10px 26px;border-radius:100px;font-size:13px;font-weight:900;transition:transform .22s,background .22s;border:0}.btn:hover{transform:translateY(-2px)}.btn-primary{background:var(--mint);color:#0c2c20}.btn-primary:hover{background:#e2fff1}.btn-ghost{background:transparent;color:white;border:1px solid rgba(232,255,246,.24)}.btn-ghost:hover{background:rgba(255,255,255,.08)}.hero-tag{margin-top:41px;display:flex;align-items:center;gap:12px;color:#86ada0;font-size:11px;font-weight:700}.hero-tag:before{content:"";width:29px;height:1px;background:#83dcb6}.hero-show{min-height:505px;display:grid;place-items:center;position:relative}.hero-show:before{content:"";position:absolute;width:min(92%,450px);aspect-ratio:1;border-radius:50%;background:#1c493e;box-shadow:0 0 0 45px rgba(183,251,226,.025)}.hero-show img{position:relative;width:auto;height:505px;object-fit:contain;filter:drop-shadow(12px 24px 30px rgba(0,0,0,.28));animation:levitate 7s ease-in-out infinite}.float-note{position:absolute;bottom:55px;left:8px;z-index:2;display:flex;gap:11px;align-items:center;background:#fafffb;color:#1a4034;box-shadow:0 16px 40px #071a1545;padding:13px 17px;border-radius:13px}.float-note b{display:block;font-size:12px}.float-note small{display:block;color:#74897e;font-size:10px}.float-note .mark{background:#e6f7ec;border-radius:10px;width:35px;height:35px;display:grid;place-items:center;font-size:22px;color:#237e60}.underhero{border-top:1px solid rgba(255,255,255,.1)}.underhero .wrap{display:flex;align-items:center;justify-content:space-between;min-height:55px;color:#95b6aa;font-size:11px;font-family:Manrope,var(--font);letter-spacing:.5px}
-.section{padding:100px 0}.heading{display:flex;align-items:end;justify-content:space-between;gap:30px;margin-bottom:33px}.smalltitle{font-size:11px;color:#46866d;font-weight:900;letter-spacing:1px;margin:0 0 12px}.heading h2,.calc-copy h2,.end h2{font-size:clamp(38px,4.1vw,58px);font-weight:900;line-height:1.4;letter-spacing:-1.6px;margin:0}.heading h2 span,.calc-copy h2 span{color:#6c7d72}.heading>p{max-width:340px;color:#697e70;line-height:2;font-size:13px;margin:0 0 4px}.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}.card{background:white;border:1px solid var(--border);border-radius:16px;overflow:hidden;transition:transform .25s,box-shadow .25s}.card:hover{transform:translateY(-5px);box-shadow:0 19px 35px rgba(16,52,39,.09)}.card .photo{height:215px;overflow:hidden;background:#173b32;position:relative}.card img{width:100%;height:100%;object-fit:cover;transition:transform .45s}.card:hover img{transform:scale(1.04)}.num{position:absolute;top:15px;right:17px;padding:4px 9px;background:#fff;color:#153a2f;border-radius:5px;font-size:11px;font-weight:900;font-family:Manrope}.card-bottom{display:flex;align-items:center;justify-content:space-between;padding:21px 22px;gap:14px}.card h3{font-size:22px;font-weight:900;margin:0 0 3px}.card p{font-size:12px;color:#829187;line-height:1.8;margin:0}.arrow{display:grid;place-items:center;flex:0 0 39px;height:39px;background:#e9f5ec;border-radius:50%;font-size:20px;color:#217a59}
-.demo{background:#f0f5ef;border-top:1px solid #e2eae1;border-bottom:1px solid #e2eae1}.demo .wrap{display:grid;grid-template-columns:.9fr 1.1fr;align-items:center;gap:85px}.calc-copy p:not(.smalltitle){font-size:14px;color:#64796a;line-height:2.1;margin:16px 0 25px}.formula{font-size:29px;font-weight:800;font-family:Manrope;border-top:1px solid #cfded1;padding-top:18px;max-width:240px;color:#2d5a43;direction:ltr;text-align:start}.calculator{background:#fff;border:1px solid #d6e5dc;border-radius:17px;overflow:hidden;box-shadow:0 20px 45px rgba(21,63,39,.055)}.calculator-top{background:#173b30;color:#c2ead2;display:flex;align-items:center;justify-content:space-between;padding:15px 24px;font-size:11px;font-family:Manrope;font-weight:800;letter-spacing:.5px;direction:ltr}.calculator-body{padding:30px}.calculator h3{margin:0 0 5px;font-size:22px;font-weight:900}.calc-sub{margin:0 0 22px;font-size:12px;color:#89968c}.fields{display:grid;grid-template-columns:1fr 1fr;gap:16px}.fields label{font-size:12px;font-weight:800;color:#526e5c}.fields input{margin-top:7px;display:block;width:100%;height:52px;background:#fbfdfa;border:1px solid #d9e5da;border-radius:9px;padding:10px;text-align:center;direction:ltr;font-family:Manrope;font-weight:800;color:#1d4232;font-size:19px}.answer{margin-top:18px;background:#e4f5e8;padding:20px;border-radius:12px;display:flex;align-items:center;justify-content:space-between;gap:12px}.answer span:first-child{font-size:13px;font-weight:800;color:#427958}.answer output{font:800 40px Manrope,sans-serif;color:#135b39}.answer small{font:700 12px Manrope;color:#679073;margin-inline-start:5px}.calc-message{font-size:12px;color:#ad4a4a;min-height:16px;margin:10px 0 0}.calc-foot{border-top:1px solid #edf2ed;padding:12px 27px;font-size:11px;color:#8b9b8c}
-.end{background:#173c30;color:#fff;padding:80px 0}.end .wrap{display:flex;align-items:center;justify-content:space-between;gap:30px}.end h2{font-size:clamp(40px,4.7vw,65px)}.end h2 span{color:var(--mint)}.end p{font-size:13px;line-height:2;color:#c0d7c9;max-width:550px;margin:15px 0 0}.end .btn{flex-shrink:0}.footer{background:#0b241c;color:#adc8b8}.footer .wrap{min-height:95px;display:flex;align-items:center;justify-content:space-between;gap:20px;font-size:11px}.footer img{width:96px;height:60px;object-fit:contain}.footer a:last-child:hover{color:white}.overlay{position:fixed;inset:0;z-index:100;display:none;place-items:center;padding:18px;background:rgba(0,24,16,.72)}.overlay.open{display:grid}.dialog{position:relative;background:white;max-width:465px;width:100%;border-radius:19px;padding:36px;color:#1b3d2b;box-shadow:0 25px 70px #0005}.dialog h2{margin:0 0 12px;font-weight:900;font-size:29px}.dialog p{line-height:2;color:#667e70;font-size:13px}.dialog .status{display:flex;flex-wrap:wrap;gap:8px;margin:22px 0}.status span{background:#eef5ee;border-radius:8px;padding:7px 12px;font-size:12px}.dialog .close{position:absolute;top:14px;left:17px;background:none;border:0;font-size:29px;color:#5b7764}
-@keyframes levitate{0%,100%{transform:translateY(0)}50%{transform:translateY(-9px)}}
-html[dir=ltr] h1,html[dir=ltr] h2,html[dir=ltr] h3{font-family:Manrope,sans-serif;line-height:1.18;letter-spacing:-1.8px}html[dir=ltr] .hero h1{font-size:clamp(42px,4.7vw,65px)}html[dir=ltr] .hero p{line-height:1.8}html[dir=ltr] .card p,html[dir=ltr] .heading>p{line-height:1.6}
-@media(max-width:960px){.wrap{width:calc(100% - 50px)}.links{gap:20px}.hero{min-height:580px;gap:10px}.hero-show img{height:440px}.hero-show{min-height:460px}.float-note{bottom:35px}.demo .wrap{gap:30px}.hero h1{font-size:clamp(42px,5.5vw,62px)}}
-@media(max-width:720px){.wrap{width:calc(100% - 38px)}.nav-row{height:70px}.brand img{width:96px;height:55px}.hamburger{display:block}.nav-button{display:none}.links{display:none;position:absolute;top:70px;left:0;right:0;background:#173b30;padding:15px 22px;box-shadow:0 15px 25px #0003;flex-direction:column;align-items:stretch;gap:0}.links.visible{display:flex}.links a{padding:12px}.hero{grid-template-columns:1fr;text-align:center;padding:49px 0 33px}.hero-copy{max-width:580px;margin:auto}.hero h1{font-size:clamp(42px,8.5vw,59px)}.hero p{margin:0 auto 23px;font-size:13px}.hero-buttons{justify-content:center}.hero-tag{justify-content:center;margin-top:30px}.hero-show{min-height:430px}.hero-show img{height:405px}.hero-show:before{width:330px}.float-note{left:2%;bottom:30px}.underhero .wrap{justify-content:center}.underhero .wrap span:first-child{display:none}.section{padding:68px 0}.heading{display:block}.heading>p{margin-top:18px}.cards{grid-template-columns:1fr 1fr;gap:15px}.card .photo{height:180px}.card-bottom{padding:14px}.card h3{font-size:19px}.demo .wrap{grid-template-columns:1fr;gap:28px}.end .wrap{display:block}.end .btn{margin-top:26px}}
-@media(max-width:520px){.wrap{width:calc(100% - 34px)}.hero{padding-top:38px}.hero h1{font-size:43px}.eyebrow{font-size:11px}.btn{min-height:49px;padding:10px 19px;font-size:12px}.hero-show{min-height:378px}.hero-show img{height:361px}.hero-show:before{width:290px}.float-note{padding:9px 11px;bottom:17px}.float-note .mark{width:29px;height:29px}.float-note small{font-size:9px}.section{padding:60px 0}.heading h2,.calc-copy h2{font-size:39px}.cards{grid-template-columns:1fr}.card .photo{height:218px}.card-bottom{padding:18px}.calculator-body{padding:21px}.fields{gap:9px}.fields input{font-size:17px}.answer output{font-size:33px}.end{padding:63px 0}.footer .wrap{flex-wrap:wrap;justify-content:center;text-align:center;padding:15px 0}.footer .wrap a:last-child{display:none}.footer .wrap>a:first-child{width:100%;display:flex;justify-content:center}}
-@media(prefers-reduced-motion:reduce){*,*:before,*:after{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
-
-/* WARSHA refined 2026: modern editorial composition with light motion */
-:root{--green:#082723;--green2:#123c33;--mint:#bff9ad;--paper:#f6f8f2;--ink:#14322d;--muted:#65786d;--border:#dce5dc}
-body{overflow-x:hidden}
-.intro{background:radial-gradient(ellipse at 77% 43%,#12443a 0%,#0a2b27 44%,#071e1b 100%)}
-.intro:before{content:"";position:absolute;inset:0;pointer-events:none;opacity:.20;background-image:linear-gradient(rgba(175,246,210,.11) 1px,transparent 1px),linear-gradient(90deg,rgba(175,246,210,.11) 1px,transparent 1px);background-size:76px 76px;mask-image:linear-gradient(90deg,#000,transparent 85%)}
-.site-nav,.hero,.underhero{position:relative;z-index:2}
-.hero{min-height:700px;gap:65px;padding:76px 0 82px}
-.hero h1{font-size:clamp(63px,6.35vw,96px);letter-spacing:-.055em;line-height:1.29;margin-bottom:22px}
-.hero h1 em{display:inline-block;position:relative;color:var(--mint)}
-.hero h1 em:after{content:"";position:absolute;inset-inline-start:2px;bottom:0;width:93%;height:7px;background:var(--mint);border-radius:70%;transform:rotate(-2deg);opacity:.45}
-.eyebrow{background:rgba(196,251,218,.06);border-color:rgba(204,255,225,.25);font-size:11px;padding:9px 15px}
-.eyebrow i{background:var(--mint);box-shadow:0 0 0 5px rgba(191,249,173,.12)}
-.hero p{line-height:2.22;max-width:550px;color:#c5dcd1}
-.hero-tag{margin-top:45px;color:#a8c9b8}
-.hero-show{min-height:555px}
-.hero-show:before{width:min(94%,440px);background:radial-gradient(circle at 40% 38%,#1b795e 0%,#125040 55%,#0b332e 100%);box-shadow:0 0 0 56px rgba(196,251,218,.025),0 0 0 108px rgba(196,251,218,.016)}
-.hero-show:after{content:"";position:absolute;width:calc(100% + 30px);max-width:580px;aspect-ratio:1;border:1px solid rgba(177,255,209,.14);border-radius:50%;pointer-events:none}
-.hero-show img{height:525px;filter:drop-shadow(0 34px 36px rgba(0,0,0,.34))}
-.float-note{border:1px solid rgba(8,50,30,.08);box-shadow:0 23px 56px rgba(0,0,0,.21);transform:rotate(3deg)}
-.float-note .mark{background:#c4f7b7;color:#14553a}
-.btn{border-radius:9px;transition:transform .25s,background .25s,box-shadow .25s}
-.btn-primary:hover{box-shadow:0 16px 30px rgba(181,246,180,.16);background:#d6ffc8}
-.btn-ghost{border-color:rgba(205,253,228,.28)}
-.nav-button{border-radius:9px;background:rgba(255,255,255,.09);border:1px solid rgba(205,253,228,.33);color:#ecfff1}
-.nav-button:hover{background:rgba(255,255,255,.2)}
-.feature-band{background:#f7f8f2;padding:110px 0 108px}
-.feature-layout{display:grid;grid-template-columns:235px 1fr;gap:65px}
-.feature-label{display:flex;align-items:center;gap:15px;direction:ltr;justify-content:flex-end;color:#618575;font:800 10px/1.5 Manrope,sans-serif;letter-spacing:.09em;white-space:nowrap}
-.feature-label i{width:30px;height:1px;background:#8eb7a2}
-.feature-overline{font-size:12px;color:#238763;font-weight:900;margin:0 0 18px}
-.feature-body h2{font-size:clamp(40px,5vw,70px);line-height:1.53;font-weight:900;letter-spacing:-.05em;margin:0}
-.feature-body h2 em{font-style:normal;background:linear-gradient(transparent 71%,#c5f5c2 71%)}
-.feature-desc{color:#62786c;font-size:15px;line-height:2.25;max-width:670px;margin:26px 0 0}
-.section{padding:109px 0}
-.heading h2{font-size:clamp(45px,4.7vw,68px);line-height:1.32;letter-spacing:-.05em}
-.heading h2 span:last-child{color:#5b987e}
-.heading>p{font-size:14px}
-.cards{gap:19px}
-.card{border:0;border-radius:11px;box-shadow:0 1px 0 rgba(18,69,42,.03);transition:transform .32s cubic-bezier(.2,.8,.2,1),box-shadow .32s}
-.card:hover{transform:translateY(-10px);box-shadow:0 25px 55px rgba(15,69,45,.13)}
-.card .photo{height:255px}
-.card .photo:after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(1,35,29,.3),transparent 40%,rgba(1,35,29,.1));pointer-events:none}
-.card img{filter:saturate(.85);transition:transform .6s}
-.card:hover img{transform:scale(1.08)}
-.num{z-index:1;top:18px;right:18px;color:#eafff3;background:rgba(9,40,31,.7);font-family:Manrope,sans-serif;border:1px solid rgba(255,255,255,.22);padding:5px 10px}
-.card-bottom{padding:26px 25px;min-height:153px}
-.card h3{font-size:27px;margin-bottom:7px}
-.card p{color:#74897c}
-.arrow{background:#e7f8e6;transition:transform .25s,background .25s}
-.card:hover .arrow{background:var(--mint);transform:rotate(45deg)}
-.demo{background:#0a2926;color:#fff;border:0;position:relative;overflow:hidden}
-.demo:before{content:"";position:absolute;top:-420px;left:-280px;width:750px;height:750px;border:1px solid rgba(212,255,224,.10);border-radius:50%;pointer-events:none}
-.demo .wrap{position:relative;z-index:1}
-.demo .smalltitle{color:var(--mint)}
-.demo .calc-copy h2 span:last-child{color:var(--mint)}
-.demo .calc-copy p:not(.smalltitle){color:#b5cec2;max-width:430px}
-.demo .formula{color:var(--mint);border-color:rgba(220,255,226,.22)}
-.calculator{border-radius:14px;border:0;box-shadow:0 30px 70px rgba(0,0,0,.2)}
-.calculator-top{background:#e7f4e9;color:#28674d}
-.answer{background:#0c302b;border-radius:9px}
-.answer span:first-child{color:#c3dbcb}
-.answer output{color:var(--mint)}
-.answer small{color:#b2d0be}
-.end{background:var(--mint);color:#0a2a20;position:relative;overflow:hidden}
-.end h2{font-size:clamp(46px,5vw,75px)}
-.end h2 span{color:#3d7354}
-.end p{color:#38644b;max-width:650px}
-.end .smalltitle{color:#2c7959!important}
-.end .btn-primary{background:#0c3028;color:#fff}
-.end .btn-primary:hover{background:#1b523e}
-.footer{background:#071e19}
-html[dir=ltr] .hero h1{font-size:clamp(52px,5.6vw,78px)}
-html[dir=ltr] .feature-body h2{font-family:Manrope,sans-serif;font-size:clamp(37px,4.4vw,62px);line-height:1.25}
-html[dir=ltr] .feature-desc{line-height:1.8}
-@media(max-width:960px){.hero{gap:15px;min-height:610px}.hero h1{font-size:clamp(52px,6.5vw,72px)}.hero-show{min-height:480px}.hero-show img{height:440px}.feature-layout{grid-template-columns:145px 1fr;gap:30px}.feature-band{padding:85px 0}}
-@media(max-width:720px){.hero{padding:50px 0 34px;gap:6px}.hero h1{font-size:clamp(49px,8.5vw,70px)}.hero-show{min-height:440px}.hero-show img{height:412px}.hero-show:after{max-width:420px}.feature-layout{display:block}.feature-label{justify-content:flex-start;margin-bottom:28px}.feature-body h2{font-size:clamp(36px,6vw,56px)}.feature-desc{font-size:13px}.card .photo{height:204px}.card-bottom{min-height:146px}.demo .wrap{gap:39px}.end{padding:70px 0}.feature-band{padding:68px 0}}
-@media(max-width:520px){.hero{padding-top:39px}.hero h1{font-size:clamp(48px,11vw,59px)}.hero-show{min-height:375px}.hero-show img{height:358px}.hero-show:after{width:340px}.hero-show:before{width:285px;box-shadow:0 0 0 36px rgba(196,251,218,.02)}.feature-body h2{font-size:39px}.feature-desc{font-size:12px}.heading h2{font-size:43px}.card .photo{height:214px}.section{padding:70px 0}.calc-copy h2{font-size:40px}.end h2{font-size:49px}.end .btn-primary{margin-top:26px}}
-</style>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#050b0e">
+  <meta name="description" content="ورشة — حسابات التروس والمخرطة والمثقاب، في تجربة معمولة للي شغلهم بالدقة.">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="ورشة | WARSHA — كل مليمتر بيفرق">
+  <meta property="og:description" content="من أول مقاس لآخر تفصيلة. أدوات حسابية للورشة بطريقة أسهل وأوضح.">
+  <meta property="og:image" content="assets/warsha-app.webp">
+  <title>ورشة | WARSHA — كل مليمتر بيفرق.</title>
+  <link rel="icon" href="assets/favicon.png" type="image/png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800;900&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="preload" as="image" href="assets/warsha-app.webp">
+  <link rel="stylesheet" href="styles.css?v=4">
+  <script defer src="script.js?v=4"></script>
 </head>
 <body>
-<div class="intro" id="top">
-<header class="site-nav">
-  <div class="wrap nav-row">
-    <a class="brand" href="#top" aria-label="ورشة WARSHA"><img src="assets/warsha-logo.webp" width="114" height="60" alt="ورشة WARSHA"></a>
-    <nav class="links" id="links" aria-label="Main navigation">
-      <a href="#tools" data-ar="الأقسام" data-en="Tools">الأقسام</a>
-      <a href="#demo" data-ar="جرّب حسبة" data-en="Try it">جرّب حسبة</a>
-      <a href="#about" data-ar="عن التطبيق" data-en="About">عن التطبيق</a>
-    </nav>
-    <div class="actions">
-      <button type="button" class="lang" id="lang" aria-label="Switch to English">EN</button>
-      <button type="button" class="nav-button" data-open data-ar="حالة التطبيق ↗" data-en="App status ↗">حالة التطبيق ↗</button>
-      <button type="button" class="hamburger" id="hamburger" aria-label="فتح القائمة" aria-expanded="false" aria-controls="links">☰</button>
+  <a class="skip-link" href="#main" data-ar="روح للمحتوى" data-en="Skip to content">روح للمحتوى</a>
+  <div class="progress-track" aria-hidden="true"><div class="progress-bar" id="progress"></div></div>
+  <header class="header" id="top">
+    <div class="container header-inner">
+      <a class="brand" href="#top" aria-label="WARSHA home"><img src="assets/warsha-logo.webp" alt="ورشة WARSHA" width="116" height="62"></a>
+      <nav class="nav" id="nav" aria-label="Main navigation">
+        <a href="#about" data-ar="عن ورشة" data-en="About">عن ورشة</a>
+        <a href="#tools" data-ar="الأدوات" data-en="Tools">الأدوات</a>
+        <a href="#calculator" data-ar="جرّب بنفسك" data-en="Try it">جرّب بنفسك</a>
+      </nav>
+      <div class="header-actions">
+        <button class="language-btn" type="button" id="lang" aria-label="Switch to English">EN <span class="language-icon">↗</span></button>
+        <button class="header-cta" type="button" data-open-modal><span data-ar="حالة التطبيق" data-en="App status">حالة التطبيق</span><span aria-hidden="true">↗</span></button>
+        <button class="menu-btn" type="button" id="menu" aria-label="فتح القائمة" aria-controls="nav" aria-expanded="false"><span></span><span></span></button>
+      </div>
     </div>
-  </div>
-</header>
-<section class="hero wrap" aria-labelledby="headline">
-  <div class="hero-copy">
-    <div class="eyebrow"><i></i><span data-ar="العدة الرقمية للي شغلهم بالدقة" data-en="THE DIGITAL TOOLKIT FOR MAKERS">العدة الرقمية للي شغلهم بالدقة</span></div>
-    <h1 id="headline"><span data-ar="كل مليمتر" data-en="EVERY MILLIMETER">كل مليمتر</span><br><em data-ar="بيفرق." data-en="MATTERS.">بيفرق.</em></h1>
-    <p data-ar="الحسبة الصح بتفرق في الشغل كله. ورشة بيقرّبلك حسابات التروس والمخرطة والمثقاب في مكان واحد، عشان تركّز في الصنعة مش في الأرقام." data-en="The right calculation makes a difference. WARSHA puts gear, lathe and drilling calculations in one focused place, so you can get back to making.">الحسبة الصح بتفرق في الشغل كله. ورشة بيقرّبلك حسابات التروس والمخرطة والمثقاب في مكان واحد، عشان تركّز في الصنعة مش في الأرقام.</p>
-    <div class="hero-buttons">
-      <a class="btn btn-primary" href="#tools"><span data-ar="اكتشف أدوات ورشة" data-en="Explore the tools">اكتشف أدوات ورشة</span><span aria-hidden="true">↗</span></a>
-      <a class="btn btn-ghost" href="#demo"><span data-ar="جرّب الحاسبة" data-en="Try the calculator">جرّب الحاسبة</span><span aria-hidden="true">←</span></a>
-    </div>
-    <div class="hero-tag" data-ar="مفيش دوشة. بس اللي محتاجه لشغلك." data-en="Less noise. More making.">مفيش دوشة. بس اللي محتاجه لشغلك.</div>
-  </div>
-  <div class="hero-show" id="about">
-    <img src="assets/warsha-app.webp" width="511" height="1078" alt="واجهة تطبيق ورشة على الموبايل" fetchpriority="high">
-    <div class="float-note"><span class="mark">✳</span><span><b data-ar="الحسابات أقربلك" data-en="Your tools, within reach">الحسابات أقربلك</b><small data-ar="التروس • المخرطة • المثقاب" data-en="Gears • Lathe • Drill">التروس • المخرطة • المثقاب</small></span></div>
-  </div>
-</section>
-<div class="underhero"><div class="wrap"><span>WARSHA / MADE FOR MAKERS</span><span data-ar="احسب بثقة. اشتغل براحة." data-en="MEASURE SMART. MAKE BETTER.">احسب بثقة. اشتغل براحة.</span></div></div>
-</div>
-<main>
-<section class="feature-band" id="vision" aria-labelledby="vision-heading">
- <div class="wrap feature-layout">
-  <div class="feature-label"><span>01 / WHY WARSHA</span><i></i></div>
-  <div class="feature-body">
-   <p class="feature-overline" data-ar="معمول علشان شغلك" data-en="DESIGNED FOR THE WORKSHOP">معمول علشان شغلك</p>
-   <h2 id="vision-heading"><span data-ar="فكّر في شغلك،" data-en="FOCUS ON THE WORK,">فكّر في شغلك،</span><br><em data-ar="مش في الحسبة." data-en="NOT THE MATH.">مش في الحسبة.</em></h2>
-   <p class="feature-desc" data-ar="سواء بتظبط ترس، بتجهّز للمخرطة، أو بتحضّر للثقب — ورشة بيلمّ حساباتك المهمة في تجربة واضحة. تفاصيل أقل على الشاشة، وتركيز أكتر على الشغل." data-en="Whether you're sizing a gear, setting up a lathe or preparing to drill, WARSHA brings useful calculations together in one clear interface. Less clutter on screen, more focus on the work.">سواء بتظبط ترس، بتجهّز للمخرطة، أو بتحضّر للثقب — ورشة بيلمّ حساباتك المهمة في تجربة واضحة. تفاصيل أقل على الشاشة، وتركيز أكتر على الشغل.</p>
-  </div>
- </div>
-</section>
+  </header>
 
-<section class="section wrap" id="tools">
- <div class="heading">
-  <div><p class="smalltitle" data-ar="02 / الأدوات" data-en="02 / THE TOOLKIT">02 / الأدوات</p><h2><span data-ar="اللي تحتاجه،" data-en="TOOLS THAT">اللي تحتاجه،</span><br><span data-ar="في مكانه." data-en="MAKE SENSE.">في مكانه.</span></h2></div>
-  <p data-ar="بدل ما تضيّع وقتك في قوائم كتير، اختار نوع شغلك وابدأ من الحسبة اللي تهمك." data-en="Find the calculation you need without working your way through complicated menus.">بدل ما تضيّع وقتك في قوائم كتير، اختار نوع شغلك وابدأ من الحسبة اللي تهمك.</p>
- </div>
- <div class="cards">
-  <a class="card" href="#demo"><div class="photo"><img src="assets/gears.webp" alt="تروس معدنية" loading="lazy"><span class="num">01</span></div><div class="card-bottom"><div><h3 data-ar="التروس" data-en="Gears">التروس</h3><p data-ar="من عدد الأسنان للموديول والأقطار — ابدأ بالحسبة الصح." data-en="Teeth, module and diameters — start with the right numbers.">من عدد الأسنان للموديول والأقطار — ابدأ بالحسبة الصح.</p></div><span class="arrow">↗</span></div></a>
-  <a class="card" href="#about"><div class="photo"><img src="assets/lathe.webp" alt="مخرطة معدنية" loading="lazy"><span class="num">02</span></div><div class="card-bottom"><div><h3 data-ar="المخرطة" data-en="Lathe">المخرطة</h3><p data-ar="أبعاد وحسابات تساعدك تجهّز لشغل المخرطة بوضوح." data-en="Dimensions and calculations to help prepare your turning work.">أبعاد وحسابات تساعدك تجهّز لشغل المخرطة بوضوح.</p></div><span class="arrow">↗</span></div></a>
-  <a class="card" href="#about"><div class="photo"><img src="assets/drill.webp" alt="مثقاب صناعي" loading="lazy"><span class="num">03</span></div><div class="card-bottom"><div><h3 data-ar="المثقاب" data-en="Drill">المثقاب</h3><p data-ar="حضّر قياساتك وخليك عارف الخطوة الجاية قبل الثقب." data-en="Get your measurements ready before you drill.">حضّر قياساتك وخليك عارف الخطوة الجاية قبل الثقب.</p></div><span class="arrow">↗</span></div></a>
- </div>
-</section>
-<section class="demo section" id="demo">
- <div class="wrap">
-  <div class="calc-copy"><p class="smalltitle" data-ar="03 / جرّب بنفسك" data-en="03 / LIVE DEMO">03 / جرّب بنفسك</p><h2><span data-ar="جرّبها." data-en="TRY IT.">جرّبها.</span><br><span data-ar="النتيجة قدامك." data-en="SEE THE RESULT.">النتيجة قدامك.</span></h2><p data-ar="مثال تفاعلي للتروس المستقيمة: غيّر عدد الأسنان أو الموديول، وشوف قطر دائرة الخطوة في نفس اللحظة." data-en="A live spur gear example: adjust the teeth count or module and get the pitch diameter immediately.">مثال تفاعلي للتروس المستقيمة: غيّر عدد الأسنان أو الموديول، وشوف قطر دائرة الخطوة في نفس اللحظة.</p><div class="formula">d = m × Z</div></div>
-  <div class="calculator">
-   <div class="calculator-top"><span>WARSHA / CALCULATOR</span><span>● LIVE DEMO</span></div>
-   <div class="calculator-body"><h3 data-ar="حاسبة التروس" data-en="Gear calculator">حاسبة التروس</h3><p class="calc-sub" data-ar="قطر دائرة الخطوة" data-en="Pitch circle diameter">قطر دائرة الخطوة</p>
-   <div class="fields">
-    <label><span data-ar="عدد الأسنان (Z)" data-en="Teeth count (Z)">عدد الأسنان (Z)</span><input id="teeth" type="number" value="24" min="1" max="10000" step="1" inputmode="numeric"></label>
-    <label><span data-ar="الموديول (m)" data-en="Module (m)">الموديول (m)</span><input id="module" type="number" value="2.5" min=".01" max="1000" step="any" inputmode="decimal"></label>
-   </div>
-   <div class="answer"><span data-ar="النتيجة" data-en="RESULT">النتيجة</span><div dir="ltr"><output id="result" aria-live="polite">60</output><small>mm</small></div></div><p class="calc-message" id="calc-message" role="status" aria-live="polite"></p>
-   </div>
-   <div class="calc-foot" data-ar="مثال توضيحي للتروس المستقيمة — القياس بالمليمتر" data-en="Standard spur gear example — measurements in millimeters">مثال توضيحي للتروس المستقيمة — القياس بالمليمتر</div>
-  </div>
- </div>
-</section>
-<section class="end" id="download"><div class="wrap"><div><p class="smalltitle" style="color:#b4eedc">WARSHA / MADE FOR MAKERS</p><h2><span data-ar="شغل متقن،" data-en="GOOD WORK">شغل متقن،</span><br><span data-ar="من أول حسبة." data-en="STARTS HERE.">من أول حسبة.</span></h2><p data-ar="بنجهّز روابط تحميل ورشة. لحد ما تكون متاحة، جرّب الحاسبة واتعرّف على فكرة التطبيق." data-en="WARSHA download links are being prepared. Until they're available, try the calculator and explore the app concept.">بنجهّز روابط تحميل ورشة. لحد ما تكون متاحة، جرّب الحاسبة واتعرّف على فكرة التطبيق.</p></div><button type="button" class="btn btn-primary" data-open><span data-ar="حالة التطبيق" data-en="App status">حالة التطبيق</span>↗</button></div></section>
-</main>
-<footer class="footer"><div class="wrap"><a href="#top"><img src="assets/warsha-logo.webp" alt="ورشة WARSHA"></a><span>© <span id="year">2026</span> WARSHA — <span data-ar="كل مليمتر بيفرق." data-en="Every millimeter matters.">كل مليمتر بيفرق.</span></span><a href="#top" data-ar="ارجع لفوق ↑" data-en="Back to top ↑">ارجع لفوق ↑</a></div></footer>
-<div class="overlay" id="overlay" aria-hidden="true"><div class="dialog" role="dialog" aria-modal="true" aria-labelledby="dialog-heading"><button class="close" type="button" data-close aria-label="إغلاق">×</button><h2 id="dialog-heading" data-ar="لسه بنجهّزها." data-en="IN THE WORKS.">لسه بنجهّزها.</h2><p data-ar="روابط تحميل التطبيق لسه مش جاهزة. Android وWindows قريبًا، وiOS لسه مش مختبر. هنضيف الروابط لما الإصدارات تبقى متاحة." data-en="Download links aren't ready yet. Android and Windows are coming soon; iOS hasn't been tested. Links will be added when builds are available.">روابط تحميل التطبيق لسه مش جاهزة. Android وWindows قريبًا، وiOS لسه مش مختبر. هنضيف الروابط لما الإصدارات تبقى متاحة.</p><div class="status"><span>Android · <b data-ar="قريبًا" data-en="Soon">قريبًا</b></span><span>Windows · <b data-ar="قريبًا" data-en="Soon">قريبًا</b></span><span>iOS · <b data-ar="غير مختبر" data-en="Not tested">غير مختبر</b></span></div><button type="button" class="btn btn-primary" data-close data-ar="تمام" data-en="Got it">تمام</button></div></div>
-<script>
-(function(){
- const $=s=>document.querySelector(s), $$=s=>[...document.querySelectorAll(s)];
- let lang='ar',lastFocus=null;
- const nav=$('#links'),hamburger=$('#hamburger'),overlay=$('#overlay');
- function closeNav(){nav.classList.remove('visible');hamburger.setAttribute('aria-expanded','false')}
- hamburger.addEventListener('click',()=>{const open=nav.classList.toggle('visible');hamburger.setAttribute('aria-expanded',String(open))});
- $$('.links a').forEach(a=>a.addEventListener('click',closeNav));
- function calc(){const z=Number($('#teeth').value),m=Number($('#module').value);const valid=$('#teeth').value.trim()&&$('#module').value.trim()&&Number.isInteger(z)&&z>=1&&z<=10000&&Number.isFinite(m)&&m>=.01&&m<=1000;$('#result').textContent=valid?Number((z*m).toFixed(3)).toLocaleString('en-US'):'—';$('#calc-message').textContent=valid?'':(lang==='ar'?'ادخل عدد أسنان صحيح وموديول موجب.':'Enter a valid teeth count and positive module.') }
- $$('#teeth, #module').forEach(el=>el.addEventListener('input',calc));
- $('#lang').addEventListener('click',()=>{lang=lang==='ar'?'en':'ar';document.documentElement.lang=lang;document.documentElement.dir=lang==='ar'?'rtl':'ltr';$$('[data-ar][data-en]').forEach(el=>el.textContent=el.getAttribute('data-'+lang));$('#lang').textContent=lang==='ar'?'EN':'عربي';calc()});
- function openModal(){closeNav();lastFocus=document.activeElement;overlay.classList.add('open');overlay.setAttribute('aria-hidden','false');document.body.classList.add('lock');$('.dialog .close').focus()}
- function closeModal(){overlay.classList.remove('open');overlay.setAttribute('aria-hidden','true');document.body.classList.remove('lock');if(lastFocus&&document.contains(lastFocus))lastFocus.focus()}
- $$('[data-open]').forEach(el=>el.addEventListener('click',openModal));$$('[data-close]').forEach(el=>el.addEventListener('click',closeModal));
- overlay.addEventListener('click',e=>{if(e.target===overlay)closeModal()});
- document.addEventListener('keydown',e=>{if(e.key==='Escape'){closeNav();if(overlay.classList.contains('open'))closeModal()}if(e.key==='Tab'&&overlay.classList.contains('open')){const focusable=$$('.dialog button');if(e.shiftKey&&document.activeElement===focusable[0]){e.preventDefault();focusable.at(-1).focus()}else if(!e.shiftKey&&document.activeElement===focusable.at(-1)){e.preventDefault();focusable[0].focus()}}});
- $('#year').textContent=new Date().getFullYear();calc();
-})();
-</script>
+  <main id="main">
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="hero-grid" aria-hidden="true"></div>
+      <div class="hero-ambient" aria-hidden="true"></div>
+      <div class="container hero-layout">
+        <div class="hero-content">
+          <div class="eyebrow"><span class="pulse"></span><span data-ar="العدة الرقمية للي شغلهم بالدقة" data-en="THE DIGITAL TOOLKIT FOR MAKERS">العدة الرقمية للي شغلهم بالدقة</span><span class="eyebrow-slash">/ 001</span></div>
+          <h1 id="hero-title"><span data-ar="كل مليمتر" data-en="EVERY MILLIMETER">كل مليمتر</span><br><span class="hero-highlight" data-ar="بيفرق." data-en="MATTERS.">بيفرق.</span></h1>
+          <p class="hero-lead" data-ar="من قلب الورشة، ولحد آخر تفصيلة. التروس والمخرطة والمثقاب، وحسابات هندسية أوضح في مكان واحد. ركّز في شغلك وسيب الأرقام علينا." data-en="Built for the precision your craft deserves. Gear, lathe and drilling calculations — organized, clear and right where you need them.">من قلب الورشة، ولحد آخر تفصيلة. التروس والمخرطة والمثقاب، وحسابات هندسية أوضح في مكان واحد. ركّز في شغلك وسيب الأرقام علينا.</p>
+          <div class="hero-actions">
+            <a href="#tools" class="button button-lime"><span data-ar="اكتشف أدوات ورشة" data-en="Explore the tools">اكتشف أدوات ورشة</span><span class="button-arrow" aria-hidden="true">↗</span></a>
+            <a href="#calculator" class="text-link"><span data-ar="جرّب حسبة دلوقتي" data-en="Try a calculation">جرّب حسبة دلوقتي</span><span aria-hidden="true">↙</span></a>
+          </div>
+          <div class="hero-footnote"><span class="footnote-line"></span><span data-ar="مفيش تعقيد. بس الأدوات اللي محتاجها." data-en="Less noise. Just the tools that matter.">مفيش تعقيد. بس الأدوات اللي محتاجها.</span></div>
+        </div>
+        <div class="hero-scene" aria-label="معاينة تطبيق ورشة">
+          <div class="scene-orbit scene-orbit-one" aria-hidden="true"></div>
+          <div class="scene-orbit scene-orbit-two" aria-hidden="true"></div>
+          <div class="scene-circle" aria-hidden="true"></div>
+          <span class="scene-index">WARSHA / APP PREVIEW</span>
+          <div class="phone-wrap"><img src="assets/warsha-app.webp" width="511" height="1078" alt="شاشة تطبيق ورشة وبها أقسام التروس والمخرطة والمثقاب" fetchpriority="high"></div>
+          <div class="float-note note-top"><span class="note-icon">↗</span><span data-ar="إيدك على الشغل" data-en="FOCUS ON THE WORK">إيدك على الشغل</span></div>
+          <div class="float-note note-bottom"><span class="note-spark">✳</span><span><b data-ar="حسابات أوضح" data-en="CLEARER CALCULATIONS">حسابات أوضح</b><small data-ar="وقتك للشغل، مش للدوران" data-en="More making. Less searching.">وقتك للشغل، مش للدوران</small></span></div>
+        </div>
+      </div>
+      <div class="hero-bottom"><div class="container hero-bottom-inner"><span>WARSHA® &nbsp; / &nbsp; MADE FOR THE WORKSHOP</span><span class="hero-bottom-center" data-ar="احسب بثقة. اشتغل براحة." data-en="MEASURE SMART. MAKE BETTER.">احسب بثقة. اشتغل براحة.</span><a href="#about" aria-label="Scroll down">↓</a></div></div>
+    </section>
+
+    <section class="intro-section section-padding" id="about">
+      <div class="container intro-grid reveal">
+        <div class="section-number"><span class="number-line"></span><span>01 / WHY WARSHA</span></div>
+        <div class="intro-main">
+          <p class="overline" data-ar="معمول علشان شغلك" data-en="DESIGNED FOR THE WAY YOU WORK">معمول علشان شغلك</p>
+          <h2 class="intro-title" data-ar="فكّر في شغلك، مش في الحسبة." data-en="FOCUS ON THE WORK. NOT THE MATH.">فكّر في شغلك، <em>مش في الحسبة.</em></h2>
+          <div class="intro-bottom"><p data-ar="سواء بتظبط ترس، بتشتغل على المخرطة، أو بتحضر للثقب — ورشة بيقرّبلك الحسابات اللي بتحتاجها من غير قوائم معقدة ولا خطوات ملهاش لازمة." data-en="Whether you're sizing a gear, setting up a lathe or planning a drill, WARSHA puts the calculations you need close by — without complicated menus or unnecessary steps.">سواء بتظبط ترس، بتشتغل على المخرطة، أو بتحضر للثقب — ورشة بيقرّبلك الحسابات اللي بتحتاجها من غير قوائم معقدة ولا خطوات ملهاش لازمة.</p><div class="signature"><span>W</span><small>BUILT TO MAKE<br>THINGS EASIER</small></div></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="tools-section section-padding" id="tools">
+      <div class="container">
+        <div class="section-head reveal"><div><div class="section-number"><span class="number-line"></span><span>02 / THE TOOLKIT</span></div><h2><span data-ar="اللي تحتاجه،" data-en="TOOLS THAT">اللي تحتاجه،</span><br><span class="outline-title" data-ar="في مكانه." data-en="MAKE SENSE.">في مكانه.</span></h2></div><p data-ar="أدواتك الأساسية من غير لف ودوران. كل حاجة بتحتاجها في مكانها." data-en="The essentials, right where you need them. Nothing extra.">أدواتك الأساسية من غير لف ودوران. كل حاجة بتحتاجها في مكانها.</p></div>
+        <div class="tools-grid">
+          <a href="#calculator" class="tool-card tool-card-feature reveal"><div class="tool-media"><img src="assets/gears.webp" alt="تروس معدنية داخل ورشة" loading="lazy"><div class="tool-media-tint"></div><span class="tool-index">01 / GEARS</span><span class="tool-media-mark">⚙</span></div><div class="tool-body"><div><span class="tool-caption" data-ar="الدقة في كل سن" data-en="PRECISION IN EVERY TOOTH">الدقة في كل سن</span><h3 data-ar="التروس" data-en="GEARS">التروس</h3><p data-ar="من عدد الأسنان للموديول والأقطار — ابدأ بالحسبة الصح." data-en="From tooth count to module and diameter — start with the right numbers.">من عدد الأسنان للموديول والأقطار — ابدأ بالحسبة الصح.</p></div><span class="tool-round" aria-hidden="true">↗</span></div></a>
+          <a href="#app-status" class="tool-card reveal" data-open-modal-link><div class="tool-media"><img src="assets/lathe.webp" alt="تشغيل مخرطة معدنية" loading="lazy"><div class="tool-media-tint"></div><span class="tool-index">02 / LATHE</span></div><div class="tool-body"><div><span class="tool-caption" data-ar="كل مقاس له حساب" data-en="EVERY DIMENSION COUNTS">كل مقاس له حساب</span><h3 data-ar="المخرطة" data-en="LATHE">المخرطة</h3><p data-ar="حسابات تساعدك تجهّز للشغل على المخرطة بشكل أوضح." data-en="Useful calculations to prepare for your next turning job.">حسابات تساعدك تجهّز للشغل على المخرطة بشكل أوضح.</p></div><span class="tool-round" aria-hidden="true">↗</span></div></a>
+          <a href="#app-status" class="tool-card reveal" data-open-modal-link><div class="tool-media"><img src="assets/drill.webp" alt="مثقاب صناعي يعمل في قطعة معدنية" loading="lazy"><div class="tool-media-tint"></div><span class="tool-index">03 / DRILL</span></div><div class="tool-body"><div><span class="tool-caption" data-ar="قبل ما تبدأ الثقب" data-en="BEFORE YOU DRILL">قبل ما تبدأ الثقب</span><h3 data-ar="المثقاب" data-en="DRILL">المثقاب</h3><p data-ar="جهّز القياسات وخليك عارف خطوتك الجاية." data-en="Plan the measurements and know your next step.">جهّز القياسات وخليك عارف خطوتك الجاية.</p></div><span class="tool-round" aria-hidden="true">↗</span></div></a>
+        </div>
+      </div>
+    </section>
+
+    <section class="calculator-section section-padding" id="calculator">
+      <div class="container calc-layout">
+        <div class="calc-intro reveal"><div class="section-number light-number"><span class="number-line"></span><span>03 / TRY WARSHA</span></div><p class="overline lime-overline" data-ar="شوف الفكرة بنفسك" data-en="SEE IT IN ACTION">شوف الفكرة بنفسك</p><h2><span data-ar="جرّبها." data-en="TRY IT.">جرّبها.</span><br><span data-ar="النتيجة قدامك." data-en="SEE THE RESULT.">النتيجة قدامك.</span></h2><p data-ar="مثال تفاعلي من حسابات التروس المستقيمة. غيّر عدد الأسنان أو الموديول وشوف قطر دائرة الخطوة في نفس اللحظة." data-en="A live example for spur gears. Adjust the tooth count or module and get the pitch circle diameter instantly.">مثال تفاعلي من حسابات التروس المستقيمة. غيّر عدد الأسنان أو الموديول وشوف قطر دائرة الخطوة في نفس اللحظة.</p><div class="formula-pill"><span>THE FORMULA</span><b>d = m × Z</b></div></div>
+        <div class="calc-shell reveal"><div class="calc-header"><div class="calc-header-left"><span class="calc-symbol">⚙</span><span><strong data-ar="حاسبة التروس" data-en="GEAR CALCULATOR">حاسبة التروس</strong><small>SPUR GEAR / PITCH DIAMETER</small></span></div><span class="live-pill"><span></span> LIVE DEMO</span></div><form id="calculator-form" novalidate><div class="calc-form-body"><div class="calc-form-intro"><span data-ar="ادخل البيانات" data-en="YOUR INPUTS">ادخل البيانات</span><span>01 — 02</span></div><div class="field-grid"><label class="field"><span data-ar="عدد الأسنان" data-en="Number of teeth">عدد الأسنان</span><div class="input-wrap"><input type="number" id="teeth" name="teeth" min="1" max="10000" step="1" value="24" required inputmode="numeric"><small>Z</small></div></label><label class="field"><span data-ar="الموديول" data-en="Module">الموديول</span><div class="input-wrap"><input type="number" id="module" name="module" min="0.01" max="1000" step="any" value="2.5" required inputmode="decimal"><small>m</small></div></label></div><div class="result-panel"><div><span class="result-label" data-ar="قطر دائرة الخطوة" data-en="PITCH DIAMETER">قطر دائرة الخطوة</span><small data-ar="النتيجة بتتغير تلقائيًا" data-en="UPDATES AS YOU TYPE">النتيجة بتتغير تلقائيًا</small></div><div class="result-number"><output id="answer" aria-live="polite">60</output><small>mm</small></div></div><p class="error-message" id="error" aria-live="polite"></p></div></form><div class="calc-footer"><span data-ar="* مثال للتروس المستقيمة القياسية — بالمليمتر" data-en="* Standard spur gear example — in millimeters">* مثال للتروس المستقيمة القياسية — بالمليمتر</span><span>W / 003</span></div></div>
+      </div>
+    </section>
+
+    <section class="closing" id="app-status"><div class="container closing-content reveal"><div class="closing-kicker"><span class="pulse"></span><span>WARSHA / WHAT'S NEXT</span></div><h2><span data-ar="شغل متقن،" data-en="GOOD WORK">شغل متقن،</span><br><span data-ar="من أول حسبة." data-en="STARTS HERE.">من أول حسبة.</span></h2><div class="closing-bottom"><p data-ar="بنجهّز روابط تحميل ورشة. لحد ما تكون جاهزة، تقدر تجرّب الحاسبة وتشوف فكرة التطبيق هنا." data-en="We're preparing WARSHA's download links. In the meantime, try the calculator and get a feel for the app here.">بنجهّز روابط تحميل ورشة. لحد ما تكون جاهزة، تقدر تجرّب الحاسبة وتشوف فكرة التطبيق هنا.</p><button type="button" class="button button-dark" data-open-modal><span data-ar="اعرف حالة التطبيق" data-en="Check app status">اعرف حالة التطبيق</span><span class="button-arrow" aria-hidden="true">↗</span></button></div></div><span class="closing-watermark" aria-hidden="true">W.</span></section>
+  </main>
+
+  <footer class="footer"><div class="container footer-content"><a href="#top" aria-label="WARSHA top"><img src="assets/warsha-logo.webp" width="104" height="54" alt="ورشة WARSHA"></a><p>© <span id="year">2026</span> WARSHA. <span data-ar="كل مليمتر بيفرق." data-en="Every millimeter matters.">كل مليمتر بيفرق.</span></p><a href="#top" class="back-top" data-ar="اطلع فوق ↑" data-en="Back to top ↑">اطلع فوق ↑</a></div></footer>
+
+  <div class="modal" id="modal" aria-hidden="true"><div class="modal-scrim" data-close-modal></div><section class="modal-box" role="dialog" aria-modal="true" aria-labelledby="modal-title" tabindex="-1"><button class="modal-close" type="button" data-close-modal aria-label="Close">×</button><span class="modal-topline">WARSHA / UPDATE 001</span><div class="modal-illustration" aria-hidden="true">✳</div><h2 id="modal-title" data-ar="لسه بنجهّزها." data-en="COMING TOGETHER.">لسه بنجهّزها.</h2><p data-ar="روابط تحميل Android وWindows مش متاحة حاليًا، ونسخة iOS لسه غير مختبرة. أول ما الإصدارات تكون جاهزة، هنضيف روابطها هنا." data-en="Android and Windows download links aren't available yet, and the iOS version hasn't been tested. Links will appear here when builds are ready.">روابط تحميل Android وWindows مش متاحة حاليًا، ونسخة iOS لسه غير مختبرة. أول ما الإصدارات تكون جاهزة، هنضيف روابطها هنا.</p><div class="modal-status"><span>ANDROID <b data-ar="قريبًا" data-en="SOON">قريبًا</b></span><span>WINDOWS <b data-ar="قريبًا" data-en="SOON">قريبًا</b></span><span>iOS <b data-ar="غير مختبرة" data-en="NOT TESTED">غير مختبرة</b></span></div><button class="button button-lime modal-button" type="button" data-close-modal><span data-ar="تمام، فهمت" data-en="Got it">تمام، فهمت</span><span aria-hidden="true">✓</span></button></section></div>
 </body>
 </html>
