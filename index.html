@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="theme-color" content="#102b25">
 <meta name="description" content="ورشة — تطبيق يجمع حسابات التروس والمخرطة والمثقاب في مكان واحد.">
-<title>ورشة | WARSHA — شغلك أسرع. وحسابك أدق.</title>
+<title>ورشة | WARSHA — كل مليمتر بيفرق.</title>
 <link rel="icon" href="assets/favicon.png" type="image/png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -23,6 +23,84 @@ html[dir=ltr] h1,html[dir=ltr] h2,html[dir=ltr] h3{font-family:Manrope,sans-seri
 @media(max-width:720px){.wrap{width:calc(100% - 38px)}.nav-row{height:70px}.brand img{width:96px;height:55px}.hamburger{display:block}.nav-button{display:none}.links{display:none;position:absolute;top:70px;left:0;right:0;background:#173b30;padding:15px 22px;box-shadow:0 15px 25px #0003;flex-direction:column;align-items:stretch;gap:0}.links.visible{display:flex}.links a{padding:12px}.hero{grid-template-columns:1fr;text-align:center;padding:49px 0 33px}.hero-copy{max-width:580px;margin:auto}.hero h1{font-size:clamp(42px,8.5vw,59px)}.hero p{margin:0 auto 23px;font-size:13px}.hero-buttons{justify-content:center}.hero-tag{justify-content:center;margin-top:30px}.hero-show{min-height:430px}.hero-show img{height:405px}.hero-show:before{width:330px}.float-note{left:2%;bottom:30px}.underhero .wrap{justify-content:center}.underhero .wrap span:first-child{display:none}.section{padding:68px 0}.heading{display:block}.heading>p{margin-top:18px}.cards{grid-template-columns:1fr 1fr;gap:15px}.card .photo{height:180px}.card-bottom{padding:14px}.card h3{font-size:19px}.demo .wrap{grid-template-columns:1fr;gap:28px}.end .wrap{display:block}.end .btn{margin-top:26px}}
 @media(max-width:520px){.wrap{width:calc(100% - 34px)}.hero{padding-top:38px}.hero h1{font-size:43px}.eyebrow{font-size:11px}.btn{min-height:49px;padding:10px 19px;font-size:12px}.hero-show{min-height:378px}.hero-show img{height:361px}.hero-show:before{width:290px}.float-note{padding:9px 11px;bottom:17px}.float-note .mark{width:29px;height:29px}.float-note small{font-size:9px}.section{padding:60px 0}.heading h2,.calc-copy h2{font-size:39px}.cards{grid-template-columns:1fr}.card .photo{height:218px}.card-bottom{padding:18px}.calculator-body{padding:21px}.fields{gap:9px}.fields input{font-size:17px}.answer output{font-size:33px}.end{padding:63px 0}.footer .wrap{flex-wrap:wrap;justify-content:center;text-align:center;padding:15px 0}.footer .wrap a:last-child{display:none}.footer .wrap>a:first-child{width:100%;display:flex;justify-content:center}}
 @media(prefers-reduced-motion:reduce){*,*:before,*:after{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
+
+/* WARSHA refined 2026: modern editorial composition with light motion */
+:root{--green:#082723;--green2:#123c33;--mint:#bff9ad;--paper:#f6f8f2;--ink:#14322d;--muted:#65786d;--border:#dce5dc}
+body{overflow-x:hidden}
+.intro{background:radial-gradient(ellipse at 77% 43%,#12443a 0%,#0a2b27 44%,#071e1b 100%)}
+.intro:before{content:"";position:absolute;inset:0;pointer-events:none;opacity:.20;background-image:linear-gradient(rgba(175,246,210,.11) 1px,transparent 1px),linear-gradient(90deg,rgba(175,246,210,.11) 1px,transparent 1px);background-size:76px 76px;mask-image:linear-gradient(90deg,#000,transparent 85%)}
+.site-nav,.hero,.underhero{position:relative;z-index:2}
+.hero{min-height:700px;gap:65px;padding:76px 0 82px}
+.hero h1{font-size:clamp(63px,6.35vw,96px);letter-spacing:-.055em;line-height:1.29;margin-bottom:22px}
+.hero h1 em{display:inline-block;position:relative;color:var(--mint)}
+.hero h1 em:after{content:"";position:absolute;inset-inline-start:2px;bottom:0;width:93%;height:7px;background:var(--mint);border-radius:70%;transform:rotate(-2deg);opacity:.45}
+.eyebrow{background:rgba(196,251,218,.06);border-color:rgba(204,255,225,.25);font-size:11px;padding:9px 15px}
+.eyebrow i{background:var(--mint);box-shadow:0 0 0 5px rgba(191,249,173,.12)}
+.hero p{line-height:2.22;max-width:550px;color:#c5dcd1}
+.hero-tag{margin-top:45px;color:#a8c9b8}
+.hero-show{min-height:555px}
+.hero-show:before{width:min(94%,440px);background:radial-gradient(circle at 40% 38%,#1b795e 0%,#125040 55%,#0b332e 100%);box-shadow:0 0 0 56px rgba(196,251,218,.025),0 0 0 108px rgba(196,251,218,.016)}
+.hero-show:after{content:"";position:absolute;width:calc(100% + 30px);max-width:580px;aspect-ratio:1;border:1px solid rgba(177,255,209,.14);border-radius:50%;pointer-events:none}
+.hero-show img{height:525px;filter:drop-shadow(0 34px 36px rgba(0,0,0,.34))}
+.float-note{border:1px solid rgba(8,50,30,.08);box-shadow:0 23px 56px rgba(0,0,0,.21);transform:rotate(3deg)}
+.float-note .mark{background:#c4f7b7;color:#14553a}
+.btn{border-radius:9px;transition:transform .25s,background .25s,box-shadow .25s}
+.btn-primary:hover{box-shadow:0 16px 30px rgba(181,246,180,.16);background:#d6ffc8}
+.btn-ghost{border-color:rgba(205,253,228,.28)}
+.nav-button{border-radius:9px;background:rgba(255,255,255,.09);border:1px solid rgba(205,253,228,.33);color:#ecfff1}
+.nav-button:hover{background:rgba(255,255,255,.2)}
+.feature-band{background:#f7f8f2;padding:110px 0 108px}
+.feature-layout{display:grid;grid-template-columns:235px 1fr;gap:65px}
+.feature-label{display:flex;align-items:center;gap:15px;direction:ltr;justify-content:flex-end;color:#618575;font:800 10px/1.5 Manrope,sans-serif;letter-spacing:.09em;white-space:nowrap}
+.feature-label i{width:30px;height:1px;background:#8eb7a2}
+.feature-overline{font-size:12px;color:#238763;font-weight:900;margin:0 0 18px}
+.feature-body h2{font-size:clamp(40px,5vw,70px);line-height:1.53;font-weight:900;letter-spacing:-.05em;margin:0}
+.feature-body h2 em{font-style:normal;background:linear-gradient(transparent 71%,#c5f5c2 71%)}
+.feature-desc{color:#62786c;font-size:15px;line-height:2.25;max-width:670px;margin:26px 0 0}
+.section{padding:109px 0}
+.heading h2{font-size:clamp(45px,4.7vw,68px);line-height:1.32;letter-spacing:-.05em}
+.heading h2 span:last-child{color:#5b987e}
+.heading>p{font-size:14px}
+.cards{gap:19px}
+.card{border:0;border-radius:11px;box-shadow:0 1px 0 rgba(18,69,42,.03);transition:transform .32s cubic-bezier(.2,.8,.2,1),box-shadow .32s}
+.card:hover{transform:translateY(-10px);box-shadow:0 25px 55px rgba(15,69,45,.13)}
+.card .photo{height:255px}
+.card .photo:after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(1,35,29,.3),transparent 40%,rgba(1,35,29,.1));pointer-events:none}
+.card img{filter:saturate(.85);transition:transform .6s}
+.card:hover img{transform:scale(1.08)}
+.num{z-index:1;top:18px;right:18px;color:#eafff3;background:rgba(9,40,31,.7);font-family:Manrope,sans-serif;border:1px solid rgba(255,255,255,.22);padding:5px 10px}
+.card-bottom{padding:26px 25px;min-height:153px}
+.card h3{font-size:27px;margin-bottom:7px}
+.card p{color:#74897c}
+.arrow{background:#e7f8e6;transition:transform .25s,background .25s}
+.card:hover .arrow{background:var(--mint);transform:rotate(45deg)}
+.demo{background:#0a2926;color:#fff;border:0;position:relative;overflow:hidden}
+.demo:before{content:"";position:absolute;top:-420px;left:-280px;width:750px;height:750px;border:1px solid rgba(212,255,224,.10);border-radius:50%;pointer-events:none}
+.demo .wrap{position:relative;z-index:1}
+.demo .smalltitle{color:var(--mint)}
+.demo .calc-copy h2 span:last-child{color:var(--mint)}
+.demo .calc-copy p:not(.smalltitle){color:#b5cec2;max-width:430px}
+.demo .formula{color:var(--mint);border-color:rgba(220,255,226,.22)}
+.calculator{border-radius:14px;border:0;box-shadow:0 30px 70px rgba(0,0,0,.2)}
+.calculator-top{background:#e7f4e9;color:#28674d}
+.answer{background:#0c302b;border-radius:9px}
+.answer span:first-child{color:#c3dbcb}
+.answer output{color:var(--mint)}
+.answer small{color:#b2d0be}
+.end{background:var(--mint);color:#0a2a20;position:relative;overflow:hidden}
+.end h2{font-size:clamp(46px,5vw,75px)}
+.end h2 span{color:#3d7354}
+.end p{color:#38644b;max-width:650px}
+.end .smalltitle{color:#2c7959!important}
+.end .btn-primary{background:#0c3028;color:#fff}
+.end .btn-primary:hover{background:#1b523e}
+.footer{background:#071e19}
+html[dir=ltr] .hero h1{font-size:clamp(52px,5.6vw,78px)}
+html[dir=ltr] .feature-body h2{font-family:Manrope,sans-serif;font-size:clamp(37px,4.4vw,62px);line-height:1.25}
+html[dir=ltr] .feature-desc{line-height:1.8}
+@media(max-width:960px){.hero{gap:15px;min-height:610px}.hero h1{font-size:clamp(52px,6.5vw,72px)}.hero-show{min-height:480px}.hero-show img{height:440px}.feature-layout{grid-template-columns:145px 1fr;gap:30px}.feature-band{padding:85px 0}}
+@media(max-width:720px){.hero{padding:50px 0 34px;gap:6px}.hero h1{font-size:clamp(49px,8.5vw,70px)}.hero-show{min-height:440px}.hero-show img{height:412px}.hero-show:after{max-width:420px}.feature-layout{display:block}.feature-label{justify-content:flex-start;margin-bottom:28px}.feature-body h2{font-size:clamp(36px,6vw,56px)}.feature-desc{font-size:13px}.card .photo{height:204px}.card-bottom{min-height:146px}.demo .wrap{gap:39px}.end{padding:70px 0}.feature-band{padding:68px 0}}
+@media(max-width:520px){.hero{padding-top:39px}.hero h1{font-size:clamp(48px,11vw,59px)}.hero-show{min-height:375px}.hero-show img{height:358px}.hero-show:after{width:340px}.hero-show:before{width:285px;box-shadow:0 0 0 36px rgba(196,251,218,.02)}.feature-body h2{font-size:39px}.feature-desc{font-size:12px}.heading h2{font-size:43px}.card .photo{height:214px}.section{padding:70px 0}.calc-copy h2{font-size:40px}.end h2{font-size:49px}.end .btn-primary{margin-top:26px}}
 </style>
 </head>
 <body>
@@ -44,37 +122,48 @@ html[dir=ltr] h1,html[dir=ltr] h2,html[dir=ltr] h3{font-family:Manrope,sans-seri
 </header>
 <section class="hero wrap" aria-labelledby="headline">
   <div class="hero-copy">
-    <div class="eyebrow"><i></i><span data-ar="ورشتك. كل حساباتك. مكان واحد." data-en="YOUR WORKSHOP. ONE PLACE.">ورشتك. كل حساباتك. مكان واحد.</span></div>
-    <h1 id="headline"><span data-ar="شغلك أسرع." data-en="WORK SMARTER.">شغلك أسرع.</span><br><em data-ar="وحسابك أدق." data-en="MEASURE BETTER.">وحسابك أدق.</em></h1>
-    <p data-ar="من التروس للمخرطة والمثقاب، ورشة بيجمع الأدوات والحسابات الهندسية في تجربة بسيطة. من غير خطوات زيادة." data-en="From gears to turning and drilling, WARSHA brings useful workshop calculations into one simple experience.">من التروس للمخرطة والمثقاب، ورشة بيجمع الأدوات والحسابات الهندسية في تجربة بسيطة. من غير خطوات زيادة.</p>
+    <div class="eyebrow"><i></i><span data-ar="العدة الرقمية للي شغلهم بالدقة" data-en="THE DIGITAL TOOLKIT FOR MAKERS">العدة الرقمية للي شغلهم بالدقة</span></div>
+    <h1 id="headline"><span data-ar="كل مليمتر" data-en="EVERY MILLIMETER">كل مليمتر</span><br><em data-ar="بيفرق." data-en="MATTERS.">بيفرق.</em></h1>
+    <p data-ar="الحسبة الصح بتفرق في الشغل كله. ورشة بيقرّبلك حسابات التروس والمخرطة والمثقاب في مكان واحد، عشان تركّز في الصنعة مش في الأرقام." data-en="The right calculation makes a difference. WARSHA puts gear, lathe and drilling calculations in one focused place, so you can get back to making.">الحسبة الصح بتفرق في الشغل كله. ورشة بيقرّبلك حسابات التروس والمخرطة والمثقاب في مكان واحد، عشان تركّز في الصنعة مش في الأرقام.</p>
     <div class="hero-buttons">
-      <a class="btn btn-primary" href="#tools"><span data-ar="اكتشف ورشة" data-en="Explore WARSHA">اكتشف ورشة</span><span aria-hidden="true">↗</span></a>
+      <a class="btn btn-primary" href="#tools"><span data-ar="اكتشف أدوات ورشة" data-en="Explore the tools">اكتشف أدوات ورشة</span><span aria-hidden="true">↗</span></a>
       <a class="btn btn-ghost" href="#demo"><span data-ar="جرّب الحاسبة" data-en="Try the calculator">جرّب الحاسبة</span><span aria-hidden="true">←</span></a>
     </div>
-    <div class="hero-tag" data-ar="تصميم بسيط. شغل أدق." data-en="Less clutter. Better work.">تصميم بسيط. شغل أدق.</div>
+    <div class="hero-tag" data-ar="مفيش دوشة. بس اللي محتاجه لشغلك." data-en="Less noise. More making.">مفيش دوشة. بس اللي محتاجه لشغلك.</div>
   </div>
   <div class="hero-show" id="about">
     <img src="assets/warsha-app.webp" width="511" height="1078" alt="واجهة تطبيق ورشة على الموبايل" fetchpriority="high">
-    <div class="float-note"><span class="mark">✳</span><span><b data-ar="كل حاجة قدامك" data-en="Everything in reach">كل حاجة قدامك</b><small data-ar="التروس • المخرطة • المثقاب" data-en="Gears • Lathe • Drill">التروس • المخرطة • المثقاب</small></span></div>
+    <div class="float-note"><span class="mark">✳</span><span><b data-ar="الحسابات أقربلك" data-en="Your tools, within reach">الحسابات أقربلك</b><small data-ar="التروس • المخرطة • المثقاب" data-en="Gears • Lathe • Drill">التروس • المخرطة • المثقاب</small></span></div>
   </div>
 </section>
-<div class="underhero"><div class="wrap"><span>WARSHA / MADE FOR MAKERS</span><span data-ar="الدقة تبدأ من هنا" data-en="PRECISION STARTS HERE">الدقة تبدأ من هنا</span></div></div>
+<div class="underhero"><div class="wrap"><span>WARSHA / MADE FOR MAKERS</span><span data-ar="احسب بثقة. اشتغل براحة." data-en="MEASURE SMART. MAKE BETTER.">احسب بثقة. اشتغل براحة.</span></div></div>
 </div>
 <main>
+<section class="feature-band" id="vision" aria-labelledby="vision-heading">
+ <div class="wrap feature-layout">
+  <div class="feature-label"><span>01 / WHY WARSHA</span><i></i></div>
+  <div class="feature-body">
+   <p class="feature-overline" data-ar="معمول علشان شغلك" data-en="DESIGNED FOR THE WORKSHOP">معمول علشان شغلك</p>
+   <h2 id="vision-heading"><span data-ar="فكّر في شغلك،" data-en="FOCUS ON THE WORK,">فكّر في شغلك،</span><br><em data-ar="مش في الحسبة." data-en="NOT THE MATH.">مش في الحسبة.</em></h2>
+   <p class="feature-desc" data-ar="سواء بتظبط ترس، بتجهّز للمخرطة، أو بتحضّر للثقب — ورشة بيلمّ حساباتك المهمة في تجربة واضحة. تفاصيل أقل على الشاشة، وتركيز أكتر على الشغل." data-en="Whether you're sizing a gear, setting up a lathe or preparing to drill, WARSHA brings useful calculations together in one clear interface. Less clutter on screen, more focus on the work.">سواء بتظبط ترس، بتجهّز للمخرطة، أو بتحضّر للثقب — ورشة بيلمّ حساباتك المهمة في تجربة واضحة. تفاصيل أقل على الشاشة، وتركيز أكتر على الشغل.</p>
+  </div>
+ </div>
+</section>
+
 <section class="section wrap" id="tools">
  <div class="heading">
-  <div><p class="smalltitle" data-ar="01 / الأقسام" data-en="01 / TOOLS">01 / الأقسام</p><h2><span data-ar="كل اللي تحتاجه." data-en="THE TOOLS YOU NEED.">كل اللي تحتاجه.</span><br><span data-ar="من غير تعقيد." data-en="NONE OF THE CLUTTER.">من غير تعقيد.</span></h2></div>
-  <p data-ar="أقسام واضحة وسهلة تخليك توصل للحسبة اللي محتاجها بأقل خطوات." data-en="Focused tools that help you get to the calculation you need, faster.">أقسام واضحة وسهلة تخليك توصل للحسبة اللي محتاجها بأقل خطوات.</p>
+  <div><p class="smalltitle" data-ar="02 / الأدوات" data-en="02 / THE TOOLKIT">02 / الأدوات</p><h2><span data-ar="اللي تحتاجه،" data-en="TOOLS THAT">اللي تحتاجه،</span><br><span data-ar="في مكانه." data-en="MAKE SENSE.">في مكانه.</span></h2></div>
+  <p data-ar="بدل ما تضيّع وقتك في قوائم كتير، اختار نوع شغلك وابدأ من الحسبة اللي تهمك." data-en="Find the calculation you need without working your way through complicated menus.">بدل ما تضيّع وقتك في قوائم كتير، اختار نوع شغلك وابدأ من الحسبة اللي تهمك.</p>
  </div>
  <div class="cards">
-  <a class="card" href="#demo"><div class="photo"><img src="assets/gears.webp" alt="تروس معدنية" loading="lazy"><span class="num">01</span></div><div class="card-bottom"><div><h3 data-ar="التروس" data-en="Gears">التروس</h3><p data-ar="حسابات التروس بشكل أبسط." data-en="Gear calculations, simplified.">حسابات التروس بشكل أبسط.</p></div><span class="arrow">↗</span></div></a>
-  <a class="card" href="#about"><div class="photo"><img src="assets/lathe.webp" alt="مخرطة معدنية" loading="lazy"><span class="num">02</span></div><div class="card-bottom"><div><h3 data-ar="المخرطة" data-en="Lathe">المخرطة</h3><p data-ar="أدوات وأبعاد في متناول إيدك." data-en="Machining tools close at hand.">أدوات وأبعاد في متناول إيدك.</p></div><span class="arrow">↗</span></div></a>
-  <a class="card" href="#about"><div class="photo"><img src="assets/drill.webp" alt="مثقاب صناعي" loading="lazy"><span class="num">03</span></div><div class="card-bottom"><div><h3 data-ar="المثقاب" data-en="Drill">المثقاب</h3><p data-ar="قياسات وحسابات سهلة." data-en="Measurements made easier.">قياسات وحسابات سهلة.</p></div><span class="arrow">↗</span></div></a>
+  <a class="card" href="#demo"><div class="photo"><img src="assets/gears.webp" alt="تروس معدنية" loading="lazy"><span class="num">01</span></div><div class="card-bottom"><div><h3 data-ar="التروس" data-en="Gears">التروس</h3><p data-ar="من عدد الأسنان للموديول والأقطار — ابدأ بالحسبة الصح." data-en="Teeth, module and diameters — start with the right numbers.">من عدد الأسنان للموديول والأقطار — ابدأ بالحسبة الصح.</p></div><span class="arrow">↗</span></div></a>
+  <a class="card" href="#about"><div class="photo"><img src="assets/lathe.webp" alt="مخرطة معدنية" loading="lazy"><span class="num">02</span></div><div class="card-bottom"><div><h3 data-ar="المخرطة" data-en="Lathe">المخرطة</h3><p data-ar="أبعاد وحسابات تساعدك تجهّز لشغل المخرطة بوضوح." data-en="Dimensions and calculations to help prepare your turning work.">أبعاد وحسابات تساعدك تجهّز لشغل المخرطة بوضوح.</p></div><span class="arrow">↗</span></div></a>
+  <a class="card" href="#about"><div class="photo"><img src="assets/drill.webp" alt="مثقاب صناعي" loading="lazy"><span class="num">03</span></div><div class="card-bottom"><div><h3 data-ar="المثقاب" data-en="Drill">المثقاب</h3><p data-ar="حضّر قياساتك وخليك عارف الخطوة الجاية قبل الثقب." data-en="Get your measurements ready before you drill.">حضّر قياساتك وخليك عارف الخطوة الجاية قبل الثقب.</p></div><span class="arrow">↗</span></div></a>
  </div>
 </section>
 <section class="demo section" id="demo">
  <div class="wrap">
-  <div class="calc-copy"><p class="smalltitle" data-ar="02 / جرّب بنفسك" data-en="02 / TRY IT">02 / جرّب بنفسك</p><h2><span data-ar="مش مجرد كلام." data-en="MORE THAN WORDS.">مش مجرد كلام.</span><br><span data-ar="جرّب الحسبة." data-en="TRY THE MATH.">جرّب الحسبة.</span></h2><p data-ar="حاسبة بسيطة لقطر دائرة الخطوة في التروس المستقيمة. غيّر الأرقام وشوف النتيجة فورًا." data-en="A quick spur gear pitch diameter demo. Change the numbers and see your result instantly.">حاسبة بسيطة لقطر دائرة الخطوة في التروس المستقيمة. غيّر الأرقام وشوف النتيجة فورًا.</p><div class="formula">d = m × Z</div></div>
+  <div class="calc-copy"><p class="smalltitle" data-ar="03 / جرّب بنفسك" data-en="03 / LIVE DEMO">03 / جرّب بنفسك</p><h2><span data-ar="جرّبها." data-en="TRY IT.">جرّبها.</span><br><span data-ar="النتيجة قدامك." data-en="SEE THE RESULT.">النتيجة قدامك.</span></h2><p data-ar="مثال تفاعلي للتروس المستقيمة: غيّر عدد الأسنان أو الموديول، وشوف قطر دائرة الخطوة في نفس اللحظة." data-en="A live spur gear example: adjust the teeth count or module and get the pitch diameter immediately.">مثال تفاعلي للتروس المستقيمة: غيّر عدد الأسنان أو الموديول، وشوف قطر دائرة الخطوة في نفس اللحظة.</p><div class="formula">d = m × Z</div></div>
   <div class="calculator">
    <div class="calculator-top"><span>WARSHA / CALCULATOR</span><span>● LIVE DEMO</span></div>
    <div class="calculator-body"><h3 data-ar="حاسبة التروس" data-en="Gear calculator">حاسبة التروس</h3><p class="calc-sub" data-ar="قطر دائرة الخطوة" data-en="Pitch circle diameter">قطر دائرة الخطوة</p>
@@ -88,10 +177,10 @@ html[dir=ltr] h1,html[dir=ltr] h2,html[dir=ltr] h3{font-family:Manrope,sans-seri
   </div>
  </div>
 </section>
-<section class="end" id="download"><div class="wrap"><div><p class="smalltitle" style="color:#b4eedc">WARSHA / MADE FOR MAKERS</p><h2><span data-ar="أقل تعقيد." data-en="LESS COMPLEXITY.">أقل تعقيد.</span><br><span data-ar="شغل أكتر." data-en="MORE MAKING.">شغل أكتر.</span></h2><p data-ar="نسخ التحميل لسه بنجهزها. تقدر تعرف حالة التطبيق من هنا." data-en="Download builds are still being prepared. You can check the release status here.">نسخ التحميل لسه بنجهزها. تقدر تعرف حالة التطبيق من هنا.</p></div><button type="button" class="btn btn-primary" data-open><span data-ar="حالة التطبيق" data-en="App status">حالة التطبيق</span>↗</button></div></section>
+<section class="end" id="download"><div class="wrap"><div><p class="smalltitle" style="color:#b4eedc">WARSHA / MADE FOR MAKERS</p><h2><span data-ar="شغل متقن،" data-en="GOOD WORK">شغل متقن،</span><br><span data-ar="من أول حسبة." data-en="STARTS HERE.">من أول حسبة.</span></h2><p data-ar="بنجهّز روابط تحميل ورشة. لحد ما تكون متاحة، جرّب الحاسبة واتعرّف على فكرة التطبيق." data-en="WARSHA download links are being prepared. Until they're available, try the calculator and explore the app concept.">بنجهّز روابط تحميل ورشة. لحد ما تكون متاحة، جرّب الحاسبة واتعرّف على فكرة التطبيق.</p></div><button type="button" class="btn btn-primary" data-open><span data-ar="حالة التطبيق" data-en="App status">حالة التطبيق</span>↗</button></div></section>
 </main>
-<footer class="footer"><div class="wrap"><a href="#top"><img src="assets/warsha-logo.webp" alt="ورشة WARSHA"></a><span>© <span id="year">2026</span> WARSHA — <span data-ar="كل التفاصيل بتفرق." data-en="Every detail matters.">كل التفاصيل بتفرق.</span></span><a href="#top" data-ar="ارجع لفوق ↑" data-en="Back to top ↑">ارجع لفوق ↑</a></div></footer>
-<div class="overlay" id="overlay" aria-hidden="true"><div class="dialog" role="dialog" aria-modal="true" aria-labelledby="dialog-heading"><button class="close" type="button" data-close aria-label="إغلاق">×</button><h2 id="dialog-heading" data-ar="ورشة جاية قريب." data-en="WARSHA IS COMING.">ورشة جاية قريب.</h2><p data-ar="روابط تحميل التطبيق لسه مش جاهزة. Android وWindows قريبًا، وiOS لسه مش مختبر. هنضيف الروابط لما الإصدارات تبقى متاحة." data-en="Download links aren't ready yet. Android and Windows are coming soon; iOS hasn't been tested. Links will be added when builds are available.">روابط تحميل التطبيق لسه مش جاهزة. Android وWindows قريبًا، وiOS لسه مش مختبر. هنضيف الروابط لما الإصدارات تبقى متاحة.</p><div class="status"><span>Android · <b data-ar="قريبًا" data-en="Soon">قريبًا</b></span><span>Windows · <b data-ar="قريبًا" data-en="Soon">قريبًا</b></span><span>iOS · <b data-ar="غير مختبر" data-en="Not tested">غير مختبر</b></span></div><button type="button" class="btn btn-primary" data-close data-ar="تمام" data-en="Got it">تمام</button></div></div>
+<footer class="footer"><div class="wrap"><a href="#top"><img src="assets/warsha-logo.webp" alt="ورشة WARSHA"></a><span>© <span id="year">2026</span> WARSHA — <span data-ar="كل مليمتر بيفرق." data-en="Every millimeter matters.">كل مليمتر بيفرق.</span></span><a href="#top" data-ar="ارجع لفوق ↑" data-en="Back to top ↑">ارجع لفوق ↑</a></div></footer>
+<div class="overlay" id="overlay" aria-hidden="true"><div class="dialog" role="dialog" aria-modal="true" aria-labelledby="dialog-heading"><button class="close" type="button" data-close aria-label="إغلاق">×</button><h2 id="dialog-heading" data-ar="لسه بنجهّزها." data-en="IN THE WORKS.">لسه بنجهّزها.</h2><p data-ar="روابط تحميل التطبيق لسه مش جاهزة. Android وWindows قريبًا، وiOS لسه مش مختبر. هنضيف الروابط لما الإصدارات تبقى متاحة." data-en="Download links aren't ready yet. Android and Windows are coming soon; iOS hasn't been tested. Links will be added when builds are available.">روابط تحميل التطبيق لسه مش جاهزة. Android وWindows قريبًا، وiOS لسه مش مختبر. هنضيف الروابط لما الإصدارات تبقى متاحة.</p><div class="status"><span>Android · <b data-ar="قريبًا" data-en="Soon">قريبًا</b></span><span>Windows · <b data-ar="قريبًا" data-en="Soon">قريبًا</b></span><span>iOS · <b data-ar="غير مختبر" data-en="Not tested">غير مختبر</b></span></div><button type="button" class="btn btn-primary" data-close data-ar="تمام" data-en="Got it">تمام</button></div></div>
 <script>
 (function(){
  const $=s=>document.querySelector(s), $$=s=>[...document.querySelectorAll(s)];
