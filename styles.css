@@ -168,3 +168,17 @@ body:before{content:"";position:fixed;inset:0;z-index:-1;background:radial-gradi
  .closing{padding:86px 0 94px}
 }
 @media(prefers-reduced-motion:reduce){.phone-wrap{animation:none}}
+/* Release download popup */
+.download-options{display:grid!important;gap:10px;margin:22px 0!important}
+.release-option{display:flex;align-items:center;gap:13px;padding:14px 15px;border:1px solid rgba(65,220,193,.23);border-radius:12px;background:rgba(16,51,49,.58);text-decoration:none;color:#f3faf8;transition:background .2s,border-color .2s,transform .2s;min-width:0}
+a.release-option:hover{background:rgba(20,81,73,.75);border-color:#33d9bf;transform:translateY(-1px)}
+.release-option-icon{width:40px;height:40px;display:grid;place-items:center;background:rgba(45,220,191,.1);color:#43e1c9;border-radius:10px;font-size:24px;flex-shrink:0}
+.release-option-copy{display:flex;flex-direction:column;gap:4px;flex:1}
+.release-option-copy b{font:800 15px Manrope,Inter,sans-serif;color:#f4fbf8}
+.release-option-copy small{font:500 12px Cairo,sans-serif;color:#a5c5bd}
+.release-arrow{font-size:22px;color:#48e4cb}
+.release-disabled{opacity:.72;cursor:not-allowed}
+.release-tag{font:700 11px Cairo,sans-serif;color:#e8ca83;border:1px solid rgba(232,202,131,.25);border-radius:20px;padding:5px 9px;white-space:nowrap}
+.release-page-link{display:inline-block;color:#47d9c1;font-size:12px;margin-top:5px;text-decoration:none}
+.release-page-link:hover{text-decoration:underline}
+@media(max-width:480px){.release-option{padding:12px}.release-option-copy small{font-size:11px}}
