@@ -190,3 +190,146 @@ body{background:#050b0c;background-image:radial-gradient(ellipse at 83% 7%,#00bf
  .header-cta{font-size:8px;padding:8px 10px}
  .field-grid{grid-template-columns:1fr}
 }
+
+
+/* WARSHA redesign v14 — immersive workshop, real industrial imagery, teal identity */
+:root{--bg:#070d0e;--surface:#0e1919;--text:#f3f7f4;--muted:#9eafab;--dim:#657874;--line:#203333;--acid:#39e6cf;--mint:#b3fff0}
+body{background:#070d0e;color:var(--text)}
+::selection{background:#39e6cf;color:#06100f}
+.header{position:absolute;background:linear-gradient(180deg,#06100fe8,transparent);border:0}
+.header-inner{height:94px}
+.brand-mark{border-radius:50%;width:43px;height:43px;background:#0c2826;border:1px solid #39e6cf80;color:#39e6cf;box-shadow:0 0 30px #39e6cf20}
+.brand-dot,.footer-brand span{color:#39e6cf}
+.nav a:hover,.language-btn:hover{color:#39e6cf}
+.header-cta{border-color:#39e6cf;color:#39e6cf}
+.progress-bar{background:#39e6cf}
+.hero{padding-top:94px;background:#07100f}
+.hero-grid{opacity:.035;background-size:88px 88px}
+.hero-glow{inset-inline-end:-180px;top:0;width:850px;height:850px;background:radial-gradient(ellipse,#00b9a31e,transparent 68%)}
+.hero-layout{grid-template-columns:1fr 1.05fr;gap:clamp(30px,5vw,80px);min-height:720px;padding:48px 0 62px}
+.hero-content{max-width:730px}
+.eyebrow{color:#d1e2dc;margin-bottom:25px}
+.pulse{background:#39e6cf;box-shadow:0 0 17px #39e6cf80}
+.eyebrow-slash{color:#39a99d}
+.hero h1{font-size:clamp(52px,6vw,82px);line-height:1.22;letter-spacing:-.055em}
+.hero-highlight{color:#39e6cf}
+.hero-lead{font-size:14px;line-height:2.15;color:#a9bbb5;max-width:520px}
+.button{padding:16px 21px}
+.button-primary{background:#39e6cf;color:#061311;border-radius:3px 18px 3px 18px}
+.button-primary:hover{background:#a4fff0}
+.text-link span:last-child,.hero-bottom a{color:#39e6cf}
+.hero-trust{border-color:#39e6cf24}
+.hero-trust i{color:#39e6cf}
+.hero-visual{min-height:560px;isolation:isolate}
+.visual-topline{border-color:#39e6cf3a;color:#7eaaa1}
+.app-stage{min-height:545px;overflow:hidden;background:linear-gradient(135deg,#0c2220dd,#07100f99 55%),url('assets/lathe.webp') center/cover no-repeat;isolation:isolate}
+.app-stage:before{content:"";position:absolute;inset:0;background:linear-gradient(90deg,#07100f45,#07100f05 55%,#07100f65);z-index:0}
+.app-stage:after{content:"";position:absolute;inset:12% 8%;border:1px solid #39e6cf25;clip-path:polygon(0 0,100% 0,100% 82%,82% 100%,0 100%);z-index:0}
+.stage-grid{opacity:.23;background-image:radial-gradient(#39e6cf 0.8px,transparent .8px);background-size:18px 18px}
+.app-image{height:510px;max-width:64%;filter:drop-shadow(0 25px 28px #000d) drop-shadow(0 0 24px #39e6cf25);transform:rotate(-3deg) translateY(5px)}
+.app-stage:hover .app-image{transform:rotate(0) translateY(-2px)}
+.visual-caption{color:#89a9a0}
+.visual-caption span:last-child{color:#39e6cf}
+.hero-bottom{border-color:#39e6cf22;color:#7eaaa1}
+.hero-bottom-inner>span:nth-child(2){color:#a9bbb5}
+.bottom-divider{color:#39e6cf}
+.section-padding{padding-block:108px}
+.intro-section{background:linear-gradient(115deg,#0b1716,#0a1110 65%,#0e1c1a);border-color:#39e6cf17}
+.number-line{background:#39e6cf}
+.overline{color:#39e6cf}
+.intro-title em{color:#39e6cf}
+.signature>span{color:#39e6cf}
+.tools-section{background:#070d0e}
+.section-head h2{letter-spacing:-.05em}
+.outline-title{color:#4b6a64}
+.tools-grid{gap:30px}
+.tool-card{position:relative}
+.tool-card:nth-child(2){margin-top:42px}
+.tool-card:nth-child(3){margin-top:84px}
+.tool-media{height:clamp(230px,25vw,350px);background:#10201e;clip-path:polygon(0 0,100% 0,100% 90%,91% 100%,0 100%)}
+.tool-media img{filter:brightness(.73) saturate(.68);transform:scale(1.015)}
+.tool-card:hover .tool-media img{filter:brightness(.96) saturate(.95)}
+.tool-media-tint{background:linear-gradient(180deg,#06100f12 30%,#06100f9c)}
+.tool-index{color:#d7f5ed}
+.tool-media-mark{color:#39e6cf35}
+.tool-caption{color:#39e6cf}
+.tool-body{border-color:#39e6cf40}
+.tool-round{border-color:#3b5a55;color:#39e6cf}
+.tool-card:hover .tool-round{background:#39e6cf;border-color:#39e6cf;color:#061311}
+.calculator-section{background:radial-gradient(ellipse at 90% 15%,#39e6cf0c,transparent 38%),#0b1413;border-color:#39e6cf1c}
+.calculator-section:before{border-color:#39e6cf12;box-shadow:0 0 0 100px #39e6cf04,0 0 0 200px #39e6cf02}
+.calc-intro h2 span:last-child{color:#39e6cf}
+.formula-pill b{color:#39e6cf}
+.calc-shell{border-color:#39e6cf33}
+.calc-header{border-color:#39e6cf25}
+.calc-symbol{background:#39e6cf;color:#061311}
+.live-pill{color:#39e6cf}
+.input-wrap:focus-within{border-color:#39e6cf}
+.input-wrap small{color:#39e6cf}
+.result-number output{color:#39e6cf}
+.closing{background:radial-gradient(ellipse at 85% 50%,#39e6cf0b,transparent 40%),#060b0a}
+.closing h2 span:last-child{color:#39e6cf}
+.closing-watermark{color:#39e6cf08}
+.closing-kicker .pulse{background:#39e6cf}
+.back-top{color:#39e6cf}
+.modal-box{background:radial-gradient(ellipse at 100% 0%,#39e6cf18,transparent 48%),linear-gradient(145deg,#11201e,#080d0c);border-color:#39e6cf50;border-radius:4px 26px 4px 26px}
+.modal-illustration{border-color:#39e6cf66;background:linear-gradient(145deg,#39e6cf25,#39e6cf0a);color:#39e6cf;box-shadow:0 0 30px #39e6cf12}
+.release-option:hover{border-color:#39e6cf88;background:linear-gradient(110deg,#39e6cf12,#39e6cf06)}
+.release-option-icon{border-color:#39e6cf55;background:linear-gradient(145deg,#39e6cf25,#39e6cf0a);color:#39e6cf}
+.release-arrow{background:#39e6cf1c;color:#39e6cf}
+.release-tag{color:#39e6cf;border-color:#39e6cf55}
+@media(max-width:900px){
+ .hero-layout{grid-template-columns:1fr 0.85fr;gap:24px;min-height:630px}
+ .hero h1{font-size:clamp(44px,6vw,62px)}
+ .app-stage{min-height:430px}
+ .app-image{height:410px;max-width:70%}
+ .hero-visual{min-height:450px}
+ .tools-grid{gap:20px}
+}
+@media(max-width:640px){
+ .header-inner{height:76px}
+ .hero{padding-top:76px}
+ .hero-layout{display:flex;flex-direction:column-reverse;align-items:stretch;gap:26px;padding:24px 0 38px;min-height:0}
+ .hero-visual{min-height:0}
+ .visual-topline{padding-bottom:10px}
+ .app-stage{min-height:350px}
+ .app-image{height:335px;max-width:59%}
+ .hero-content{padding-top:4px}
+ .eyebrow{margin-bottom:16px}
+ .hero h1{font-size:clamp(40px,10.3vw,58px);line-height:1.27;margin-bottom:16px}
+ .hero-lead{font-size:12px;line-height:2}
+ .hero-actions{gap:18px;margin-top:22px}
+ .hero-trust{margin-top:26px;gap:12px}
+ .hero-bottom-inner{min-height:43px}
+ .hero-bottom-inner>span:nth-child(2){display:none}
+ .section-padding{padding-block:68px}
+ .intro-grid{display:block}
+ .intro-grid>.section-number{margin-bottom:24px}
+ .intro-title{font-size:clamp(34px,8.7vw,48px);line-height:1.5}
+ .intro-bottom{display:block;margin-top:16px}
+ .intro-bottom p{font-size:11px}
+ .signature{margin-top:22px}
+ .section-head{display:block}
+ .section-head h2{font-size:clamp(36px,9vw,52px)}
+ .section-head>p{margin-top:13px}
+ .tools-grid{grid-template-columns:1fr;gap:33px}
+ .tool-card:nth-child(2),.tool-card:nth-child(3){margin-top:0}
+ .tool-media{height:clamp(230px,68vw,350px)}
+ .tool-body{padding-top:13px;margin-top:12px}
+ .calc-layout{display:flex;flex-direction:column;align-items:stretch;gap:26px}
+ .calc-intro h2{font-size:clamp(39px,9.5vw,54px)}
+ .calc-shell{padding:0 16px}
+ .calc-header{padding:17px 0}
+ .calc-form-body{padding:20px 0}
+ .field-grid{gap:13px}
+ .input-wrap input{font-size:18px;padding:12px 6px}
+ .result-panel{padding:18px 0;margin-top:22px}
+ .result-number output{font-size:40px}
+ .closing{padding:68px 0}
+ .closing h2{font-size:clamp(42px,10.5vw,61px)}
+ .closing-bottom{align-items:flex-start;flex-direction:column;gap:12px;margin-top:18px}
+ .closing-bottom p{margin:0}
+ .closing-watermark{font-size:200px;bottom:-50px}
+ .footer-content{padding:20px 0;flex-wrap:wrap;gap:12px}
+}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.tool-card,.tool-media img,.app-image,.button{transition:none}}
