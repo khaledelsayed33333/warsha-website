@@ -394,3 +394,125 @@ body.modal-lock{overflow:hidden}
  .modal-box{animation:none}
  .js .reveal{opacity:1;transform:none;filter:none;transition:none}
 }
+
+
+/* RESTORE FIRST WARSHA LOOK — cinematic petrol/teal, glowing workshop UI */
+:root{--bg:#061112;--surface:#0c2020;--text:#f3fbf9;--muted:#a2bfba;--dim:#648580;--line:#17403d;--acid:#00e3cf;--mint:#8effe7}
+body{background:#061112;color:#f3fbf9}
+::selection{background:#00e3cf;color:#041110}
+.header{position:sticky;top:0;background:#061112e8;border-bottom:1px solid #00e3cf25;backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px)}
+.header-inner{height:82px}
+.brand-mark{width:43px;height:43px;border-radius:14px;background:linear-gradient(145deg,#00e3cf2a,#00e3cf08);border:1px solid #00e3cf75;color:#00e3cf;box-shadow:0 0 28px #00e3cf20}
+.brand-dot,.footer-brand span,.hero-highlight,.intro-title em,.signature>span,.tool-caption,.formula-pill b,.calc-intro h2 span:last-child,.result-number output,.closing h2 span:last-child,.back-top{color:#00e3cf}
+.nav a:hover,.language-btn:hover{color:#00e3cf}
+.header-cta{border:1px solid #00e3cf62;border-radius:999px;padding:11px 16px;color:#00e3cf;background:#00e3cf0a}
+.header-cta:hover{background:#00e3cf19}
+.progress-bar{background:linear-gradient(90deg,#00e3cf,#85ffe9)}
+.hero{padding-top:0;background:radial-gradient(ellipse at 72% 36%,#00e3cf12,transparent 42%),linear-gradient(145deg,#061112,#071817 58%,#061112)}
+.hero-grid{opacity:.12;background-size:52px 52px;mask-image:linear-gradient(#000,transparent 88%)}
+.hero-glow{top:20px;inset-inline-end:-180px;width:800px;height:800px;background:radial-gradient(circle,#00e3cf20,transparent 66%)}
+.hero-layout{grid-template-columns:1fr 1fr;gap:54px;min-height:690px;padding:58px 0 58px}
+.hero h1{font-size:clamp(48px,5.8vw,78px);line-height:1.2;letter-spacing:-.055em}
+.hero-highlight{background:linear-gradient(90deg,#00e3cf,#8effe7);-webkit-background-clip:text;background-clip:text;color:transparent}
+.hero-lead{color:#a8c1bc}
+.button-primary{background:linear-gradient(115deg,#00e3cf,#8effe7);color:#031312;border-radius:12px;box-shadow:0 8px 28px #00e3cf20}
+.button-primary:hover{background:#9bffef;box-shadow:0 10px 34px #00e3cf36}
+.text-link span:last-child,.hero-bottom a{color:#00e3cf}
+.hero-trust{border-color:#00e3cf24}
+.hero-trust i,.pulse{color:#00e3cf;background:#00e3cf}
+.hero-visual{min-height:540px}
+.visual-topline{border-color:#00e3cf42;color:#73b6ad}
+.app-stage{min-height:520px;overflow:hidden;border:1px solid #00e3cf24;border-radius:28px;background:linear-gradient(130deg,#082927dc,#071413c9 65%),url('assets/lathe.webp') center/cover no-repeat;box-shadow:inset 0 0 80px #00e3cf0a,0 22px 80px #0005}
+.app-stage:before{content:"";position:absolute;inset:0;background:radial-gradient(ellipse at 50% 45%,#00e3cf22,transparent 62%);z-index:0}
+.app-stage:after{content:"";position:absolute;inset:12px;border:1px solid #00e3cf15;border-radius:20px;clip-path:none;z-index:0}
+.stage-grid{opacity:.26;background-image:linear-gradient(#00e3cf0a 1px,transparent 1px),linear-gradient(90deg,#00e3cf0a 1px,transparent 1px);background-size:28px 28px}
+.app-image{height:495px;max-width:66%;filter:drop-shadow(0 28px 35px #000c) drop-shadow(0 0 22px #00e3cf25);transform:rotate(-2deg)}
+.app-stage:hover .app-image{transform:rotate(0) translateY(-5px)}
+.visual-caption{color:#78a8a0}
+.visual-caption span:last-child{color:#00e3cf}
+.hero-bottom{border-color:#00e3cf24;color:#6f9b94}
+.hero-bottom-inner>span:nth-child(2){color:#a8c1bc}
+.bottom-divider{color:#00e3cf}
+.intro-section{background:linear-gradient(115deg,#0a1b1b,#0b2020 55%,#081514);border-color:#00e3cf20}
+.number-line{background:#00e3cf}
+.overline{color:#00e3cf}
+.intro-title em{color:#00e3cf}
+.signature>span{color:#00e3cf}
+.tools-section{background:radial-gradient(ellipse at 20% 0%,#00e3cf08,transparent 35%),#061112}
+.section-head h2{letter-spacing:-.045em}
+.outline-title{color:#547a75}
+.tools-grid{gap:22px}
+.tool-card{padding:0;overflow:hidden;border:1px solid #00e3cf25;border-radius:22px;background:linear-gradient(160deg,#102725,#091716);box-shadow:0 12px 38px #0003;transition:transform .32s,border-color .32s,box-shadow .32s}
+.tool-card:nth-child(2),.tool-card:nth-child(3){margin-top:30px}
+.tool-card:hover{transform:translateY(-8px);border-color:#00e3cf86;box-shadow:0 20px 50px #0006,0 0 26px #00e3cf0c}
+.tool-media,.tool-card:nth-child(2) .tool-media,.tool-card:nth-child(3) .tool-media{height:clamp(210px,22vw,310px);clip-path:none;border-radius:0;background:#0a1b1a}
+.tool-media img{filter:brightness(.78) saturate(.8);transition:transform .7s,filter .4s}
+.tool-card:hover .tool-media img{transform:scale(1.06);filter:brightness(.98) saturate(1)}
+.tool-media-tint{background:linear-gradient(180deg,#06100f25,transparent 36%,#06100f85)}
+.tool-index{color:#e5fff9}
+.tool-media-mark{color:#00e3cf55}
+.tool-body{min-height:145px;padding:18px 18px 20px;margin:0;border:0;align-items:center}
+.tool-caption{color:#00e3cf}
+.tool-body h3{font-size:25px}
+.tool-body p{color:#a1b9b3}
+.tool-round{width:39px;height:39px;border:1px solid #00e3cf65;background:#00e3cf0a;color:#00e3cf}
+.tool-card:hover .tool-round{background:#00e3cf;color:#041110;border-color:#00e3cf;transform:rotate(45deg)}
+.calculator-section{background:radial-gradient(ellipse at 85% 20%,#00e3cf0d,transparent 40%),#0a1a19;border-color:#00e3cf20}
+.calculator-section:before{border-color:#00e3cf17;box-shadow:0 0 0 100px #00e3cf05,0 0 0 200px #00e3cf03}
+.calc-shell{border:1px solid #00e3cf3a;border-radius:24px;background:linear-gradient(145deg,#102322,#091615);padding:0 24px;box-shadow:0 20px 60px #0004}
+.calc-header{margin-inline:-24px;padding:21px 24px;background:#00e3cf09;border-bottom:1px solid #00e3cf25}
+.calc-symbol{background:linear-gradient(145deg,#00e3cf,#8effe7);color:#041110}
+.live-pill{color:#00e3cf}
+.input-wrap{border:1px solid #23534d;border-radius:12px;background:#071514}
+.input-wrap:focus-within{border-color:#00e3cf;box-shadow:0 0 0 3px #00e3cf13}
+.input-wrap small{color:#00e3cf}
+.result-panel{padding:20px;border:1px solid #00e3cf3a;border-radius:16px;background:linear-gradient(110deg,#00e3cf0c,transparent)}
+.result-number output{color:#00e3cf}
+.closing{background:radial-gradient(ellipse at 82% 45%,#00e3cf12,transparent 42%),#050e0d;border-bottom:1px solid #00e3cf22}
+.closing h2 span:last-child{color:#00e3cf}
+.closing-watermark{color:#00e3cf08}
+.closing-kicker .pulse{background:#00e3cf}
+.footer{background:#040b0a}
+.modal-scrim{background:rgba(1,8,8,.7);backdrop-filter:blur(18px) saturate(.7);-webkit-backdrop-filter:blur(18px) saturate(.7)}
+.modal-box{background:radial-gradient(ellipse at 100% 0%,#00e3cf18,transparent 48%),linear-gradient(145deg,#102624,#071312);border:1px solid #00e3cf50;border-radius:24px}
+.modal-close{display:grid;place-items:center;line-height:1;padding:0;border-radius:50%;background:#0b201e;color:#b8fff2;border-color:#00e3cf50}
+.modal-close:hover,.modal-close:focus-visible{background:#00e3cf;color:#041110;border-color:#00e3cf}
+.download-options{grid-template-columns:repeat(2,minmax(0,1fr))}
+.release-option{grid-template-columns:44px minmax(0,1fr) 30px;border:1px solid #1f514a;border-radius:15px;background:linear-gradient(145deg,#102725,#091716)}
+.release-option:hover{border-color:#00e3cf;background:linear-gradient(145deg,#143a35,#0a1d1a);box-shadow:0 12px 28px #0004,0 0 20px #00e3cf12}
+.release-option-icon{border-color:#00e3cf55;background:#00e3cf12;color:#00e3cf}
+.release-arrow{background:#00e3cf18;color:#00e3cf}
+.release-option:hover .release-arrow{background:#00e3cf;color:#041110}
+.release-tag{color:#00e3cf;border-color:#00e3cf55}
+@media(max-width:900px){
+ .hero-layout{grid-template-columns:1fr .9fr;gap:26px;min-height:620px}
+ .hero h1{font-size:clamp(43px,5.8vw,62px)}
+ .app-stage{min-height:430px}
+ .app-image{height:410px;max-width:72%}
+ .tool-card:nth-child(2),.tool-card:nth-child(3){margin-top:15px}
+ .tool-body{padding:15px;min-height:155px}
+}
+@media(max-width:640px){
+ .header{position:sticky}
+ .header-inner{height:74px}
+ .hero{padding-top:0}
+ .hero-layout{display:flex;flex-direction:column-reverse;align-items:stretch;gap:22px;padding:20px 0 34px;min-height:0}
+ .hero-visual{min-height:0}
+ .app-stage{min-height:340px;border-radius:20px}
+ .app-image{height:320px;max-width:59%}
+ .hero h1{font-size:clamp(39px,10vw,56px)}
+ .hero-trust{margin-top:24px}
+ .section-padding{padding-block:68px}
+ .tools-grid{grid-template-columns:1fr;gap:22px}
+ .tool-card:nth-child(2),.tool-card:nth-child(3){margin-top:0}
+ .tool-media,.tool-card:nth-child(2) .tool-media,.tool-card:nth-child(3) .tool-media{height:clamp(220px,66vw,330px)}
+ .tool-body{min-height:0;padding:16px}
+ .calc-layout{gap:24px}
+ .calc-shell{padding:0 16px;border-radius:20px}
+ .calc-header{margin-inline:-16px;padding:17px 16px}
+ .field-grid{gap:13px}
+ .result-panel{padding:16px}
+ .download-options{grid-template-columns:1fr}
+ .release-disabled{grid-column:auto}
+}
+@media(prefers-reduced-motion:reduce){.hero-glow{animation:none}.js .reveal{opacity:1;transform:none;filter:none;transition:none}}
