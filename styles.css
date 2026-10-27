@@ -282,3 +282,21 @@ img,svg,video,canvas{max-width:100%}
   body[dir="ltr"] .hero-art .card-top{right:0;left:auto}
   body[dir="ltr"] .hero-art .card-bottom{left:0;right:auto}
 }
+
+
+/* Hard reset for phones where the browser reports a wider layout viewport */
+@media screen and (max-device-width: 700px), screen and (max-width: 700px){
+  html,body{width:100%!important;min-width:0!important;max-width:100%!important;margin:0!important;padding:0!important;overflow-x:hidden!important}
+  body{position:relative;left:0!important;right:0!important}
+  .topbar{width:100%!important;max-width:100%!important;margin:0!important;box-sizing:border-box!important;padding-left:18px!important;padding-right:18px!important}
+  main{width:100%!important;max-width:100%!important;overflow:hidden}
+  .wrap{width:calc(100% - 28px)!important;max-width:520px!important;margin-left:auto!important;margin-right:auto!important;box-sizing:border-box!important}
+  .hero{width:calc(100% - 28px)!important}
+  .trust-row{width:calc(100% - 28px)!important}
+  .section,.download-section,.footer{width:calc(100% - 28px)!important}
+  .screens-section{width:100%!important;max-width:100%!important;overflow:hidden!important}
+  .screens-layout{width:calc(100% - 28px)!important}
+  .hero-art{width:100%!important;max-width:440px!important;margin-left:auto!important;margin-right:auto!important;overflow:hidden!important}
+  .hero-copy{text-align:center!important}
+  .hero-actions{width:100%;max-width:100%;margin-left:auto;margin-right:auto}
+}
