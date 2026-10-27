@@ -211,3 +211,42 @@ body:before{content:"";position:fixed;inset:0;pointer-events:none;z-index:-1;bac
   .platform-art{width:36px;height:36px}
   .platform-action b{font-size:13px}
 }
+
+
+/* Prevent horizontal overflow and keep every section fitted to phone width */
+html,body{width:100%;max-width:100%;overflow-x:clip}
+*,*::before,*::after{min-width:0}
+img,svg,video,canvas{max-width:100%}
+@media(max-width:650px){
+  body{overflow-x:clip}
+  .wrap{width:calc(100% - 24px);max-width:100%;margin-inline:auto}
+  .hero,.hero-copy,.hero-art,.section,.screens-layout,.download-section,.download-panel,.footer{min-width:0;max-width:100%}
+  .hero-art{width:100%;overflow:hidden}
+  .hero:before{inset-inline-start:0;width:100%;filter:blur(14px)}
+  .orbit,.gear-ghost{max-width:100%;pointer-events:none}
+  .floating-card{max-width:calc(50% - 8px)}
+  .card-top{right:0}
+  .card-bottom{left:0}
+  .trust-row{width:calc(100% - 24px)}
+  .feature-grid,.feature-card,.screens-section,.ai-demo,.ai-window{min-width:0;max-width:100%}
+  .feature-card p,.screens-layout h2,.screens-layout p,.download-copy p{overflow-wrap:anywhere;word-break:normal}
+  .download-panel{width:100%;overflow:hidden}
+  .download-mark{left:0;max-width:35%;overflow:hidden}
+  .footer{overflow-wrap:anywhere}
+  .download-modal{width:100%;max-width:100%;overflow:hidden}
+  .download-dialog{width:100%;max-width:100%;overflow-x:hidden}
+  .platform-options,.platform-option{width:100%;max-width:100%;min-width:0}
+  .platform-action{min-width:0;white-space:nowrap}
+  .modal-footnote{min-width:0}
+}
+@media(max-width:380px){
+  .wrap{width:calc(100% - 20px)}
+  .hero-art{height:320px}
+  .floating-card{max-width:145px}
+  .card-top{right:0}
+  .card-bottom{left:0}
+  .hero-actions{grid-template-columns:minmax(0,1fr)}
+  .hero-actions .btn{width:100%;min-width:0}
+  .trust-row{width:calc(100% - 20px)}
+  .platform-action{white-space:normal}
+}
