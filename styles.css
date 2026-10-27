@@ -82,3 +82,7 @@ body.modal-open{overflow:hidden}
 .download-mark{color:rgba(0,227,207,.1)}
 .download-copy h2{color:#f3fbfa}
 @media(max-width:650px){.screens-layout{grid-template-columns:1fr;gap:22px;padding-top:60px;padding-bottom:60px;text-align:start}.screens-layout h2{font-size:29px}.ai-points{gap:10px}.ai-points span{font-size:10px}.ai-demo{min-height:300px}.ai-window{transform:none}.ai-chat{padding:16px 13px}.chat-bubble{font-size:10px}.download-panel{background:radial-gradient(ellipse at 90% 20%,rgba(0,227,207,.12),transparent 50%),linear-gradient(120deg,#071c1e,#041214)}}
+
+/* AI technology in engineering calculations — no chatbot positioning */
+.calc-input-value,.calc-result-value{display:block;font:800 23px var(--font-en);color:#f3fbfa;margin-top:5px}
+.calc-result-value{font-size:31px;color:var(--teal)}
