@@ -1,5 +1,7 @@
 const langToggle = document.getElementById("langToggle");
+const downloadModal = document.getElementById("downloadModal");
 let currentLang = "ar";
+let previousDownloadFocus = null;
 
 function setLanguage(lang) {
   currentLang = lang;
@@ -13,5 +15,46 @@ function setLanguage(lang) {
   });
   langToggle.textContent = isArabic ? "EN" : "AR";
   langToggle.setAttribute("aria-label", isArabic ? "Switch to English" : "التبديل إلى العربية");
+  document.querySelectorAll("[data-close-download]").forEach((el) => {
+    if (el.classList.contains("download-close")) {
+      el.setAttribute("aria-label", isArabic ? "إغلاق نافذة التحميل" : "Close download window");
+    }
+  });
 }
 langToggle.addEventListener("click", () => setLanguage(currentLang === "ar" ? "en" : "ar"));
+
+function openDownloadModal() {
+  previousDownloadFocus = document.activeElement;
+  downloadModal.classList.add("is-open");
+  downloadModal.setAttribute("aria-hidden", "false");
+  document.body.classList.add("modal-open");
+  const closeButton = downloadModal.querySelector(".download-close");
+  if (closeButton) closeButton.focus();
+}
+function closeDownloadModal() {
+  if (!downloadModal.classList.contains("is-open")) return;
+  downloadModal.classList.remove("is-open");
+  downloadModal.setAttribute("aria-hidden", "true");
+  document.body.classList.remove("modal-open");
+  if (previousDownloadFocus && document.contains(previousDownloadFocus)) previousDownloadFocus.focus();
+}
+document.querySelectorAll("[data-open-download]").forEach((button) => {
+  button.addEventListener("click", openDownloadModal);
+});
+downloadModal.querySelectorAll("[data-close-download]").forEach((element) => {
+  element.addEventListener("click", closeDownloadModal);
+});
+document.addEventListener("keydown", (event) => {
+  if (event.key === "Escape") closeDownloadModal();
+  if (event.key === "Tab" && downloadModal.classList.contains("is-open")) {
+    const controls = [...downloadModal.querySelectorAll("a[href],button:not([disabled])")];
+    if (!controls.length) return;
+    if (event.shiftKey && document.activeElement === controls[0]) {
+      event.preventDefault();
+      controls[controls.length - 1].focus();
+    } else if (!event.shiftKey && document.activeElement === controls[controls.length - 1]) {
+      event.preventDefault();
+      controls[0].focus();
+    }
+  }
+});
