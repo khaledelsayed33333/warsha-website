@@ -1,125 +1,53 @@
 <!doctype html>
 <html lang="ar" dir="rtl">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#050b0e">
-  <meta name="description" content="ورشة — حسابات التروس والمخرطة والمثقاب، في تجربة معمولة للي شغلهم بالدقة.">
-  <meta property="og:type" content="website">
-  <meta property="og:title" content="ورشة | WARSHA — كل مليمتر بيفرق">
-  <meta property="og:description" content="من أول مقاس لآخر تفصيلة. أدوات حسابية للورشة بطريقة أسهل وأوضح.">
-  <meta property="og:image" content="assets/warsha-app.webp">
-  <title>ورشة | WARSHA — كل مليمتر بيفرق.</title>
-  <link rel="icon" href="assets/favicon.png" type="image/png">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800;900&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  <link rel="preload" as="image" href="assets/warsha-app.webp">
-  <link rel="stylesheet" href="styles.css?v=7-clean">
-  <script defer src="script.js?v=5-download"></script>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#080b0d">
+<meta name="description" content="WARSHA — أدوات وحسابات هندسية للورش. التروس والمخرطة والمثقاب في تجربة واحدة.">
+<meta property="og:title" content="WARSHA | أدوات هندسية بين إيديك">
+<meta property="og:description" content="حسابات هندسية واضحة وأدوات عملية للورشة.">
+<meta property="og:image" content="assets/warsha-app.webp">
+<title>WARSHA — أدوات هندسية بين إيديك</title>
+<link rel="icon" href="assets/favicon.png" type="image/png">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800;900&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css?v=8-rebuild"><script defer src="script.js?v=6-rebuild"></script>
 </head>
 <body>
-  <a class="skip-link" href="#main" data-ar="روح للمحتوى" data-en="Skip to content">روح للمحتوى</a>
-  <div class="progress-track" aria-hidden="true"><div class="progress-bar" id="progress"></div></div>
-  <header class="header" id="top">
-    <div class="container header-inner">
-      <a class="brand" href="#top" aria-label="WARSHA home"><img src="assets/warsha-logo.webp" alt="ورشة WARSHA" width="116" height="62"></a>
-      <nav class="nav" id="nav" aria-label="Main navigation">
-        <a href="#about" data-ar="عن ورشة" data-en="About">عن ورشة</a>
-        <a href="#tools" data-ar="الأدوات" data-en="Tools">الأدوات</a>
-        <a href="#calculator" data-ar="جرّب بنفسك" data-en="Try it">جرّب بنفسك</a>
-      </nav>
-      <div class="header-actions">
-        <button class="language-btn" type="button" id="lang" aria-label="Switch to English">EN <span class="language-icon">↗</span></button>
-        <button class="header-cta" type="button" data-open-modal><span data-ar="حالة التطبيق" data-en="App status">حالة التطبيق</span><span aria-hidden="true">↗</span></button>
-        <button class="menu-btn" type="button" id="menu" aria-label="فتح القائمة" aria-controls="nav" aria-expanded="false"><span></span><span></span></button>
-      </div>
-    </div>
-  </header>
-
-  <main id="main">
-    <section class="hero" aria-labelledby="hero-title">
-      <div class="hero-grid" aria-hidden="true"></div>
-      <div class="hero-ambient" aria-hidden="true"></div>
-      <div class="container hero-layout">
-        <div class="hero-content">
-          <div class="eyebrow"><span class="pulse"></span><span data-ar="العدة الرقمية للي شغلهم بالدقة" data-en="THE DIGITAL TOOLKIT FOR MAKERS">العدة الرقمية للي شغلهم بالدقة</span><span class="eyebrow-slash">/ 001</span></div>
-          <h1 id="hero-title"><span data-ar="كل مليمتر" data-en="EVERY MILLIMETER">كل مليمتر</span><br><span class="hero-highlight" data-ar="بيفرق." data-en="MATTERS.">بيفرق.</span></h1>
-          <p class="hero-lead" data-ar="من قلب الورشة، ولحد آخر تفصيلة. التروس والمخرطة والمثقاب، وحسابات هندسية أوضح في مكان واحد. ركّز في شغلك وسيب الأرقام علينا." data-en="Built for the precision your craft deserves. Gear, lathe and drilling calculations — organized, clear and right where you need them.">من قلب الورشة، ولحد آخر تفصيلة. التروس والمخرطة والمثقاب، وحسابات هندسية أوضح في مكان واحد. ركّز في شغلك وسيب الأرقام علينا.</p>
-          <div class="hero-actions">
-            <a href="#tools" class="button button-lime"><span data-ar="اكتشف أدوات ورشة" data-en="Explore the tools">اكتشف أدوات ورشة</span><span class="button-arrow" aria-hidden="true">↗</span></a>
-            <a href="#calculator" class="text-link"><span data-ar="جرّب حسبة دلوقتي" data-en="Try a calculation">جرّب حسبة دلوقتي</span><span aria-hidden="true">↙</span></a>
-          </div>
-          <div class="hero-footnote"><span class="footnote-line"></span><span data-ar="مفيش تعقيد. بس الأدوات اللي محتاجها." data-en="Less noise. Just the tools that matter.">مفيش تعقيد. بس الأدوات اللي محتاجها.</span></div>
-        </div>
-        <div class="hero-scene" aria-label="معاينة تطبيق ورشة">
-          <div class="scene-orbit scene-orbit-one" aria-hidden="true"></div>
-          <div class="scene-orbit scene-orbit-two" aria-hidden="true"></div>
-          <div class="scene-circle" aria-hidden="true"></div>
-          <span class="scene-index">WARSHA / APP PREVIEW</span>
-          <div class="phone-wrap"><img src="assets/warsha-app.webp" width="511" height="1078" alt="شاشة تطبيق ورشة وبها أقسام التروس والمخرطة والمثقاب" fetchpriority="high"></div>
-          <div class="float-note note-top"><span class="note-icon">↗</span><span data-ar="إيدك على الشغل" data-en="FOCUS ON THE WORK">إيدك على الشغل</span></div>
-          <div class="float-note note-bottom"><span class="note-spark">✳</span><span><b data-ar="حسابات أوضح" data-en="CLEARER CALCULATIONS">حسابات أوضح</b><small data-ar="وقتك للشغل، مش للدوران" data-en="More making. Less searching.">وقتك للشغل، مش للدوران</small></span></div>
-        </div>
-      </div>
-      <div class="hero-bottom"><div class="container hero-bottom-inner"><span>WARSHA® &nbsp; / &nbsp; MADE FOR THE WORKSHOP</span><span class="hero-bottom-center" data-ar="احسب بثقة. اشتغل براحة." data-en="MEASURE SMART. MAKE BETTER.">احسب بثقة. اشتغل براحة.</span><a href="#about" aria-label="Scroll down">↓</a></div></div>
-    </section>
-
-    <section class="intro-section section-padding" id="about">
-      <div class="container intro-grid reveal">
-        <div class="section-number"><span class="number-line"></span><span>01 / WHY WARSHA</span></div>
-        <div class="intro-main">
-          <p class="overline" data-ar="معمول علشان شغلك" data-en="DESIGNED FOR THE WAY YOU WORK">معمول علشان شغلك</p>
-          <h2 class="intro-title" data-ar="فكّر في شغلك، مش في الحسبة." data-en="FOCUS ON THE WORK. NOT THE MATH.">فكّر في شغلك، <em>مش في الحسبة.</em></h2>
-          <div class="intro-bottom"><p data-ar="سواء بتظبط ترس، بتشتغل على المخرطة، أو بتحضر للثقب — ورشة بيقرّبلك الحسابات اللي بتحتاجها من غير قوائم معقدة ولا خطوات ملهاش لازمة." data-en="Whether you're sizing a gear, setting up a lathe or planning a drill, WARSHA puts the calculations you need close by — without complicated menus or unnecessary steps.">سواء بتظبط ترس، بتشتغل على المخرطة، أو بتحضر للثقب — ورشة بيقرّبلك الحسابات اللي بتحتاجها من غير قوائم معقدة ولا خطوات ملهاش لازمة.</p><div class="signature"><span>W</span><small>BUILT TO MAKE<br>THINGS EASIER</small></div></div>
-        </div>
-      </div>
-    </section>
-
-    <section class="tools-section section-padding" id="tools">
-      <div class="container">
-        <div class="section-head reveal"><div><div class="section-number"><span class="number-line"></span><span>02 / THE TOOLKIT</span></div><h2><span data-ar="اللي تحتاجه،" data-en="TOOLS THAT">اللي تحتاجه،</span><br><span class="outline-title" data-ar="في مكانه." data-en="MAKE SENSE.">في مكانه.</span></h2></div><p data-ar="أدواتك الأساسية من غير لف ودوران. كل حاجة بتحتاجها في مكانها." data-en="The essentials, right where you need them. Nothing extra.">أدواتك الأساسية من غير لف ودوران. كل حاجة بتحتاجها في مكانها.</p></div>
-        <div class="tools-grid">
-          <a href="#calculator" class="tool-card tool-card-feature reveal"><div class="tool-media"><img src="assets/gears.webp" alt="تروس معدنية داخل ورشة" loading="lazy"><div class="tool-media-tint"></div><span class="tool-index">01 / GEARS</span><span class="tool-media-mark">⚙</span></div><div class="tool-body"><div><span class="tool-caption" data-ar="الدقة في كل سن" data-en="PRECISION IN EVERY TOOTH">الدقة في كل سن</span><h3 data-ar="التروس" data-en="GEARS">التروس</h3><p data-ar="من عدد الأسنان للموديول والأقطار — ابدأ بالحسبة الصح." data-en="From tooth count to module and diameter — start with the right numbers.">من عدد الأسنان للموديول والأقطار — ابدأ بالحسبة الصح.</p></div><span class="tool-round" aria-hidden="true">↗</span></div></a>
-          <a href="#app-status" class="tool-card reveal" data-open-modal-link><div class="tool-media"><img src="assets/lathe.webp" alt="تشغيل مخرطة معدنية" loading="lazy"><div class="tool-media-tint"></div><span class="tool-index">02 / LATHE</span></div><div class="tool-body"><div><span class="tool-caption" data-ar="كل مقاس له حساب" data-en="EVERY DIMENSION COUNTS">كل مقاس له حساب</span><h3 data-ar="المخرطة" data-en="LATHE">المخرطة</h3><p data-ar="حسابات تساعدك تجهّز للشغل على المخرطة بشكل أوضح." data-en="Useful calculations to prepare for your next turning job.">حسابات تساعدك تجهّز للشغل على المخرطة بشكل أوضح.</p></div><span class="tool-round" aria-hidden="true">↗</span></div></a>
-          <a href="#app-status" class="tool-card reveal" data-open-modal-link><div class="tool-media"><img src="assets/drill.webp" alt="مثقاب صناعي يعمل في قطعة معدنية" loading="lazy"><div class="tool-media-tint"></div><span class="tool-index">03 / DRILL</span></div><div class="tool-body"><div><span class="tool-caption" data-ar="قبل ما تبدأ الثقب" data-en="BEFORE YOU DRILL">قبل ما تبدأ الثقب</span><h3 data-ar="المثقاب" data-en="DRILL">المثقاب</h3><p data-ar="جهّز القياسات وخليك عارف خطوتك الجاية." data-en="Plan the measurements and know your next step.">جهّز القياسات وخليك عارف خطوتك الجاية.</p></div><span class="tool-round" aria-hidden="true">↗</span></div></a>
-        </div>
-      </div>
-    </section>
-
-    <section class="calculator-section section-padding" id="calculator">
-      <div class="container calc-layout">
-        <div class="calc-intro reveal"><div class="section-number light-number"><span class="number-line"></span><span>03 / TRY WARSHA</span></div><p class="overline lime-overline" data-ar="شوف الفكرة بنفسك" data-en="SEE IT IN ACTION">شوف الفكرة بنفسك</p><h2><span data-ar="جرّبها." data-en="TRY IT.">جرّبها.</span><br><span data-ar="النتيجة قدامك." data-en="SEE THE RESULT.">النتيجة قدامك.</span></h2><p data-ar="مثال تفاعلي من حسابات التروس المستقيمة. غيّر عدد الأسنان أو الموديول وشوف قطر دائرة الخطوة في نفس اللحظة." data-en="A live example for spur gears. Adjust the tooth count or module and get the pitch circle diameter instantly.">مثال تفاعلي من حسابات التروس المستقيمة. غيّر عدد الأسنان أو الموديول وشوف قطر دائرة الخطوة في نفس اللحظة.</p><div class="formula-pill"><span>THE FORMULA</span><b>d = m × Z</b></div></div>
-        <div class="calc-shell reveal"><div class="calc-header"><div class="calc-header-left"><span class="calc-symbol">⚙</span><span><strong data-ar="حاسبة التروس" data-en="GEAR CALCULATOR">حاسبة التروس</strong><small>SPUR GEAR / PITCH DIAMETER</small></span></div><span class="live-pill"><span></span> LIVE DEMO</span></div><form id="calculator-form" novalidate><div class="calc-form-body"><div class="calc-form-intro"><span data-ar="ادخل البيانات" data-en="YOUR INPUTS">ادخل البيانات</span><span>01 — 02</span></div><div class="field-grid"><label class="field"><span data-ar="عدد الأسنان" data-en="Number of teeth">عدد الأسنان</span><div class="input-wrap"><input type="number" id="teeth" name="teeth" min="1" max="10000" step="1" value="24" required inputmode="numeric"><small>Z</small></div></label><label class="field"><span data-ar="الموديول" data-en="Module">الموديول</span><div class="input-wrap"><input type="number" id="module" name="module" min="0.01" max="1000" step="any" value="2.5" required inputmode="decimal"><small>m</small></div></label></div><div class="result-panel"><div><span class="result-label" data-ar="قطر دائرة الخطوة" data-en="PITCH DIAMETER">قطر دائرة الخطوة</span><small data-ar="النتيجة بتتغير تلقائيًا" data-en="UPDATES AS YOU TYPE">النتيجة بتتغير تلقائيًا</small></div><div class="result-number"><output id="answer" aria-live="polite">60</output><small>mm</small></div></div><p class="error-message" id="error" aria-live="polite"></p></div></form><div class="calc-footer"><span data-ar="* مثال للتروس المستقيمة القياسية — بالمليمتر" data-en="* Standard spur gear example — in millimeters">* مثال للتروس المستقيمة القياسية — بالمليمتر</span><span>W / 003</span></div></div>
-      </div>
-    </section>
-
-    <section class="closing" id="app-status"><div class="container closing-content reveal"><div class="closing-kicker"><span class="pulse"></span><span>WARSHA / WHAT'S NEXT</span></div><h2><span data-ar="شغل متقن،" data-en="GOOD WORK">شغل متقن،</span><br><span data-ar="من أول حسبة." data-en="STARTS HERE.">من أول حسبة.</span></h2><div class="closing-bottom"><p data-ar="بنجهّز روابط تحميل ورشة. لحد ما تكون جاهزة، تقدر تجرّب الحاسبة وتشوف فكرة التطبيق هنا." data-en="We're preparing WARSHA's download links. In the meantime, try the calculator and get a feel for the app here.">بنجهّز روابط تحميل ورشة. لحد ما تكون جاهزة، تقدر تجرّب الحاسبة وتشوف فكرة التطبيق هنا.</p><button type="button" class="button button-dark" data-open-modal><span data-ar="اعرف حالة التطبيق" data-en="Check app status">اعرف حالة التطبيق</span><span class="button-arrow" aria-hidden="true">↗</span></button></div></div><span class="closing-watermark" aria-hidden="true">W.</span></section>
-  </main>
-
-  <footer class="footer"><div class="container footer-content"><a href="#top" aria-label="WARSHA top"><img src="assets/warsha-logo.webp" width="104" height="54" alt="ورشة WARSHA"></a><p>© <span id="year">2026</span> WARSHA. <span data-ar="كل مليمتر بيفرق." data-en="Every millimeter matters.">كل مليمتر بيفرق.</span></p><a href="#top" class="back-top" data-ar="اطلع فوق ↑" data-en="Back to top ↑">اطلع فوق ↑</a></div></footer>
-
-  <div class="modal" id="modal" aria-hidden="true">
-    <div class="modal-scrim" data-close-modal></div>
-    <section class="modal-box" role="dialog" aria-modal="true" aria-labelledby="modal-title" tabindex="-1">
-      <button class="modal-close" type="button" data-close-modal aria-label="Close">×</button>
-      <span class="modal-topline">WARSHA / DOWNLOAD CENTER</span>
-      <div class="modal-illustration" aria-hidden="true">✳</div>
-      <h2 id="modal-title" data-ar="اختار نسختك." data-en="CHOOSE YOUR VERSION.">اختار نسختك.</h2>
-      <p data-ar="حمّل Warsha على جهازك. نسخة iOS ما زالت غير مختبرة." data-en="Download WARSHA for your device. The iOS build is not tested yet.">حمّل Warsha على جهازك. نسخة iOS ما زالت غير مختبرة.</p>
-      <div class="modal-status download-options">
-        <a href="https://github.com/khaledelsayed33333/warsha-website/releases/download/v1.2.1%2B5/warsha-android.apk" class="release-option">
-          <span class="release-option-icon">▣</span><span class="release-option-copy"><b>Android</b><small data-ar="تحميل ملف APK" data-en="Download APK file">تحميل ملف APK</small></span><span class="release-arrow">↓</span>
-        </a>
-        <a href="https://github.com/khaledelsayed33333/warsha-website/releases/download/v1.2.1%2B5/warsha-windows.zip" class="release-option">
-          <span class="release-option-icon">▰</span><span class="release-option-copy"><b>Windows</b><small data-ar="تحميل حزمة ZIP" data-en="Download ZIP package">تحميل حزمة ZIP</small></span><span class="release-arrow">↓</span>
-        </a>
-        <div class="release-option release-disabled" aria-disabled="true">
-          <span class="release-option-icon">●</span><span class="release-option-copy"><b>iOS</b><small data-ar="النسخة غير مختبرة حتى الآن" data-en="Build not tested yet">النسخة غير مختبرة حتى الآن</small></span><span class="release-tag" data-ar="قريبًا" data-en="Soon">قريبًا</span>
-        </div>
-      </div>
-      <a class="release-page-link" href="https://github.com/khaledelsayed33333/warsha-website/releases/tag/v1.2.1%2B5" target="_blank" rel="noopener" data-ar="عرض تفاصيل الإصدار على GitHub ↗" data-en="View release on GitHub ↗">عرض تفاصيل الإصدار على GitHub ↗</a>
-    </section>
-  </div>
-</body>
-</html>
+<a class="skip-link" href="#main" data-ar="انتقل للمحتوى" data-en="Skip to content">انتقل للمحتوى</a>
+<div class="progress-track" aria-hidden="true"><div class="progress-bar" id="progress"></div></div>
+<header class="header" id="top"><div class="container header-inner">
+<a class="brand" href="#top" aria-label="WARSHA home"><img src="assets/warsha-logo.webp" alt="WARSHA" width="116" height="62"><span class="brand-word">WARSHA<span class="brand-dot">.</span><small data-ar="أدوات هندسية بين إيديك" data-en="ENGINEERING TOOLS, IN HAND">أدوات هندسية بين إيديك</small></span></a>
+<nav class="nav" id="nav" aria-label="Main navigation"><a href="#about" data-ar="عن ورشة" data-en="About">عن ورشة</a><a href="#tools" data-ar="الأدوات" data-en="Tools">الأدوات</a><a href="#calculator" data-ar="حاسبة التروس" data-en="Gear calculator">حاسبة التروس</a></nav>
+<div class="header-actions"><button class="language-btn" type="button" id="lang" aria-label="Switch to English">EN</button><button class="header-cta" type="button" data-open-modal><span data-ar="تحميل التطبيق" data-en="Download app">تحميل التطبيق</span><span aria-hidden="true">↗</span></button><button class="menu-btn" type="button" id="menu" aria-label="فتح القائمة" aria-controls="nav" aria-expanded="false"><span></span><span></span></button></div>
+</div></header>
+<main id="main">
+<section class="hero" aria-labelledby="hero-title"><div class="hero-grid" aria-hidden="true"></div><div class="hero-glow" aria-hidden="true"></div>
+<div class="container hero-layout">
+<div class="hero-content"><div class="eyebrow"><span class="pulse"></span><span data-ar="مصمّم للناس اللي بتصنع" data-en="BUILT FOR PEOPLE WHO MAKE">مصمّم للناس اللي بتصنع</span><span class="eyebrow-slash">/ 01</span></div>
+<h1 id="hero-title"><span data-ar="شغلك محتاج" data-en="YOUR CRAFT">شغلك محتاج</span><br><span class="hero-highlight" data-ar="دقّة. مش تعقيد." data-en="NEEDS PRECISION.">دقّة. مش تعقيد.</span></h1>
+<p class="hero-lead" data-ar="التروس، المخرطة، والمثقاب — أدوات وحسابات هندسية متجمّعة في مكان واحد. واجهة واضحة تساعدك تركز في شغلك، مش في إنك تدور على الحسبة." data-en="Gears, lathe and drilling — practical engineering tools and calculations in one place. A clear interface that lets you focus on the work, not searching for the math.">التروس، المخرطة، والمثقاب — أدوات وحسابات هندسية متجمّعة في مكان واحد. واجهة واضحة تساعدك تركز في شغلك، مش في إنك تدور على الحسبة.</p>
+<div class="hero-actions"><a href="#tools" class="button button-primary"><span data-ar="اكتشف الأدوات" data-en="Explore tools">اكتشف الأدوات</span><span class="button-arrow" aria-hidden="true">↗</span></a><a href="#calculator" class="text-link"><span data-ar="جرّب الحاسبة" data-en="Try the calculator">جرّب الحاسبة</span><span aria-hidden="true">↓</span></a></div>
+<div class="hero-trust"><span><i>✓</i><span data-ar="واجهة عربي وإنجليزي" data-en="Arabic & English">واجهة عربي وإنجليزي</span></span><span><i>✓</i><span data-ar="مصمّم للاستخدام العملي" data-en="Made for practical use">مصمّم للاستخدام العملي</span></span></div>
+</div>
+<div class="hero-visual"><div class="visual-topline"><span>W / 001</span><span data-ar="نظرة على التطبيق" data-en="A LOOK INSIDE THE APP">نظرة على التطبيق</span></div><div class="app-stage"><div class="stage-grid" aria-hidden="true"></div><div class="app-image"><img src="assets/warsha-app.webp" alt="معاينة واجهة تطبيق ورشة" width="511" height="1078" fetchpriority="high"></div><div class="stage-chip chip-one"><span class="chip-icon">⚙</span><span><b data-ar="حسابات هندسية" data-en="ENGINEERING CALCS">حسابات هندسية</b><small data-ar="الأدوات في مكان واحد" data-en="Tools in one place">الأدوات في مكان واحد</small></span></div><div class="stage-chip chip-two"><span class="chip-dot"></span><span data-ar="مصنوع للورشة" data-en="MADE FOR THE WORKSHOP">مصنوع للورشة</span></div><span class="stage-coordinate">31° 12' / WORKSHOP SERIES</span></div><div class="visual-caption"><span data-ar="كل أداة ليها مكانها." data-en="EVERY TOOL HAS ITS PLACE.">كل أداة ليها مكانها.</span><span>WARSHA®</span></div></div>
+</div>
+<div class="hero-bottom"><div class="container hero-bottom-inner"><span>WARSHA® <span class="bottom-divider">/</span> ENGINEERING TOOLKIT</span><span data-ar="من أول قياس لآخر تفصيلة" data-en="FROM FIRST MEASURE TO FINAL DETAIL">من أول قياس لآخر تفصيلة</span><a href="#about" aria-label="Scroll down">↓</a></div></div>
+</section>
+<section class="intro-section section-padding" id="about"><div class="container intro-grid reveal"><div class="section-number"><span class="number-line"></span><span>01 / ABOUT</span></div><div class="intro-main"><p class="overline" data-ar="فكرة ورشة" data-en="THE IDEA">فكرة ورشة</p><h2 class="intro-title" data-ar="بدل ما تضيّع وقتك في الحسبة، <em>خلّي الحسبة تشتغل معاك.</em>" data-en="Spend less time on calculations. <em>Spend more time making.</em>">بدل ما تضيّع وقتك في الحسبة، <em>خلّي الحسبة تشتغل معاك.</em></h2><div class="intro-bottom"><p data-ar="ورشة معمول علشان يسهّل الوصول للحسابات والأدوات اللي بتحتاجها في شغل الورش. خطوات مفهومة، تنظيم واضح، وتجربة تركّز على المهمة اللي في إيدك." data-en="WARSHA makes the calculations and tools used in workshop jobs easier to reach. Clear steps, thoughtful organization and an experience focused on the task at hand.">ورشة معمول علشان يسهّل الوصول للحسابات والأدوات اللي بتحتاجها في شغل الورش. خطوات مفهومة، تنظيم واضح، وتجربة تركّز على المهمة اللي في إيدك.</p><div class="signature"><span>W.</span><small>MADE FOR<br>THE MAKERS</small></div></div></div></div></section>
+<section class="tools-section section-padding" id="tools"><div class="container"><div class="section-head reveal"><div><div class="section-number"><span class="number-line"></span><span>02 / TOOLKIT</span></div><h2><span data-ar="الأدوات اللي تحتاجها." data-en="TOOLS THAT WORK.">الأدوات اللي تحتاجها.</span><br><span class="outline-title" data-ar="من غير دوشة." data-en="WITHOUT THE NOISE.">من غير دوشة.</span></h2></div><p data-ar="اختار القسم المناسب لشغلك، ووصل للأداة اللي محتاجها بسهولة." data-en="Choose the right category for your job and get to the tool you need.">اختار القسم المناسب لشغلك، ووصل للأداة اللي محتاجها بسهولة.</p></div>
+<div class="tools-grid">
+<a href="#calculator" class="tool-card tool-card-feature reveal"><div class="tool-media"><img src="assets/gears.webp" alt="تروس معدنية" loading="lazy"><div class="tool-media-tint"></div><span class="tool-index">01 / GEARS</span><span class="tool-media-mark">⚙</span></div><div class="tool-body"><div><span class="tool-caption" data-ar="حسابات التروس" data-en="GEAR CALCULATIONS">حسابات التروس</span><h3 data-ar="التروس" data-en="GEARS">التروس</h3><p data-ar="عدد الأسنان، الموديول، والأقطار — ابدأ من الأرقام الصح." data-en="Tooth count, module and diameters — start with the right numbers.">عدد الأسنان، الموديول، والأقطار — ابدأ من الأرقام الصح.</p></div><span class="tool-round" aria-hidden="true">↗</span></div></a>
+<a href="#app-status" class="tool-card reveal" data-open-modal-link><div class="tool-media"><img src="assets/lathe.webp" alt="مخرطة معدنية" loading="lazy"><div class="tool-media-tint"></div><span class="tool-index">02 / LATHE</span><span class="tool-media-mark">⌁</span></div><div class="tool-body"><div><span class="tool-caption" data-ar="تجهيز الشغل" data-en="SET UP YOUR WORK">تجهيز الشغل</span><h3 data-ar="المخرطة" data-en="LATHE">المخرطة</h3><p data-ar="أدوات تساعدك تراجع المقاسات وتجهّز خطواتك." data-en="Tools to check dimensions and prepare your next steps.">أدوات تساعدك تراجع المقاسات وتجهّز خطواتك.</p></div><span class="tool-round" aria-hidden="true">↗</span></div></a>
+<a href="#app-status" class="tool-card reveal" data-open-modal-link><div class="tool-media"><img src="assets/drill.webp" alt="مثقاب صناعي" loading="lazy"><div class="tool-media-tint"></div><span class="tool-index">03 / DRILL</span><span class="tool-media-mark">＋</span></div><div class="tool-body"><div><span class="tool-caption" data-ar="قياس قبل التنفيذ" data-en="MEASURE BEFORE MAKING">قياس قبل التنفيذ</span><h3 data-ar="المثقاب" data-en="DRILL">المثقاب</h3><p data-ar="راجع القياسات وخلي كل خطوة محسوبة." data-en="Check the measurements and make every step count.">راجع القياسات وخلي كل خطوة محسوبة.</p></div><span class="tool-round" aria-hidden="true">↗</span></div></a>
+</div></div></section>
+<section class="calculator-section section-padding" id="calculator"><div class="container calc-layout"><div class="calc-intro reveal"><div class="section-number light-number"><span class="number-line"></span><span>03 / LIVE CALCULATION</span></div><p class="overline lime-overline" data-ar="جرّب بنفسك" data-en="TRY IT YOURSELF">جرّب بنفسك</p><h2><span data-ar="حسبة واضحة." data-en="CLEAR INPUTS.">حسبة واضحة.</span><br><span data-ar="نتيجة فورية." data-en="INSTANT ANSWER.">نتيجة فورية.</span></h2><p data-ar="جرّب المثال التفاعلي لحساب قطر دائرة الخطوة في التروس المستقيمة. غيّر القيم وشوف النتيجة فورًا." data-en="Try this interactive example to calculate a spur gear's pitch diameter. Change the values and see the result instantly.">جرّب المثال التفاعلي لحساب قطر دائرة الخطوة في التروس المستقيمة. غيّر القيم وشوف النتيجة فورًا.</p><div class="formula-pill"><span>THE FORMULA</span><b>d = m × Z</b></div></div>
+<div class="calc-shell reveal"><div class="calc-header"><div class="calc-header-left"><span class="calc-symbol">⚙</span><span><strong data-ar="حاسبة التروس" data-en="GEAR CALCULATOR">حاسبة التروس</strong><small>SPUR GEAR / PITCH DIAMETER</small></span></div><span class="live-pill"><span></span> LIVE DEMO</span></div><form id="calculator-form" novalidate><div class="calc-form-body"><div class="calc-form-intro"><span data-ar="بيانات الترس" data-en="GEAR PARAMETERS">بيانات الترس</span><span>01 — 02</span></div><div class="field-grid"><label class="field"><span data-ar="عدد الأسنان" data-en="Number of teeth">عدد الأسنان</span><div class="input-wrap"><input type="number" id="teeth" name="teeth" min="1" max="10000" step="1" value="24" required inputmode="numeric"><small>Z</small></div></label><label class="field"><span data-ar="الموديول" data-en="Module">الموديول</span><div class="input-wrap"><input type="number" id="module" name="module" min="0.01" max="1000" step="any" value="2.5" required inputmode="decimal"><small>m</small></div></label></div><div class="result-panel"><div><span class="result-label" data-ar="قطر دائرة الخطوة" data-en="PITCH DIAMETER">قطر دائرة الخطوة</span><small data-ar="النتيجة بتتحدث تلقائيًا" data-en="UPDATES AS YOU TYPE">النتيجة بتتحدث تلقائيًا</small></div><div class="result-number"><output id="answer" aria-live="polite">60</output><small>mm</small></div></div><p class="error-message" id="error" aria-live="polite"></p></div></form><div class="calc-footer"><span data-ar="مثال للتروس المستقيمة القياسية — بالمليمتر" data-en="Standard spur gear example — millimeters">مثال للتروس المستقيمة القياسية — بالمليمتر</span><span>W / 003</span></div></div></div></section>
+<section class="closing" id="app-status"><div class="container closing-content reveal"><div class="closing-kicker"><span class="pulse"></span><span data-ar="ابدأ مع ورشة" data-en="GET STARTED WITH WARSHA">ابدأ مع ورشة</span></div><h2><span data-ar="إيدك على الشغل." data-en="HANDS ON.">إيدك على الشغل.</span><br><span data-ar="والباقي علينا." data-en="WE'LL HANDLE THE MATH.">والباقي علينا.</span></h2><div class="closing-bottom"><p data-ar="حمّل النسخة المناسبة لجهازك، وشوف تفاصيل الإصدارات المتاحة." data-en="Get the version for your device and check the available releases.">حمّل النسخة المناسبة لجهازك، وشوف تفاصيل الإصدارات المتاحة.</p><button type="button" class="button button-primary" data-open-modal><span data-ar="اختار نسخة التحميل" data-en="Choose your download">اختار نسخة التحميل</span><span class="button-arrow" aria-hidden="true">↗</span></button></div></div><span class="closing-watermark" aria-hidden="true">W.</span></section>
+</main>
+<footer class="footer"><div class="container footer-content"><a class="footer-brand" href="#top">WARSHA<span>.</span></a><p>© <span id="year">2026</span> WARSHA. <span data-ar="كل مليمتر بيفرق." data-en="Every millimeter matters.">كل مليمتر بيفرق.</span></p><a href="#top" class="back-top" data-ar="العودة للأعلى ↑" data-en="Back to top ↑">العودة للأعلى ↑</a></div></footer>
+<div class="modal" id="modal" aria-hidden="true"><div class="modal-scrim" data-close-modal></div><section class="modal-box" role="dialog" aria-modal="true" aria-labelledby="modal-title" tabindex="-1"><button class="modal-close" type="button" data-close-modal aria-label="Close">×</button><span class="modal-topline">WARSHA / DOWNLOAD CENTER</span><div class="modal-illustration" aria-hidden="true">↗</div><h2 id="modal-title" data-ar="اختار نسختك." data-en="CHOOSE YOUR VERSION.">اختار نسختك.</h2><p data-ar="حمّل ورشة على جهازك. اختار النسخة المناسبة ليك." data-en="Download WARSHA on your device. Choose the right version for you.">حمّل ورشة على جهازك. اختار النسخة المناسبة ليك.</p><div class="modal-status download-options">
+<a href="https://github.com/khaledelsayed33333/warsha-website/releases/download/v1.2.1%2B5/warsha-android.apk" class="release-option"><span class="release-option-icon">▣</span><span class="release-option-copy"><b>Android</b><small data-ar="تحميل ملف APK" data-en="Download APK file">تحميل ملف APK</small></span><span class="release-arrow">↓</span></a>
+<a href="https://github.com/khaledelsayed33333/warsha-website/releases/download/v1.2.1%2B5/warsha-windows.zip" class="release-option"><span class="release-option-icon">▰</span><span class="release-option-copy"><b>Windows</b><small data-ar="تحميل حزمة ZIP" data-en="Download ZIP package">تحميل حزمة ZIP</small></span><span class="release-arrow">↓</span></a>
+<div class="release-option release-disabled" aria-disabled="true"><span class="release-option-icon">●</span><span class="release-option-copy"><b>iOS</b><small data-ar="النسخة غير متاحة حاليًا" data-en="Not available yet">النسخة غير متاحة حاليًا</small></span><span class="release-tag" data-ar="قريبًا" data-en="Coming soon">قريبًا</span></div></div><a class="release-page-link" href="https://github.com/khaledelsayed33333/warsha-website/releases/tag/v1.2.1%2B5" target="_blank" rel="noopener" data-ar="عرض تفاصيل الإصدار على GitHub ↗" data-en="View release on GitHub ↗">عرض تفاصيل الإصدار على GitHub ↗</a></section></div>
+</body></html>
