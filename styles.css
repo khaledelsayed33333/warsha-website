@@ -250,3 +250,35 @@ img,svg,video,canvas{max-width:100%}
   .trust-row{width:calc(100% - 20px)}
   .platform-action{white-space:normal}
 }
+
+
+/* Final phone viewport alignment fix */
+@media(max-width:650px){
+  .topbar{
+    width:100%;
+    max-width:100%;
+    margin:0;
+    padding-inline:20px;
+    box-sizing:border-box;
+    left:auto;
+    right:auto;
+    transform:none;
+    border-bottom:1px solid rgba(77,225,208,.1);
+  }
+  .hero,.trust-row,.section,.screens-layout,.download-section,.footer{
+    margin-left:auto;
+    margin-right:auto;
+    position:relative;
+    left:auto;
+    right:auto;
+    transform:none;
+  }
+  .trust-row{width:calc(100% - 24px)}
+  .hero-art{overflow:hidden;contain:paint}
+  .hero-art .phone{flex:0 0 auto}
+  .hero-art .floating-card{max-width:44%;overflow:hidden}
+  .hero-art .card-top{right:0;left:auto}
+  .hero-art .card-bottom{left:0;right:auto}
+  body[dir="ltr"] .hero-art .card-top{right:0;left:auto}
+  body[dir="ltr"] .hero-art .card-bottom{left:0;right:auto}
+}
