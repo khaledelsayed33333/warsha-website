@@ -4,6 +4,9 @@
    True Responsive Design (no fixed breakpoints, fluid layout)
    ============================================================ */
 
+/* Prevent off-canvas mobile navigation from expanding the page viewport */
+html, body { max-width: 100%; overflow-x: clip; }
+
 /* ====== Design Tokens ====== */
 :root {
   /* Colors - Dark Petroleum + Turquoise */
