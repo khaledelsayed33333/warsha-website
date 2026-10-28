@@ -1337,7 +1337,7 @@ body.modal-open { overflow: hidden; }
     visibility: hidden;
   }
   html[dir="rtl"] .nav { --nav-slide-from: 100%; --nav-origin: inline-end; }
-  html[dir="ltr"] .nav { --nav-slide-from: -100%; --nav-origin: inline-start; transform: translateX(-100%); }
+  html[dir="ltr"] .nav { --nav-slide-from: 100%; --nav-origin: inline-end; transform: translateX(100%); }
 
   .nav[data-open="true"] {
     transform: translateX(0);
