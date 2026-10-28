@@ -513,3 +513,27 @@ img,svg,video,canvas{max-width:100%}
   .brand-text b{font-size:19px}
   .brand-text small{font-size:8px}
 }
+
+
+/* Tablet viewport overflow fix: keep the page and modal inside the visible screen */
+@media screen and (min-width:651px) and (max-width:1100px){
+  html,body{width:100%!important;max-width:100%!important;overflow-x:hidden!important}
+  .wrap{width:calc(100% - 40px)!important;max-width:100%!important;margin-left:auto!important;margin-right:auto!important}
+  .topbar{width:calc(100% - 40px)!important}
+  main,.hero,.trust-row,.section,.screens-section,.screens-layout,.download-section,.download-panel,.footer{max-width:100%!important;min-width:0!important}
+  .hero{grid-template-columns:minmax(0,1fr) minmax(0,.82fr)!important;gap:16px!important}
+  .hero-copy,.hero-art{min-width:0!important;max-width:100%!important}
+  .hero-art{overflow:hidden!important;margin-inline:0!important;transform:scale(.88)!important}
+  .hero h1{font-size:clamp(48px,6.5vw,72px)!important;letter-spacing:-2px}
+  .hero-desc{overflow-wrap:anywhere}
+  .hero-actions{min-width:0}
+  .hero-actions .btn{min-width:0;padding-inline:12px}
+  .trust-row{grid-template-columns:repeat(4,minmax(0,1fr))!important}
+  .trust-row>div{min-width:0;text-align:center;overflow-wrap:anywhere}
+  .feature-grid{grid-template-columns:repeat(3,minmax(0,1fr))!important}
+  .screens-layout{grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr)!important;gap:24px!important}
+  .download-modal{width:100vw!important;max-width:100vw!important;inset:0!important;padding:16px!important;overflow-x:hidden!important}
+  .download-dialog{width:min(920px,calc(100vw - 32px))!important;max-width:calc(100vw - 32px)!important;min-width:0!important;margin-inline:auto!important}
+  .platform-options{grid-template-columns:repeat(3,minmax(0,1fr))!important;width:100%!important}
+  .platform-option{min-width:0!important;padding:16px 12px!important}
+}
