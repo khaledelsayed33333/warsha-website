@@ -421,3 +421,76 @@ img,svg,video,canvas{max-width:100%}
   .menu-toggle{width:38px;height:38px;flex-basis:38px}
   .topbar .lang-toggle{padding:8px 10px}
 }
+
+
+/* Refined tablet/phone composition and balanced header controls */
+@media screen and (max-width:1100px){
+  .topbar{
+    height:76px!important;
+    width:calc(100% - 32px)!important;
+    padding:0 4px!important;
+    gap:12px!important;
+    justify-content:flex-start!important;
+  }
+  .topbar .brand{order:1!important;margin:0!important;flex:1 1 auto;min-width:0}
+  .topbar .brand small{white-space:nowrap;max-width:180px;overflow:hidden;text-overflow:ellipsis}
+  .topbar .lang-toggle{order:2!important;flex:0 0 auto;min-width:48px;height:40px;padding:0 12px!important;border-radius:12px;font-size:12px}
+  .topbar .menu-toggle{order:3!important;margin:0!important;position:static;flex:0 0 42px;width:42px;height:42px;border-radius:13px;background:linear-gradient(145deg,rgba(32,214,194,.15),rgba(32,214,194,.04));box-shadow:inset 0 0 0 1px rgba(32,214,194,.04),0 5px 15px rgba(0,0,0,.14)}
+  .topbar .nav{top:calc(100% + 10px)!important;inset-inline:0!important;width:100%!important;padding:9px!important;gap:4px!important;border-radius:18px!important}
+  .topbar .nav a{min-height:46px!important;padding:11px 15px!important;border-radius:11px;font-size:14px!important}
+  .topbar .nav a:active{background:rgba(32,214,194,.12)}
+}
+@media screen and (max-width:650px){
+  .topbar{width:calc(100% - 28px)!important;height:70px!important}
+  .topbar .brand-mark{font-size:27px}
+  .topbar .brand b{font-size:18px;letter-spacing:1.2px}
+  .topbar .brand small{font-size:8px;max-width:140px}
+  .topbar .menu-toggle{width:40px;height:40px;flex-basis:40px}
+  .hero{padding-top:32px!important;padding-bottom:24px!important}
+  .hero-copy{width:100%;max-width:100%}
+  .hero .eyebrow{margin-bottom:14px}
+  .hero h1{font-size:clamp(52px,13vw,64px);margin-bottom:4px}
+  .hero h2{margin-top:10px!important;margin-bottom:9px!important;line-height:1.45}
+  .hero-desc{max-width:520px;margin-inline:auto!important;line-height:1.95}
+  .hero-actions{display:grid!important;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:10px!important;margin-top:21px!important;width:100%}
+  .hero-actions .btn{width:100%;min-width:0;min-height:60px;padding:10px 9px!important;gap:8px;border-radius:13px}
+  .hero-actions .btn-primary{justify-content:center}
+  .hero-actions .btn b{font-size:11px;line-height:1.5}
+  .hero-actions .btn small{font-size:9px;white-space:normal}
+  .hero-actions .btn-secondary{font-size:11px}
+  .microcopy{justify-content:center;gap:7px!important;line-height:1.9;margin-top:17px!important}
+  .hero-art{height:365px!important;margin-top:2px!important}
+  .trust-row{margin-top:0}
+  .section{padding-top:52px!important;padding-bottom:48px!important}
+  .section-heading{margin-bottom:24px!important}
+  .feature-grid{gap:11px!important}
+  .feature-card{padding:16px 13px!important;min-height:175px!important}
+  .screens-layout{gap:25px!important;padding-top:42px!important;padding-bottom:42px!important}
+  .ai-points{gap:10px!important}
+  .download-section{padding-top:32px!important;padding-bottom:32px!important}
+  .download-panel{padding:25px 18px!important;border-radius:18px!important}
+  .download-buttons .btn{width:100%;min-width:0!important}
+  .footer{padding-top:20px!important;gap:14px!important}
+}
+@media screen and (min-width:651px) and (max-width:1100px){
+  .topbar{width:calc(100% - 48px)!important}
+  .hero{padding-top:46px!important;padding-bottom:38px!important}
+  .hero-actions .btn{min-height:58px}
+  .trust-row{padding:20px 0!important}
+  .section{padding-top:70px!important;padding-bottom:64px!important}
+  .feature-card{border-radius:18px}
+  .screens-layout{padding-top:58px!important;padding-bottom:58px!important}
+  .download-section{padding-top:48px!important;padding-bottom:48px!important}
+  .download-panel{border-radius:24px}
+}
+@media screen and (max-width:400px){
+  .topbar{width:calc(100% - 22px)!important;gap:8px!important}
+  .topbar .brand small{max-width:105px}
+  .topbar .brand-mark{font-size:24px}
+  .topbar .brand b{font-size:16px}
+  .topbar .lang-toggle{min-width:42px;padding-inline:9px!important}
+  .topbar .menu-toggle{width:38px;height:38px;flex-basis:38px}
+  .hero-actions{grid-template-columns:minmax(0,1fr)}
+  .hero-actions .btn{min-height:54px}
+  .hero-art{height:335px!important}
+}
