@@ -1562,3 +1562,38 @@ html[dir="ltr"] .whatsapp-float { font-family: var(--font-en); }
     bottom: calc(max(.75rem, env(safe-area-inset-bottom)) + 4.5rem);
   }
 }
+
+
+/* WARSHA brand logo */
+.logo__image {
+  display: block;
+  width: clamp(112px, 14vw, 156px);
+  height: 54px;
+  object-fit: contain;
+  object-position: center;
+  flex-shrink: 0;
+}
+.hero__title {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  width: 100%;
+}
+.hero__logo {
+  display: block;
+  width: min(100%, 430px);
+  height: auto;
+  max-height: 250px;
+  object-fit: contain;
+  object-position: right center;
+}
+@media (max-width: 640px) {
+  .logo__image {
+    width: 104px;
+    height: 44px;
+  }
+  .hero__logo {
+    width: min(100%, 330px);
+    max-height: 190px;
+  }
+}
