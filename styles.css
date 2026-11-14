@@ -1463,3 +1463,42 @@ body.modal-open { overflow: hidden; }
     --color-text-soft: #c8d8db;
   }
 }
+
+
+/* ====== Floating WhatsApp contact ====== */
+.whatsapp-float {
+  position: fixed;
+  inset-inline-end: max(1.1rem, env(safe-area-inset-right));
+  bottom: max(1.1rem, env(safe-area-inset-bottom));
+  z-index: 150;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+  min-height: 52px;
+  padding: 0.75rem 1.1rem;
+  border: 1px solid rgba(255,255,255,0.18);
+  border-radius: 999px;
+  background: #168b54;
+  color: #fff;
+  font-family: var(--font-ar);
+  font-size: var(--fs-sm);
+  font-weight: 800;
+  box-shadow: 0 8px 28px rgba(0,0,0,0.28);
+  transition: transform var(--t-fast), background var(--t-fast), box-shadow var(--t-fast);
+}
+.whatsapp-float:hover,
+.whatsapp-float:focus-visible {
+  background: #117844;
+  color: #fff;
+  transform: translateY(-3px);
+  box-shadow: 0 12px 32px rgba(0,0,0,0.34);
+}
+html[dir="ltr"] .whatsapp-float { font-family: var(--font-en); }
+@media (max-width: 480px) {
+  .whatsapp-float {
+    min-height: 50px;
+    padding: 0.7rem 0.95rem;
+    font-size: var(--fs-xs);
+  }
+}
