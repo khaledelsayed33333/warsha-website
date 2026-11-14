@@ -89,6 +89,13 @@
       osFormatApk: "APK",
       osFormatZip: "ZIP",
       whatsappCta: "اسألنا على واتساب",
+      whatsappTitle: "اسأل فريق WARSHA",
+      whatsappSubtitle: "اكتب سؤالك وسنساعدك عبر واتساب",
+      whatsappClose: "×",
+      whatsappMessageLabel: "اكتب سؤالك",
+      whatsappPlaceholder: "اكتب رسالتك هنا...",
+      whatsappSend: "إرسال عبر واتساب",
+      whatsappHint: "سيتم فتح واتساب برسالتك لتأكيد الإرسال.",
       footerTagline: "أدوات هندسية بين يديك",
       footerRights: "جميع الحقوق محفوظة.",
       backToTop: "↑ العودة للأعلى",
@@ -179,6 +186,13 @@
       osFormatApk: "APK",
       osFormatZip: "ZIP",
       whatsappCta: "Ask us on WhatsApp",
+      whatsappTitle: "Ask the WARSHA team",
+      whatsappSubtitle: "Write your question and we’ll help you on WhatsApp",
+      whatsappClose: "×",
+      whatsappMessageLabel: "Your question",
+      whatsappPlaceholder: "Type your message here...",
+      whatsappSend: "Send via WhatsApp",
+      whatsappHint: "WhatsApp will open with your message ready to send.",
       footerTagline: "Engineering tools at your fingertips",
       footerRights: "All rights reserved.",
       backToTop: "↑ Back to top",
@@ -215,6 +229,46 @@
     const modalClose = modal ? modal.querySelector(".modal__close") : null;
     const toast = document.getElementById("toast");
     const yearEl = document.getElementById("year");
+    const whatsappToggle = document.getElementById("whatsappToggle");
+    const whatsappChat = document.getElementById("whatsappChat");
+    const whatsappClose = document.getElementById("whatsappClose");
+    const whatsappForm = document.getElementById("whatsappForm");
+    const whatsappMessage = document.getElementById("whatsappMessage");
+
+    function closeWhatsAppChat() {
+      if (!whatsappChat || !whatsappToggle) return;
+      whatsappChat.setAttribute("data-open", "false");
+      whatsappChat.hidden = true;
+      whatsappToggle.setAttribute("aria-expanded", "false");
+    }
+
+    if (whatsappToggle && whatsappChat) {
+      whatsappToggle.addEventListener("click", function () {
+        const willOpen = whatsappChat.hidden;
+        whatsappChat.hidden = !willOpen;
+        whatsappChat.setAttribute("data-open", willOpen ? "true" : "false");
+        whatsappToggle.setAttribute("aria-expanded", willOpen ? "true" : "false");
+        if (willOpen && whatsappMessage) setTimeout(function () { whatsappMessage.focus(); }, 80);
+      });
+    }
+    if (whatsappClose) whatsappClose.addEventListener("click", closeWhatsAppChat);
+
+    document.addEventListener("keydown", function (event) {
+      if (event.key === "Escape" && whatsappChat && !whatsappChat.hidden) closeWhatsAppChat();
+    });
+
+    if (whatsappForm && whatsappMessage) {
+      whatsappForm.addEventListener("submit", function (event) {
+        event.preventDefault();
+        const message = whatsappMessage.value.trim();
+        if (!message) { whatsappMessage.focus(); return; }
+        const greeting = html.getAttribute("data-lang") === "en"
+          ? "Hello WARSHA team, I have a question:"
+          : "مرحبًا فريق WARSHA، عندي سؤال:";
+        const url = "https://wa.me/201207847099?text=" + encodeURIComponent(greeting + "\\n" + message);
+        window.open(url, "_blank", "noopener,noreferrer");
+      });
+    }
 
     // -------- Year in footer --------
     if (yearEl) yearEl.textContent = new Date().getFullYear();
@@ -228,6 +282,12 @@
       html.setAttribute("lang", lang);
       html.setAttribute("dir", lang === "ar" ? "rtl" : "ltr");
       html.setAttribute("data-lang", lang);
+
+      // Translate placeholders separately (textContent would not affect attributes)
+      document.querySelectorAll("[data-i18n-placeholder]").forEach(function (el) {
+        const key = el.getAttribute("data-i18n-placeholder");
+        if (dict[key] !== undefined) el.setAttribute("placeholder", dict[key]);
+      });
 
       // Translate all [data-i18n] elements
       document.querySelectorAll("[data-i18n]").forEach(function (el) {
