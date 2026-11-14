@@ -265,7 +265,7 @@
         const greeting = html.getAttribute("data-lang") === "en"
           ? "Hello WARSHA team, I have a question:"
           : "مرحبًا فريق WARSHA، عندي سؤال:";
-        const url = "https://wa.me/201207847099?text=" + encodeURIComponent(greeting + "\\n" + message);
+        const url = "https://wa.me/201207847099?text=" + encodeURIComponent(greeting + "\n" + message);
         window.open(url, "_blank", "noopener,noreferrer");
       });
     }
