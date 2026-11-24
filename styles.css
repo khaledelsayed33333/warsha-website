@@ -2885,3 +2885,67 @@ input[type='range'] {
 @media (prefers-reduced-motion: reduce) {
   .platform-card.is-recommended { animation: none; }
 }
+
+
+/* Balanced capabilities bento layout */
+#features .bento-grid {
+  width: 100%;
+  display: grid;
+  grid-template-columns: minmax(0, 1.35fr) minmax(0, 1fr) minmax(0, 1fr);
+  grid-template-areas:
+    "f1 f1 f2"
+    "f3 f4 f5";
+  gap: 18px;
+  direction: ltr;
+  align-items: stretch;
+}
+#features .bento-grid > .bento-card {
+  min-width: 0;
+  min-height: 210px;
+  grid-column: auto;
+  direction: rtl;
+  text-align: right;
+  padding: 25px;
+}
+#features .bento-grid > .bento-card:nth-child(1) { grid-area: f1; }
+#features .bento-grid > .bento-card:nth-child(2) { grid-area: f2; }
+#features .bento-grid > .bento-card:nth-child(3) { grid-area: f3; }
+#features .bento-grid > .bento-card:nth-child(4) { grid-area: f4; }
+#features .bento-grid > .bento-card:nth-child(5) { grid-area: f5; }
+#features .bento-grid > .bento-card h3 {
+  line-height: 1.55;
+}
+#features .bento-grid > .bento-card p {
+  line-height: 1.8;
+}
+#features .bento-grid > .bento-card .bento-formula-pill {
+  align-self: flex-start;
+}
+@media (max-width: 900px) {
+  #features .bento-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-areas:
+      "f1 f1"
+      "f2 f3"
+      "f4 f5";
+  }
+  #features .bento-grid > .bento-card {
+    min-height: 200px;
+  }
+}
+@media (max-width: 600px) {
+  #features .bento-grid {
+    grid-template-columns: minmax(0, 1fr);
+    grid-template-areas:
+      "f1"
+      "f2"
+      "f3"
+      "f4"
+      "f5";
+    gap: 13px;
+  }
+  #features .bento-grid > .bento-card {
+    min-height: auto;
+    padding: 20px;
+  }
+}
