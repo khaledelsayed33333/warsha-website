@@ -1845,7 +1845,7 @@
         const guideLabel = isAr ? 'خطوات التثبيت والتشغيل' : 'Installation Guide';
 
         return `
-          <article class="platform-card ${isRec ? 'is-recommended' : ''}" id="plat-${p.id}">
+          <article class="platform-card ${isRec ? 'is-recommended' : ''} ${isComingSoon ? 'is-coming-soon-card' : ''}" id="plat-${p.id}">
             ${isRec ? `<span class="plat-rec-badge">${recLabel}</span>` : ''}
             <div class="plat-head">
               <div class="plat-icon">${getPlatformIconSVG(p.id)}</div>
