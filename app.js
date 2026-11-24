@@ -1838,7 +1838,10 @@
         if (!p) return '';
         const isRec = key === detected;
         const recLabel = isAr ? 'مناسب لجهازك' : 'Recommended';
-        const dlLabel = isAr ? `تحميل ${p.name}` : `Download ${p.name}`;
+        const isComingSoon = p.status === 'coming-soon';
+        const dlLabel = isComingSoon
+          ? (isAr ? 'متاح قريبًا' : 'Coming Soon')
+          : (isAr ? `تحميل ${p.name}` : `Download ${p.name}`);
         const guideLabel = isAr ? 'خطوات التثبيت والتشغيل' : 'Installation Guide';
 
         return `
@@ -1870,11 +1873,10 @@
               </div>
             </div>
             <div class="plat-actions">
-              <a href="${p.url}" class="plat-download-btn" data-download-platform="${p.id}" download="${p.fileName}">
-                <span>↓</span>
-                <span>${dlLabel}</span>
-              </a>
-              <button type="button" class="plat-guide-btn" data-guide-platform="${p.id}">${guideLabel}</button>
+              ${isComingSoon
+                ? `<span class="plat-download-btn is-coming-soon" aria-disabled="true"><span>◷</span><span>${dlLabel}</span></span>`
+                : `<a href="${p.url}" class="plat-download-btn" data-download-platform="${p.id}" download="${p.fileName}"><span>↓</span><span>${dlLabel}</span></a>`}
+              ${isComingSoon ? '' : `<button type="button" class="plat-guide-btn" data-guide-platform="${p.id}">${guideLabel}</button>`}
             </div>
           </article>
         `;
