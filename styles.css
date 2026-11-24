@@ -2831,3 +2831,38 @@ input[type='range'] {
 .platform-card.is-coming-soon-card .plat-meta-list {
   opacity: .72;
 }
+
+
+/* Recommended platform: subtly elevated and larger */
+.platform-card.is-recommended {
+  z-index: 2;
+  transform: translateY(-10px) scale(1.045);
+  border-width: 2px;
+  box-shadow: 0 22px 48px rgba(0,184,169,.24), 0 0 0 1px rgba(32,214,194,.12), 0 0 34px rgba(32,214,194,.12);
+  animation: recommended-arrive 650ms cubic-bezier(.2,.8,.2,1) both;
+}
+.platform-card.is-recommended:hover {
+  transform: translateY(-14px) scale(1.055);
+  box-shadow: 0 28px 58px rgba(0,184,169,.3), 0 0 0 1px rgba(32,214,194,.18), 0 0 42px rgba(32,214,194,.16);
+}
+.platform-card.is-recommended .plat-rec-badge {
+  top: -13px;
+  padding: 6px 16px;
+  font-size: .78rem;
+  box-shadow: 0 6px 18px rgba(0,184,169,.28);
+}
+@keyframes recommended-arrive {
+  from { opacity: .72; transform: translateY(5px) scale(.98); }
+  to { opacity: 1; transform: translateY(-10px) scale(1.045); }
+}
+@media (max-width: 900px) {
+  .platform-card.is-recommended { transform: translateY(-5px) scale(1.015); }
+  .platform-card.is-recommended:hover { transform: translateY(-7px) scale(1.02); }
+}
+@media (max-width: 640px) {
+  .platform-card.is-recommended,
+  .platform-card.is-recommended:hover { transform: none; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .platform-card.is-recommended { animation: none; }
+}
