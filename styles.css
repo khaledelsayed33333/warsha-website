@@ -2833,46 +2833,39 @@ input[type='range'] {
 }
 
 
-/* Recommended platform: perimeter LED that travels around the frame */
+/* Recommended platform: clearly visible moving LED perimeter */
+@property --warsha-led-angle {
+  syntax: "<angle>";
+  inherits: false;
+  initial-value: 0deg;
+}
 .platform-card.is-recommended {
   position: relative;
   z-index: 2;
   transform: none;
   isolation: isolate;
-  border: 1px solid rgba(32, 214, 194, .58);
+  border: 2px solid transparent;
+  background:
+    linear-gradient(155deg, rgba(0, 137, 123, .2), rgba(7, 26, 28, .94)) padding-box,
+    conic-gradient(
+      from var(--warsha-led-angle),
+      rgba(32, 214, 194, .18) 0deg,
+      rgba(32, 214, 194, .18) 245deg,
+      #20d6c2 278deg,
+      #d5fffb 294deg,
+      #20d6c2 310deg,
+      rgba(32, 214, 194, .18) 338deg,
+      rgba(32, 214, 194, .18) 360deg
+    ) border-box;
   box-shadow:
     0 12px 30px rgba(0, 184, 169, .13),
-    0 0 18px rgba(32, 214, 194, .09);
-  animation: recommended-soft-glow 3.6s ease-in-out infinite;
-}
-.platform-card.is-recommended::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  z-index: 3;
-  padding: 2px;
-  border-radius: inherit;
-  pointer-events: none;
-  background: conic-gradient(
-    from 0deg,
-    transparent 0deg 255deg,
-    rgba(32, 214, 194, .08) 278deg,
-    rgba(32, 214, 194, .65) 310deg,
-    #c4fff8 330deg,
-    #20d6c2 344deg,
-    transparent 360deg
-  );
-  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
-  -webkit-mask-composite: xor;
-  mask-composite: exclude;
-  filter: drop-shadow(0 0 4px rgba(32, 214, 194, .9)) drop-shadow(0 0 9px rgba(32, 214, 194, .48));
-  animation: recommended-led-orbit 4.2s linear infinite;
+    0 0 16px rgba(32, 214, 194, .12);
+  animation: warsha-led-rotate 4.8s linear infinite;
+  transition: transform .25s ease, box-shadow .25s ease;
 }
 .platform-card.is-recommended:hover {
   transform: translateY(-3px);
-  box-shadow:
-    0 16px 36px rgba(0, 184, 169, .18),
-    0 0 24px rgba(32, 214, 194, .15);
+  box-shadow: 0 16px 36px rgba(0,184,169,.2), 0 0 24px rgba(32,214,194,.2);
 }
 .platform-card.is-recommended .plat-rec-badge {
   top: -12px;
@@ -2882,24 +2875,13 @@ input[type='range'] {
   box-shadow: 0 5px 16px rgba(0, 184, 169, .25);
   transform: none;
 }
-@keyframes recommended-led-orbit {
-  to { transform: rotate(360deg); }
-}
-@keyframes recommended-soft-glow {
-  0%, 100% {
-    border-color: rgba(32, 214, 194, .48);
-    box-shadow: 0 12px 30px rgba(0,184,169,.1), 0 0 14px rgba(32,214,194,.07);
-  }
-  50% {
-    border-color: rgba(105, 255, 235, .78);
-    box-shadow: 0 14px 34px rgba(0,184,169,.17), 0 0 24px rgba(32,214,194,.14);
-  }
+@keyframes warsha-led-rotate {
+  to { --warsha-led-angle: 360deg; }
 }
 @media (max-width: 640px) {
   .platform-card.is-recommended,
   .platform-card.is-recommended:hover { transform: none; }
 }
 @media (prefers-reduced-motion: reduce) {
-  .platform-card.is-recommended,
-  .platform-card.is-recommended::after { animation: none; }
+  .platform-card.is-recommended { animation: none; }
 }
