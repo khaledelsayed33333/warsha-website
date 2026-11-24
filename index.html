@@ -1,150 +1,256 @@
-<!DOCTYPE html>
-<html lang="ar" dir="rtl" data-theme="dark" data-lang="ar">
+<!doctype html>
+<html lang="ar" dir="rtl">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
-  <meta name="theme-color" content="#060b0e" />
-  <meta name="description" content="WARSHA - تطبيق مدفوع متخصص في الحسابات والأدوات الهندسية المستخدمة في الورش. أدوات هندسية بين يديك." />
-  <meta name="keywords" content="WARSHA, ورشة, أدوات هندسية, حسابات هندسية, تروس, مخرطة, مثقاب" />
-  <title>WARSHA - ورشة | أدوات هندسية بين يديك</title>
-  <link rel="icon" type="image/png" href="assets/warsha_logo_transparent_square_raw.png?v=1.0" />
-  <link rel="apple-touch-icon" href="assets/warsha_logo_transparent_square_raw.png?v=1.0" />
-
-  <!-- Preconnect for fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800;900&family=Inter:wght@400;500;600;700;800&family=Tajawal:wght@400;500;700;800&display=swap" rel="stylesheet" />
-
-  <!-- Cache Busting via version query -->
-  <link rel="stylesheet" href="styles.css?v=1.2.8" />
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#031719">
+  <meta name="description" content="تطبيق ورشة (WARSHA) — منصة حسابات الخراطة والتروس والمثقاب بدقة هندسية فائقة على Android وWindows وiOS. جرّب الأدوات تفاعليًا في 3D وحمّل نسختك مباشرة.">
+  <title>WARSHA | ورشة — أدوات وحسابات التشغيل والمخرطة والتروس</title>
+  <link rel="icon" type="image/png" href="./assets/images/favicon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;600;700&family=Space+Grotesk:wght@500;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./styles.css">
 </head>
-<body>
+<body class="is-loading">
 
-  <!-- ====================== Skip Link (Accessibility) ====================== -->
-  <a href="#main" class="skip-link" data-i18n="skipToContent">تخطّي إلى المحتوى</a>
-
-  <!-- ====================== Background Decoration ====================== -->
-  <div class="bg-decoration" aria-hidden="true">
-    <div class="bg-glow bg-glow--1"></div>
-    <div class="bg-glow bg-glow--2"></div>
-    <div class="bg-grid"></div>
+  <!-- Calibration Preloader -->
+  <div class="preloader" id="preloader" aria-hidden="true">
+    <div class="preloader-inner">
+      <div class="preloader-ring">
+        <span class="preloader-sweep"></span>
+        <img src="./assets/images/warsha_logo_transparent.png" alt="WARSHA Logo" class="preloader-logo">
+      </div>
+      <div class="preloader-meta">
+        <span class="mono-tag">CALIBRATING CNC ENGINE</span>
+        <span class="preloader-bar"><i></i></span>
+      </div>
+    </div>
   </div>
 
-  <!-- ====================== Header / Navbar ====================== -->
-  <header class="site-header" id="top">
-    <div class="container header__inner">
+  <!-- Background Precision Grid + Texture + Ambient Glow -->
+  <div class="bg-stage" aria-hidden="true">
+    <div class="bg-blueprint-grid"></div>
+    <div class="bg-home-texture"></div>
+    <div class="ambient-orb orb-teal"></div>
+    <div class="ambient-orb orb-bronze"></div>
+    <div class="ambient-orb orb-deep"></div>
+  </div>
 
-      <!-- Logo -->
-      <a href="#top" class="logo" aria-label="WARSHA - العودة إلى الأعلى">
-        <img class="logo__image" src="assets/warsha_logo_transparent_square_raw.png" alt="WARSHA - ورشة" />
+  <!-- Top Scroll Vernier Progress -->
+  <div class="scroll-progress-wrap" aria-hidden="true">
+    <div class="scroll-progress-bar" id="scrollProgressBar"></div>
+  </div>
+
+  <!-- Floating Scroll Telemetry (Desktop) -->
+  <aside class="axis-telemetry" aria-hidden="true">
+    <span class="axis-dot"></span>
+    <span class="mono-tag">Z-AXIS</span>
+    <strong class="mono-val" id="axisTravelValue">000.0 mm</strong>
+  </aside>
+
+  <!-- Sticky Glass Navigation -->
+  <header class="site-header" id="siteHeader">
+    <div class="container header-inner">
+      <a href="#top" class="brand-lockup" aria-label="WARSHA Home">
+        <div class="brand-logo-wrap">
+          <img src="./assets/images/warsha_logo_transparent.png" alt="شعار ورشة" class="brand-logo-img">
+        </div>
+        <div class="brand-text">
+          <div class="brand-title-row">
+            <strong>WARSHA</strong>
+            <span class="version-pill mono-val" id="headerVersionPill">v1.2.2+6</span>
+          </div>
+          <small data-i18n="brand.sub">أدوات الخراطة والتروس والمثقاب</small>
+        </div>
       </a>
 
-      <!-- Nav links (toggles on mobile) -->
-      <nav class="nav" id="primaryNav" aria-label="التنقل الرئيسي" data-open="false">
-        <ul class="nav__list">
-          <li><a href="#about" class="nav__link" data-i18n="navAbout">عن التطبيق</a></li>
-          <li><a href="#features" class="nav__link" data-i18n="navFeatures">المميزات</a></li>
-          <li><a href="#tools" class="nav__link" data-i18n="navTools">الأدوات</a></li>
-          <li><a href="#download" class="nav__link nav__link--cta" data-i18n="navDownload">التحميل</a></li>
-          <li class="nav__item--lang">
-            <button class="lang-toggle" id="langToggle" type="button" aria-label="Switch language">
-              <span class="lang-toggle__icon" aria-hidden="true">
-                <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                  <circle cx="12" cy="12" r="10"/>
-                  <path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
-                </svg>
-              </span>
-              <span id="langLabel">EN</span>
-            </button>
-          </li>
-        </ul>
+      <nav class="main-nav" id="mainNav" aria-label="التنقل الرئيسي">
+        <a href="#tools" data-i18n="nav.tools">الأقسام والأدوات</a>
+        <a href="#lab" data-i18n="nav.lab">معاينة الأدوات</a>
+        <a href="#preview" data-i18n="nav.preview">شاشات التطبيق</a>
+        <a href="#features" data-i18n="nav.features">المزايا الهندسية</a>
+        <a href="#download" data-i18n="nav.download">التحميل</a>
       </nav>
 
-      <!-- Desktop language toggle + Hamburger -->
-      <div class="header__actions">
-        <button class="lang-toggle lang-toggle--desktop" type="button" aria-label="Switch language">
-          <span class="lang-toggle__icon" aria-hidden="true">
-            <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <circle cx="12" cy="12" r="10"/>
-              <path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
-            </svg>
-          </span>
-          <span id="langLabelDesktop">EN</span>
+      <div class="header-actions">
+        <button type="button" class="lang-btn" id="langToggle" aria-label="Switch language">
+          <span class="lang-code">EN</span>
         </button>
-        <button class="hamburger" id="hamburgerBtn" type="button"
-                aria-label="فتح القائمة" aria-controls="primaryNav" aria-expanded="false">
-          <span class="hamburger__bar"></span>
-          <span class="hamburger__bar"></span>
-          <span class="hamburger__bar"></span>
+        <a href="#download" class="btn-header-cta">
+          <span class="cta-pulse"></span>
+          <span data-i18n="nav.cta">تحميل التطبيق</span>
+        </a>
+        <button type="button" class="menu-toggle" id="menuToggle" aria-label="فتح القائمة" aria-expanded="false">
+          <span></span><span></span><span></span>
         </button>
       </div>
     </div>
   </header>
 
-  <!-- ====================== Main Content ====================== -->
-  <main id="main">
+  <!-- Mobile Navigation Drawer -->
+  <div class="mobile-drawer" id="mobileDrawer" aria-hidden="true">
+    <div class="mobile-drawer-panel">
+      <div class="mobile-drawer-head">
+        <img src="./assets/images/warsha_logo_transparent.png" alt="WARSHA" class="drawer-logo">
+        <button type="button" class="drawer-close" id="drawerClose" aria-label="إغلاق">✕</button>
+      </div>
+      <nav class="mobile-nav-links">
+        <a href="#tools" data-i18n="nav.tools">الأقسام والأدوات</a>
+        <a href="#lab" data-i18n="nav.lab">معاينة الأدوات</a>
+        <a href="#preview" data-i18n="nav.preview">شاشات التطبيق</a>
+        <a href="#features" data-i18n="nav.features">المزايا الهندسية</a>
+        <a href="#download" data-i18n="nav.download">التحميل</a>
+      </nav>
+      <div class="mobile-drawer-footer">
+        <a href="#download" class="btn btn-primary btn-full" data-i18n="hero.ctaPrimary">حمّل نسختك الآن</a>
+      </div>
+    </div>
+  </div>
 
-    <!-- ====================== Hero ====================== -->
-    <section class="hero" aria-labelledby="heroTitle">
-      <div class="container hero__inner">
-
-        <div class="hero__content">
-          <p class="hero__eyebrow" data-i18n="heroEyebrow">تطبيق هندسي احترافي للورش</p>
-          <h1 class="hero__title" id="heroTitle"><img class="hero__logo" src="assets/warsha_logo_transparent_square_raw.png" alt="WARSHA - ورشة" /></h1>
-          <p class="hero__subtitle" data-i18n="heroSubtitle">أدوات هندسية بين يديك</p>
-          <p class="hero__desc" data-i18n="heroDesc">
-            تطبيق متخصص في الحسابات والأدوات الهندسية المستخدمة في الورش، يجمع بين التروس والمخرطة والمثقاب في واجهة واحدة عملية وسريعة.
-          </p>
-
-          <div class="hero__cta">
-            <button class="btn btn--primary" id="heroDownloadBtn" type="button" data-i18n="heroDownload">تحميل</button>
-            <a href="#features" class="btn btn--secondary" data-i18n="heroExplore">اكتشف المميزات</a>
+  <main id="top">
+    <!-- ================================================================
+         HERO SECTION + INTERACTIVE 3D MACHINING TWIN
+    ================================================================ -->
+    <section class="hero-section">
+      <div class="container hero-grid">
+        <div class="hero-copy reveal-up">
+          <div class="hero-eyebrow">
+            <span class="status-led"></span>
+            <span data-i18n="hero.eyebrow">متاح الآن لـ Android · Windows · iOS</span>
+            <span class="eyebrow-sep">|</span>
+            <span class="mono-val" id="heroVersionTag">v1.2.2+6</span>
           </div>
 
-          <ul class="hero__badges" aria-label="معلومات سريعة">
-            <li data-i18n="heroBadge1">تروس · مخرطة · مثقاب</li>
-            <li data-i18n="heroBadge2">يعمل دون اتصال</li>
-            <li data-i18n="heroBadge3">تطبيق مدفوع</li>
-          </ul>
+          <h1 class="hero-title">
+            <span class="title-lead" data-i18n="hero.titleLead">دقة الورش والمخارط</span>
+            <span class="title-highlight" data-i18n="hero.titleHighlight">في حسابات لحظية بلا أخطاء</span>
+          </h1>
+
+          <p class="hero-desc" data-i18n="hero.desc">
+            تطبيق <strong>ورشة (WARSHA)</strong> هو رفيقك الهندسي اليومي في الخراطة والتفريز وتصنيع التروس وتقسيم الثقوب — يجمع 11 أداة حسابية متخصصة تشمل نظام Gleason للتروس المخروطية وحساب مجموعات التروس حتى 4 تروس، مع عمل متواصل أوفلاين على الموبايل والكمبيوتر.
+          </p>
+
+          <div class="hero-actions">
+            <a href="#download" class="btn btn-primary btn-hero-main" id="heroSmartDownloadBtn">
+              <span class="btn-icon-box" id="heroOsIcon">↓</span>
+              <span class="btn-label-stack">
+                <strong id="heroOsTitle" data-i18n="hero.smartDownload">تحميل التطبيق لنظامك</strong>
+                <small id="heroOsSub" data-i18n="hero.smartDownloadSub">APK أندرويد · Windows · iOS</small>
+              </span>
+            </a>
+
+            <a href="#lab" class="btn btn-ghost">
+              <span class="btn-3d-badge">3D</span>
+              <span data-i18n="hero.tryLab">استعرض الأدوات في 3D</span>
+            </a>
+          </div>
+
+          <!-- Direct Platform Quick Pills -->
+          <div class="platform-quick-strip" aria-label="المنصات المدعومة">
+            <a href="#download" class="quick-plat-chip" data-platform-jump="android">
+              <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M17.6 9.48l1.84-3.18c.16-.31.04-.69-.26-.85-.29-.15-.65-.06-.83.22l-1.88 3.24a11.46 11.46 0 00-8.94 0L5.65 5.67c-.19-.29-.58-.38-.87-.2-.28.18-.37.54-.22.83L6.4 9.48A10.78 10.78 0 001 18h22a10.78 10.78 0 00-5.4-8.52zM7 15.25a1.25 1.25 0 110-2.5 1.25 1.25 0 010 2.5zm10 0a1.25 1.25 0 110-2.5 1.25 1.25 0 010 2.5z"/></svg>
+              <span>Android APK</span>
+            </a>
+            <a href="#download" class="quick-plat-chip" data-platform-jump="windows">
+              <svg viewBox="0 0 24 24" width="15" height="15" fill="currentColor" aria-hidden="true"><path d="M3 5.5L10.5 4.4V11.5H3V5.5ZM11.5 4.2L21 2.8V11.5H11.5V4.2ZM3 12.5H10.5V19.6L3 18.5V12.5ZM11.5 12.5H21V21.2L11.5 19.8V12.5Z"/></svg>
+              <span>Windows x64</span>
+            </a>
+            <a href="#download" class="quick-plat-chip" data-platform-jump="ios">
+              <svg viewBox="0 0 24 24" width="15" height="15" fill="currentColor" aria-hidden="true"><path d="M16.37 12.7c-.02-2.2 1.8-3.26 1.88-3.31-1.03-1.5-2.62-1.7-3.18-1.73-1.34-.14-2.64.8-3.32.8-.69 0-1.74-.78-2.86-.76-1.46.02-2.82.86-3.57 2.17-1.54 2.67-.39 6.6 1.09 8.75.73 1.05 1.59 2.23 2.72 2.19 1.1-.04 1.52-.7 2.85-.7 1.32 0 1.7.7 2.86.68 1.18-.02 1.93-1.07 2.64-2.13.85-1.23 1.19-2.43 1.21-2.49-.03-.01-2.3-.88-2.32-3.47zM14.2 6.32c.59-.72.99-1.71.88-2.71-.85.04-1.91.57-2.52 1.28-.54.63-1.02 1.65-.9 2.62.96.07 1.94-.48 2.54-1.19z"/></svg>
+              <span>iOS · iPhone/iPad</span>
+            </a>
+          </div>
+
+          <div class="hero-metrics">
+            <div class="metric-item">
+              <strong class="mono-val" data-count-to="11">11</strong>
+              <span data-i18n="hero.m1">أداة تشغيل متخصصة</span>
+            </div>
+            <div class="metric-divider"></div>
+            <div class="metric-item">
+              <strong class="mono-val">3</strong>
+              <span data-i18n="hero.m2">منصات أصلية متزامنة</span>
+            </div>
+            <div class="metric-divider"></div>
+            <div class="metric-item">
+              <strong class="mono-val" data-i18n="hero.m3Val">30 يوم</strong>
+              <span data-i18n="hero.m3">تشغيل أوفلاين بالورشة</span>
+            </div>
+            <div class="metric-divider"></div>
+            <div class="metric-item">
+              <strong class="mono-val">10⁻⁸</strong>
+              <span data-i18n="hero.m4">دقة كسرية بلا تقريب</span>
+            </div>
+          </div>
         </div>
 
-        <!-- Phone mockup -->
-        <div class="hero__visual">
-          <div class="phone-mockup" aria-hidden="true">
-            <div class="phone-mockup__notch"></div>
-            <div class="phone-mockup__screen">
-              <div class="phone-mockup__statusbar">
-                <span>9:41</span>
-                <span class="phone-mockup__icons">
-                  <span class="dot"></span><span class="dot"></span><span class="dot"></span>
+        <!-- Interactive 3D Mechanical Stage -->
+        <div class="hero-stage-wrap reveal-up" style="--delay: 120ms">
+          <div class="stage-frame" id="heroStageCard">
+            <div class="stage-topbar">
+              <div class="stage-mode-tabs" role="tablist" aria-label="نوع المجسم ثلاثي الأبعاد">
+                <button type="button" class="stage-tab is-active" data-scene="gears" role="tab" aria-selected="true">
+                  <span data-i18n="stage.tabGears">⚙ التروس</span>
+                </button>
+                <button type="button" class="stage-tab" data-scene="lathe" role="tab" aria-selected="false">
+                  <span data-i18n="stage.tabLathe">▥ السلبة</span>
+                </button>
+                <button type="button" class="stage-tab" data-scene="drill" role="tab" aria-selected="false">
+                  <span data-i18n="stage.tabDrill">◎ الثقوب</span>
+                </button>
+              </div>
+              <button type="button" class="wire-toggle" id="wireframeToggle" title="تبديل وضع العرض الهندسي">
+                <span class="wire-dot"></span>
+                <span id="wireToggleLabel" data-i18n="stage.wireBtn">CAD Wire</span>
+              </button>
+            </div>
+
+            <div class="canvas-viewport">
+              <canvas id="hero3dCanvas" aria-label="عرض هندسي تفاعلي ثلاثي الأبعاد لأدوات ورشة"></canvas>
+
+              <!-- Floating HUD Corner Telemetry -->
+              <div class="hud-corner hud-tl">
+                <span class="hud-label" id="hudPrimaryLabel" data-i18n="stage.hudGearsTitle">MESHING HELICAL TRAIN</span>
+                <strong class="hud-value mono-val" id="hudPrimaryVal">3D INTERACTIVE PREVIEW</strong>
+              </div>
+              <div class="hud-corner hud-tr">
+                <span class="hud-label">WARSHA ENGINE</span>
+                <strong class="hud-value mono-val teal" id="hudSecondaryVal" data-i18n="stage.inAppBadge">AVAILABLE IN APP</strong>
+              </div>
+              <div class="hud-corner hud-bl">
+                <span class="drag-hint">
+                  <span class="drag-icon">⟲</span>
+                  <span data-i18n="stage.dragHint">اسحب لتدوير المجسم 360°</span>
                 </span>
               </div>
-              <div class="phone-mockup__appbar">
-                <span class="phone-mockup__appname">WARSHA</span>
-                <span class="phone-mockup__menu">≡</span>
+              <div class="hud-corner hud-br">
+                <img src="./assets/images/warsha_logo_transparent.png" alt="" class="hud-watermark">
               </div>
-              <div class="phone-mockup__welcome">
-                <div class="phone-mockup__hello" data-i18n="mockHello">أهلاً بك</div>
-                <div class="phone-mockup__sub" data-i18n="mockSub">اختر أداة للبدء</div>
+            </div>
+
+            <!-- Interactive Quick Parameter Sliders inside 3D Frame -->
+            <div class="stage-controls" id="heroStageControls">
+              <div class="stage-slider-group">
+                <div class="slider-meta">
+                  <span id="ctrl1Label" data-i18n="stage.ctrlTeeth1">أسنان القائد Z₁</span>
+                  <strong class="mono-val" id="ctrl1Val">24</strong>
+                </div>
+                <input type="range" id="ctrl1Slider" min="16" max="42" step="1" value="24">
               </div>
-              <div class="phone-mockup__cards">
-                <div class="mini-card mini-card--1">
-                  <span class="mini-card__icon">⚙</span>
-                  <span class="mini-card__title" data-i18n="mockCard1">التروس</span>
+              <div class="stage-slider-group">
+                <div class="slider-meta">
+                  <span id="ctrl2Label" data-i18n="stage.ctrlAngle">زاوية الحلزون β</span>
+                  <strong class="mono-val" id="ctrl2Val">18°</strong>
                 </div>
-                <div class="mini-card mini-card--2">
-                  <span class="mini-card__icon">⊙</span>
-                  <span class="mini-card__title" data-i18n="mockCard2">المخرطة</span>
-                </div>
-                <div class="mini-card mini-card--3">
-                  <span class="mini-card__icon">⊕</span>
-                  <span class="mini-card__title" data-i18n="mockCard3">المثقاب</span>
-                </div>
+                <input type="range" id="ctrl2Slider" min="0" max="35" step="1" value="18">
               </div>
-              <div class="phone-mockup__calc">
-                <div class="calc-row"><span data-i18n="mockCalcModule">الترس: نمطي</span><span>2.5</span></div>
-                <div class="calc-row"><span data-i18n="mockCalcRpm">السرعة (RPM)</span><span>1450</span></div>
-                <div class="calc-row"><span data-i18n="mockCalcFeed">التغذية (mm/rev)</span><span>0.15</span></div>
+              <div class="stage-slider-group">
+                <div class="slider-meta">
+                  <span id="ctrl3Label" data-i18n="stage.ctrlSpeed">سرعة الدوران</span>
+                  <strong class="mono-val" id="ctrl3Val">1.0×</strong>
+                </div>
+                <input type="range" id="ctrl3Slider" min="0" max="2.5" step="0.1" value="1.0">
               </div>
             </div>
           </div>
@@ -152,340 +258,529 @@
       </div>
     </section>
 
-    <!-- ====================== About ====================== -->
-    <section class="section about" id="about" aria-labelledby="aboutTitle">
+    <!-- ================================================================
+         KINETIC TELEMETRY TICKER
+    ================================================================ -->
+    <div class="ticker-band" aria-hidden="true">
+      <div class="ticker-track">
+        <span>⚙ مجموعة الترس الحلزوني</span><i>◆</i>
+        <span>HELICAL GEAR SET (23–100T)</span><i>◆</i>
+        <span>⚙ الترس المخروطي الحلزوني GLEASON</span><i>◆</i>
+        <span>▥ قانون السلبة (° ′ ″)</span><i>◆</i>
+        <span>◎ تقسيم الثقوب وقطر الداير PCD</span><i>◆</i>
+        <span>⚙ ترس الدودة والكاتينة والسير</span><i>◆</i>
+        <span>▥ قطر جزء من الدائرة</span><i>◆</i>
+        <span>ANDROID APK · WINDOWS EXE · IOS IPA</span><i>◆</i>
+        <span>⚙ مجموعة الترس الحلزوني</span><i>◆</i>
+        <span>HELICAL GEAR SET (23–100T)</span><i>◆</i>
+        <span>⚙ الترس المخروطي الحلزوني GLEASON</span><i>◆</i>
+        <span>▥ قانون السلبة (° ′ ″)</span><i>◆</i>
+        <span>◎ تقسيم الثقوب وقطر الداير PCD</span><i>◆</i>
+        <span>⚙ ترس الدودة والكاتينة والسير</span><i>◆</i>
+        <span>▥ قطر جزء من الدائرة</span><i>◆</i>
+        <span>ANDROID APK · WINDOWS EXE · IOS IPA</span><i>◆</i>
+      </div>
+    </div>
+
+    <!-- ================================================================
+         SECTION 1: THE 3 DEPARTMENTS & ALL 11 REAL TOOLS
+    ================================================================ -->
+    <section class="section-block" id="tools">
       <div class="container">
-        <header class="section__head">
-          <p class="section__eyebrow" data-i18n="aboutEyebrow">عن التطبيق</p>
-          <h2 class="section__title" id="aboutTitle" data-i18n="aboutTitle">ما هو WARSHA؟</h2>
-          <p class="section__lead" data-i18n="aboutLead">
-            WARSHA هو تطبيق مدفوع صُمّم خصيصًا للفنيين والمهندسين العاملين في الورش، يوفر مجموعة من الأدوات والحسابات الهندسية اليومية في واجهة منظمة وسهلة الاستخدام.
+        <div class="section-head reveal-up">
+          <span class="section-kicker mono-tag" data-i18n="tools.kicker">WORKSHOP SUITE // 11 PRECISION MODULES</span>
+          <h2 class="section-title" data-i18n="tools.title">كل أدوات الورشة في 3 أقسام رئيسية</h2>
+          <p class="section-subtitle" data-i18n="tools.subtitle">
+            كل بطاقة هنا تمثل أداة حقيقية داخل تطبيق ورشة مع مدخلاتها ومخرجاتها الفعلية — استعرضها أو انقر «معاينة الأداة» لفتح شكل الحساب والتنزيل.
           </p>
-        </header>
-
-        <div class="about__grid">
-          <article class="about__card glass">
-            <div class="about__icon" aria-hidden="true">
-              <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
-            </div>
-            <h3 data-i18n="aboutCard1Title">أدوات متخصصة</h3>
-            <p data-i18n="aboutCard1Desc">ثلاث مجموعات رئيسية تغطي حسابات التروس والخراطة والثقب، مبنية على معادلات هندسية معتمدة.</p>
-          </article>
-
-          <article class="about__card glass">
-            <div class="about__icon" aria-hidden="true">
-              <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-            </div>
-            <h3 data-i18n="aboutCard2Title">سريع وعملي</h3>
-            <p data-i18n="aboutCard2Desc">واجهة مباشرة بلا خطوات زائدة، تفتح الأداة المطلوبة فورًا وتعرض النتائج بوضوح.</p>
-          </article>
-
-          <article class="about__card glass">
-            <div class="about__icon" aria-hidden="true">
-              <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
-            </div>
-            <h3 data-i18n="aboutCard3Title">يعمل دون اتصال</h3>
-            <p data-i18n="aboutCard3Desc">كل الحسابات تتم محليًا على جهازك، لا حاجة للإنترنت بعد تثبيت التطبيق.</p>
-          </article>
         </div>
+
+        <!-- 3 Department Highlights (from HomePage) -->
+        <div class="departments-row reveal-up">
+          <button type="button" class="dept-card is-active" data-dept-filter="all">
+            <div class="dept-badge mono-val">11</div>
+            <div class="dept-copy">
+              <h3 data-i18n="dept.allTitle">جميع الأدوات</h3>
+              <p data-i18n="dept.allDesc">عرض كافة حسابات التروس والمخرطة والمثقاب</p>
+            </div>
+          </button>
+          <button type="button" class="dept-card" data-dept-filter="gears">
+            <img src="./assets/home/gears.jpg" alt="قسم التروس" class="dept-thumb">
+            <div class="dept-copy">
+              <h3 data-i18n="dept.gearsTitle">التروس <span class="mono-val">(8)</span></h3>
+              <p data-i18n="dept.gearsDesc">حلزوني · مخروطي عدل وGleason · دودة · سير · كاتينة</p>
+            </div>
+          </button>
+          <button type="button" class="dept-card" data-dept-filter="lathe">
+            <img src="./assets/home/lathe.jpg" alt="قسم المخرطة" class="dept-thumb">
+            <div class="dept-copy">
+              <h3 data-i18n="dept.latheTitle">المخرطة <span class="mono-val">(2)</span></h3>
+              <p data-i18n="dept.latheDesc">قانون السلبة (° ′ ″) · قطر جزء من الدائرة</p>
+            </div>
+          </button>
+          <button type="button" class="dept-card" data-dept-filter="drill">
+            <img src="./assets/home/drill.jpg" alt="قسم المثقاب" class="dept-thumb">
+            <div class="dept-copy">
+              <h3 data-i18n="dept.drillTitle">المثقاب <span class="mono-val">(1)</span></h3>
+              <p data-i18n="dept.drillDesc">تقسيم الثقوب والمسافة بين الأخرام وقطر الداير</p>
+            </div>
+          </button>
+        </div>
+
+        <!-- Tools Grid (Rendered dynamically via app.js for clean bilingual support) -->
+        <div class="tools-grid" id="toolsGrid"></div>
       </div>
     </section>
 
-    <!-- ====================== Features ====================== -->
-    <section class="section features" id="features" aria-labelledby="featuresTitle">
+    <!-- ================================================================
+         SECTION 2: INTERACTIVE LIVE CALCULATOR & BLUEPRINT LAB
+    ================================================================ -->
+    <section class="section-block lab-section" id="lab">
       <div class="container">
-        <header class="section__head">
-          <p class="section__eyebrow" data-i18n="featuresEyebrow">المميزات</p>
-          <h2 class="section__title" id="featuresTitle" data-i18n="featuresTitle">ثلاث مجموعات هندسية أساسية</h2>
-          <p class="section__lead" data-i18n="featuresLead">
-            تم تنظيم أدوات التطبيق في ثلاث مجموعات تغطي أكثر العمليات شيوعًا في الورش الهندسية.
+        <div class="section-head reveal-up">
+          <span class="section-kicker mono-tag" data-i18n="lab.kicker">INTERACTIVE APP PREVIEW // 11 PRECISION MODULES</span>
+          <h2 class="section-title" data-i18n="lab.title">شاهد كيف تعمل أدوات الحساب داخل تطبيق ورشة</h2>
+          <p class="section-subtitle" data-i18n="lab.subtitle">
+            اختر الأداة التي تحتاجها وتعرّف على المدخلات والمخطط الهندسي التفاعلي — وعند الضغط على زر «النتيجة» تنتقل مباشرة للتطبيق لتحميله والحصول على النتيجة الدقيقة.
           </p>
-        </header>
-
-        <div class="features__grid">
-          <!-- Gears -->
-          <article class="feature-card glass" data-card="gears">
-            <div class="feature-card__icon feature-card__icon--gears" aria-hidden="true">
-              <svg viewBox="0 0 24 24" width="36" height="36" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-                <circle cx="12" cy="12" r="3"/>
-                <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"/>
-              </svg>
-            </div>
-            <h3 class="feature-card__title" data-i18n="featureGearsTitle">التروس</h3>
-            <p class="feature-card__desc" data-i18n="featureGearsDesc">
-              مجموعة أدوات وحسابات للتروس تشمل الموديول، عدد الأسنان، نسبة التروس، والسرعات الزاوية.
-            </p>
-            <ul class="feature-card__list">
-              <li data-i18n="featureGearsItem1">حساب الموديول وخطوة الملعب</li>
-              <li data-i18n="featureGearsItem2">نسبة التروس وسرعة الخرج</li>
-              <li data-i18n="featureGearsItem3">قطر المرجع وقطر القاعدة</li>
-            </ul>
-          </article>
-
-          <!-- Lathe -->
-          <article class="feature-card glass" data-card="lathe">
-            <div class="feature-card__icon feature-card__icon--lathe" aria-hidden="true">
-              <svg viewBox="0 0 24 24" width="36" height="36" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-                <circle cx="6" cy="12" r="3"/>
-                <circle cx="18" cy="12" r="3"/>
-                <path d="M9 12h6M3 3v18M21 3v18M3 6h18M3 18h18"/>
-              </svg>
-            </div>
-            <h3 class="feature-card__title" data-i18n="featureLatheTitle">المخرطة</h3>
-            <p class="feature-card__desc" data-i18n="featureLatheDesc">
-              حسابات الخراطة من سرعة القطع، معدل التغذية، وقت التشغيل، إلى حساب العمق والتمريرات.
-            </p>
-            <ul class="feature-card__list">
-              <li data-i18n="featureLatheItem1">سرعة القطع (Vc) وعدد الدورات (RPM)</li>
-              <li data-i18n="featureLatheItem2">معدل التغذية وزمن التشغيل</li>
-              <li data-i18n="featureLatheItem3">حساب عمق القطع والتمريرات</li>
-            </ul>
-          </article>
-
-          <!-- Drill -->
-          <article class="feature-card glass" data-card="drill">
-            <div class="feature-card__icon feature-card__icon--drill" aria-hidden="true">
-              <svg viewBox="0 0 24 24" width="36" height="36" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M14 2L18 6M12 4L20 12M3 21L12 12M16 8l4-4M5 19l3-3"/>
-                <path d="M5 21l3-3"/>
-              </svg>
-            </div>
-            <h3 class="feature-card__title" data-i18n="featureDrillTitle">المثقاب</h3>
-            <p class="feature-card__desc" data-i18n="featureDrillDesc">
-              حسابات الثقب والقياسات: قطر الثقب، عمق الثقب، سرعة القِطع، ومعدل التغذية لكل ثقب.
-            </p>
-            <ul class="feature-card__list">
-              <li data-i18n="featureDrillItem1">سرعة القطع والتغذية (mm/rev)</li>
-              <li data-i18n="featureDrillItem2">عمق الثقب وزمن الثقب</li>
-              <li data-i18n="featureDrillItem3">جدول أحجام المثاقب القياسية</li>
-            </ul>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <!-- ====================== Engineering ====================== -->
-    <section class="section engineering" id="tools" aria-labelledby="engTitle">
-      <div class="container">
-        <header class="section__head">
-          <p class="section__eyebrow" data-i18n="engEyebrow">الأدوات والحسابات</p>
-          <h2 class="section__title" id="engTitle" data-i18n="engTitle">حسابات هندسية عملية</h2>
-          <p class="section__lead" data-i18n="engLead">
-            عرض للأدوات والحسابات المتوفرة فعليًا في التطبيق. الأمثلة الرقمية أدناه توضيحية فقط ولا تمثل نتائج حقيقية.
-          </p>
-        </header>
-
-        <div class="engineering__grid">
-          <!-- Gears calc -->
-          <article class="eng-card glass">
-            <header class="eng-card__head">
-              <span class="eng-card__tag" data-i18n="engTagGears">تروس</span>
-              <h3 data-i18n="engGearsTitle">حساب سرعة الخرج</h3>
-            </header>
-            <p class="eng-card__desc" data-i18n="engGearsDesc">
-              من عدد أسنان الترس القائد والتابع وسرعة الدخل، يحسب التطبيق سرعة الخرج ونسبة التروس.
-            </p>
-            <div class="eng-card__formula" aria-label="صيغة حسابية">
-              <code data-i18n="engGearsFormula">n₂ = (n₁ × z₁) / z₂</code>
-            </div>
-            <div class="eng-card__example" role="note">
-              <span class="eng-card__ex-label" data-i18n="engExampleLabel">مثال توضيحي:</span>
-              <span class="eng-card__ex-text" data-i18n="engGearsExample">
-                n₁ = 1450 rpm, z₁ = 20, z₂ = 40 ← n₂ = 725 rpm
-              </span>
-            </div>
-          </article>
-
-          <!-- Lathe calc -->
-          <article class="eng-card glass">
-            <header class="eng-card__head">
-              <span class="eng-card__tag eng-card__tag--lathe" data-i18n="engTagLathe">مخرطة</span>
-              <h3 data-i18n="engLatheTitle">حساب عدد الدورات (RPM)</h3>
-            </header>
-            <p class="eng-card__desc" data-i18n="engLatheDesc">
-              من سرعة القطع (Vc) وقطر المشغول (D)، يحسب التطبيق عدد الدورات المناسب للعملية.
-            </p>
-            <div class="eng-card__formula">
-              <code data-i18n="engLatheFormula">RPM = (1000 × Vc) / (π × D)</code>
-            </div>
-            <div class="eng-card__example" role="note">
-              <span class="eng-card__ex-label" data-i18n="engExampleLabel">مثال توضيحي:</span>
-              <span class="eng-card__ex-text" data-i18n="engLatheExample">
-                Vc = 150 m/min, D = 50 mm ← RPM ≈ 955
-              </span>
-            </div>
-          </article>
-
-          <!-- Drill calc -->
-          <article class="eng-card glass">
-            <header class="eng-card__head">
-              <span class="eng-card__tag eng-card__tag--drill" data-i18n="engTagDrill">مثقاب</span>
-              <h3 data-i18n="engDrillTitle">حساب زمن الثقب</h3>
-            </header>
-            <p class="eng-card__desc" data-i18n="engDrillDesc">
-              من عمق الثقب، عدد الدورات، ومعدل التغذية، يحسب التطبيق زمن الثقب المتوقع.
-            </p>
-            <div class="eng-card__formula">
-              <code data-i18n="engDrillFormula">t = L / (RPM × f)</code>
-            </div>
-            <div class="eng-card__example" role="note">
-              <span class="eng-card__ex-label" data-i18n="engExampleLabel">مثال توضيحي:</span>
-              <span class="eng-card__ex-text" data-i18n="engDrillExample">
-                L = 25 mm, RPM = 1000, f = 0.1 ← t = 0.25 min
-              </span>
-            </div>
-          </article>
         </div>
 
-        <p class="engineering__note" data-i18n="engNote">
-          الأرقام في الأمثلة أعلاه للتوضيح فقط، والنتائج الفعلية قد تختلف حسب المواد والظروف.
-        </p>
-      </div>
-    </section>
-
-    <!-- ====================== Download CTA ====================== -->
-    <section class="section download-cta" id="download" aria-labelledby="downloadTitle">
-      <div class="container">
-        <div class="download-cta__panel glass">
-          <div class="download-cta__content">
-            <p class="section__eyebrow" data-i18n="downloadEyebrow">التحميل</p>
-            <h2 class="section__title" id="downloadTitle" data-i18n="downloadTitle">حمّل WARSHA الآن</h2>
-            <p class="download-cta__desc" data-i18n="downloadDesc">
-              التطبيق متاح لأجهزة Android و Windows. نسخة iOS قيد التطوير. التطبيق مدفوع، التفاصيل تظهر داخل التطبيق.
-            </p>
-            <div class="download-cta__actions">
-              <button class="btn btn--primary btn--lg" id="ctaDownloadBtn" type="button" data-i18n="downloadChoose">اختر نظام التشغيل</button>
-              <a href="#features" class="btn btn--ghost" data-i18n="downloadSeeFeatures">راجع المميزات</a>
-            </div>
+        <div class="lab-shell reveal-up">
+          <!-- Lab Calculator Tabs -->
+          <div class="lab-tabs" id="labTabs" role="tablist">
+            <button type="button" class="lab-tab is-active" data-calc="helicalDiameter">
+              <span data-i18n="calc.tabHelicalDia">حسابات الترس الحلزوني</span>
+            </button>
+            <button type="button" class="lab-tab" data-calc="helicalSet">
+              <span data-i18n="calc.tabGearSet">مجموعة الترس الحلزوني (2/4)</span>
+            </button>
+            <button type="button" class="lab-tab" data-calc="taper">
+              <span data-i18n="calc.tabTaper">قانون السلبة (° ′ ″)</span>
+            </button>
+            <button type="button" class="lab-tab" data-calc="circlePart">
+              <span data-i18n="calc.tabCirclePart">قطر جزء من دائرة</span>
+            </button>
+            <button type="button" class="lab-tab" data-calc="holeDivision">
+              <span data-i18n="calc.tabHoleDiv">تقسيم الثقوب</span>
+            </button>
+            <button type="button" class="lab-tab" data-calc="beltTiming">
+              <span data-i18n="calc.tabBeltTiming">ترس السير والكاتينة</span>
+            </button>
           </div>
-          <div class="download-cta__visual" aria-hidden="true">
-            <div class="os-icons">
-              <span class="os-chip os-chip--android">
-                <svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor"><path d="M17.6 9.48l1.84-3.18a.4.4 0 0 0-.69-.4l-1.86 3.22a11.43 11.43 0 0 0-9.78 0L5.25 5.9a.4.4 0 1 0-.69.4L6.4 9.48A10.81 10.81 0 0 0 1 18h22a10.81 10.81 0 0 0-5.4-8.52zM7 15.25a1.25 1.25 0 1 1 0-2.5 1.25 1.25 0 0 1 0 2.5zm10 0a1.25 1.25 0 1 1 0-2.5 1.25 1.25 0 0 1 0 2.5z"/></svg>
-                <span>Android</span>
-              </span>
-              <span class="os-chip os-chip--windows">
-                <svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor"><path d="M3 5.5l8-1.1v7.6H3V5.5zm0 13l8 1.1v-7.5H3v6.4zm9-14.2L22 3v9H12V4.3zm0 15.4L22 21V12H12v7.7z"/></svg>
-                <span>Windows</span>
-              </span>
-              <span class="os-chip os-chip--ios os-chip--soon">
-                <svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor"><path d="M16.5 1c.07 1.32-.48 2.6-1.27 3.5-.81.92-2.07 1.62-3.32 1.53-.13-1.27.5-2.62 1.25-3.46C14 1.7 15.34.97 16.5 1zM20 17.2c-.5 1.16-.74 1.68-1.39 2.71-.91 1.46-2.2 3.28-3.8 3.3-1.42.01-1.79-.93-3.72-.92-1.93.01-2.33.94-3.76.92-1.6-.02-2.82-1.66-3.74-3.12C1.16 17.39.86 13.41 2.4 11.3c.79-1.08 2.04-1.74 3.21-1.74 1.21 0 1.97.84 2.96.84.96 0 1.55-.84 2.94-.84 1.06 0 2.18.58 2.99 1.58-2.62 1.44-2.2 5.18.5 6.06z"/></svg>
-                <span>iOS</span>
-                <span class="os-chip__soon" data-i18n="comingSoon">قريبًا</span>
-              </span>
+
+          <!-- Lab Workbench Body -->
+          <div class="lab-workbench">
+            <!-- Left: Inputs & Results -->
+            <div class="lab-io-col">
+              <div class="lab-tool-header">
+                <div>
+                  <span class="mono-tag lab-cat-badge" id="labToolBadge">GEARS MODULE</span>
+                  <h3 id="labToolTitle">حسابات الترس الحلزوني</h3>
+                </div>
+                <button type="button" class="preset-btn" id="labResetBtn" data-i18n="lab.reset">قيم افتراضية</button>
+              </div>
+              <p class="lab-tool-desc" id="labToolDesc"></p>
+
+              <!-- Dynamic Form -->
+              <form class="lab-form" id="labForm" onsubmit="return false;"></form>
+
+              <!-- Real-time Results Panel -->
+              <div class="lab-results" id="labResults"></div>
+            </div>
+
+            <!-- Right: Live Schematic / 2D+3D Blueprint Visualizer -->
+            <div class="lab-visual-col">
+              <div class="blueprint-card">
+                <div class="blueprint-head">
+                  <span class="mono-tag" id="blueprintTitle">LIVE CAD SCHEMATIC</span>
+                  <span class="mono-val blueprint-formula" id="blueprintFormula">OUTPUT IN WARSHA APP</span>
+                </div>
+                <div class="blueprint-canvas-wrap">
+                  <canvas id="labBlueprintCanvas"></canvas>
+                </div>
+                <div class="blueprint-footer" id="blueprintFooter"></div>
+              </div>
             </div>
           </div>
         </div>
       </div>
     </section>
 
+    <!-- ================================================================
+         SECTION 3: AUTHENTIC MULTI-DEVICE UI SHOWCASE (MOBILE + WINDOWS)
+    ================================================================ -->
+    <section class="section-block preview-section" id="preview">
+      <div class="container">
+        <div class="preview-header-row reveal-up">
+          <div>
+            <span class="section-kicker mono-tag" data-i18n="preview.kicker">ADAPTIVE INTERFACE // MOBILE & DESKTOP</span>
+            <h2 class="section-title" data-i18n="preview.title">تصميم واحد مريح للعين... يتكيف مع هاتفك وشاشة الكمبيوتر</h2>
+            <p class="section-subtitle" data-i18n="preview.subtitle">
+              تصفح الواجهة الليلية الفعلية لتطبيق ورشة على الموبايل (Android وiOS) أو انتقل لمعاينة نسخة سطح المكتب (Windows) ذات القائمة الجانبية والبحث الفوري.
+            </p>
+          </div>
+
+          <div class="device-switcher" role="tablist" aria-label="تبديل معاينة الجهاز">
+            <button type="button" class="device-btn is-active" data-device="mobile" aria-selected="true">
+              <span data-i18n="preview.mobileBtn">📱 واجهة الموبايل</span>
+            </button>
+            <button type="button" class="device-btn" data-device="desktop" aria-selected="false">
+              <span data-i18n="preview.desktopBtn">🖥 واجهة Windows</span>
+            </button>
+          </div>
+        </div>
+
+        <div class="device-stage reveal-up">
+          <!-- MOBILE MOCKUP (Authentic Flutter HomePage) -->
+          <div class="device-frame mobile-mockup is-active" id="mobileMockup">
+            <div class="phone-shell">
+              <div class="phone-bezel">
+                <div class="phone-island"></div>
+                <div class="phone-screen">
+                  <img src="./assets/home/home_bg_dark.png" alt="" class="app-bg-img">
+                  <div class="app-ui-layer">
+                    <div class="app-statusbar">
+                      <span class="mono-val">9:41</span>
+                      <span class="app-status-icons">5G · 100%</span>
+                    </div>
+                    <div class="app-topbar">
+                      <span class="app-menu-icon">☰</span>
+                      <img src="./assets/images/warsha_logo_transparent.png" alt="ورشة" class="app-mini-logo">
+                      <span class="app-license-pill">30d</span>
+                    </div>
+                    <div class="app-search-bar">
+                      <span>🔍</span>
+                      <span data-i18n="mock.search">البحث عن أداة في جميع الأقسام...</span>
+                    </div>
+                    <div class="app-section-caption" data-i18n="mock.mainSections">الأقسام الرئيسية</div>
+
+                    <div class="app-cards-stack">
+                      <div class="app-mock-card is-selected" data-mock-tab="gears">
+                        <img src="./assets/home/gears.jpg" alt="التروس">
+                        <div class="app-mock-card-body">
+                          <strong data-i18n="mock.gears">التروس</strong>
+                          <small data-i18n="mock.gearsSub">كل حسابات التروس (8 أدوات)</small>
+                        </div>
+                        <span class="app-arrow">‹</span>
+                      </div>
+                      <div class="app-mock-card" data-mock-tab="lathe">
+                        <img src="./assets/home/lathe.jpg" alt="المخرطة">
+                        <div class="app-mock-card-body">
+                          <strong data-i18n="mock.lathe">المخرطة</strong>
+                          <small data-i18n="mock.latheSub">حسابات المخرطة والتشغيل</small>
+                        </div>
+                        <span class="app-arrow">‹</span>
+                      </div>
+                      <div class="app-mock-card" data-mock-tab="drill">
+                        <img src="./assets/home/drill.jpg" alt="المثقاب">
+                        <div class="app-mock-card-body">
+                          <strong data-i18n="mock.drill">المثقاب</strong>
+                          <small data-i18n="mock.drillSub">حسابات الثقوب والبنط</small>
+                        </div>
+                        <span class="app-arrow">‹</span>
+                      </div>
+                    </div>
+
+                    <div class="app-mock-preview-strip" id="mobilePreviewStrip">
+                      <span class="mono-val">Gleason · Helical · Taper · PCD</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Companion Callout Cards beside Phone -->
+            <div class="mockup-callouts">
+              <div class="callout-card">
+                <span class="callout-icon">🌙</span>
+                <div>
+                  <strong data-i18n="preview.c1Title">وضع ليلي ونهاري + تكبير الخط</strong>
+                  <p data-i18n="preview.c1Desc">مقروئية ممتازة وسط إضاءة الورشة مع خيارات تكبير الخط وحفظ الاختيار محليًا.</p>
+                </div>
+              </div>
+              <div class="callout-card">
+                <span class="callout-icon">🔎</span>
+                <div>
+                  <strong data-i18n="preview.c2Title">بحث ذكي بالعربي والإنجليزي</strong>
+                  <p data-i18n="preview.c2Desc">اكتب «حلزوني» أو «Gleason» أو «سلبة» أو «خرم» للانتقال المباشر لأي أداة.</p>
+                </div>
+              </div>
+              <div class="callout-card">
+                <span class="callout-icon">🛡</span>
+                <div>
+                  <strong data-i18n="preview.c3Title">حماية كاملة وترخيص 30 يوم أوفلاين</strong>
+                  <p data-i18n="preview.c3Desc">يعمل دون إنترنت داخل المصنع أو المخرطة مع عداد واضح لموعد التحقق القادم.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- WINDOWS DESKTOP MOCKUP (Authentic _buildDesktopLayout) -->
+          <div class="device-frame desktop-mockup" id="desktopMockup">
+            <div class="win-window">
+              <div class="win-titlebar">
+                <div class="win-controls">
+                  <span></span><span></span><span></span>
+                </div>
+                <span class="win-title mono-val">W A R S H A.exe — v1.2.2+6 (Windows x64)</span>
+                <span class="win-badge">DARK MODE</span>
+              </div>
+              <div class="win-body">
+                <!-- Sidebar (Matches #0C1919 sidebar in home_page.dart) -->
+                <aside class="win-sidebar">
+                  <div class="win-brand">
+                    <img src="./assets/images/warsha_logo_transparent.png" alt="WARSHA">
+                  </div>
+                  <div class="win-nav-list" id="winNavList">
+                    <button type="button" class="win-nav-item is-active" data-win-tab="home">
+                      <span>⌂</span><span data-i18n="win.home">الرئيسية</span>
+                    </button>
+                    <button type="button" class="win-nav-item" data-win-tab="gears">
+                      <span>⚙</span><span data-i18n="win.gears">التروس</span>
+                    </button>
+                    <button type="button" class="win-nav-item" data-win-tab="lathe">
+                      <span>▥</span><span data-i18n="win.lathe">المخرطة</span>
+                    </button>
+                    <button type="button" class="win-nav-item" data-win-tab="drill">
+                      <span>◎</span><span data-i18n="win.drill">المثقاب</span>
+                    </button>
+                  </div>
+                  <div class="win-user-pill">
+                    <span class="win-avatar">W</span>
+                    <div>
+                      <strong data-i18n="win.user">حساب المشترك</strong>
+                      <small data-i18n="win.license">ترخيص نشط · 30 يوم</small>
+                    </div>
+                  </div>
+                </aside>
+
+                <!-- Content Area (Matches #091414 content area in home_page.dart) -->
+                <div class="win-content" id="winContentPanel">
+                  <div class="win-search-row">
+                    <span>🔍</span>
+                    <span data-i18n="mock.search">البحث عن أداة في جميع الأقسام...</span>
+                  </div>
+                  <div class="win-heading-bar">
+                    <div>
+                      <h4 data-i18n="mock.mainSections">الأقسام الرئيسية</h4>
+                      <small data-i18n="win.sub">اختر القسم المناسب للوصول إلى أدوات الحسابات الميكانيكية</small>
+                    </div>
+                    <span class="win-accent-line"></span>
+                  </div>
+                  <div class="win-cards-grid" id="winCardsGrid">
+                    <div class="win-glow-card">
+                      <img src="./assets/home/gears.jpg" alt="التروس">
+                      <div class="win-card-overlay">
+                        <strong data-i18n="mock.gears">التروس</strong>
+                        <small data-i18n="mock.gearsSub">كل حسابات التروس</small>
+                      </div>
+                    </div>
+                    <div class="win-glow-card">
+                      <img src="./assets/home/lathe.jpg" alt="المخرطة">
+                      <div class="win-card-overlay">
+                        <strong data-i18n="mock.lathe">المخرطة</strong>
+                        <small data-i18n="mock.latheSub">حسابات المخرطة والتشغيل</small>
+                      </div>
+                    </div>
+                    <div class="win-glow-card">
+                      <img src="./assets/home/drill.jpg" alt="المثقاب">
+                      <div class="win-card-overlay">
+                        <strong data-i18n="mock.drill">المثقاب</strong>
+                        <small data-i18n="mock.drillSub">حسابات الثقوب والبنط</small>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================================================================
+         SECTION 4: REAL TECHNICAL CAPABILITIES (BENTO GRID)
+    ================================================================ -->
+    <section class="section-block" id="features">
+      <div class="container">
+        <div class="section-head reveal-up">
+          <span class="section-kicker mono-tag" data-i18n="feat.kicker">ENGINEERED FOR THE SHOP FLOOR</span>
+          <h2 class="section-title" data-i18n="feat.title">لماذا يعتمد الصنايعية والمهندسون على تطبيق ورشة؟</h2>
+        </div>
+
+        <div class="bento-grid">
+          <article class="bento-card bento-wide reveal-up">
+            <div class="bento-top">
+              <span class="bento-num mono-val">01</span>
+              <span class="bento-tag" data-i18n="feat.f1Tag">ISOLATE COMPUTE ENGINE</span>
+            </div>
+            <h3 data-i18n="feat.f1Title">بحث فوري في آلاف توليفات التروس بدون تهنيج</h3>
+            <p data-i18n="feat.f1Desc">
+              حساب مجموعات التروس الثنائية والرباعية (من 23 إلى 100 سنة) يعمل في مسار معالجة مستقل (Isolate) لفرز أفضل 50 توليفة بدقة كسرية تصل إلى 10 أرقام بعد العلامة دون أي تقريب عشوائي.
+            </p>
+            <div class="bento-formula-pill mono-val">2-GEAR &amp; 4-GEAR ENGINE · 23–100T</div>
+          </article>
+
+          <article class="bento-card reveal-up">
+            <div class="bento-top">
+              <span class="bento-num mono-val">02</span>
+              <span class="bento-tag" data-i18n="feat.f2Tag">OFFLINE 30 DAYS</span>
+            </div>
+            <h3 data-i18n="feat.f2Title">تشغيل أوفلاين 30 يومًا</h3>
+            <p data-i18n="feat.f2Desc">
+              يعمل التطبيق داخل الورشة والمخرطة حتى عند ضعف الشبكة، مع تجديد تلقائي لصلاحية الـ 30 يومًا بمجرد اتصالك بالإنترنت.
+            </p>
+          </article>
+
+          <article class="bento-card reveal-up">
+            <div class="bento-top">
+              <span class="bento-num mono-val">03</span>
+              <span class="bento-tag" data-i18n="feat.f3Tag">CENTER DISTANCE SOLVER</span>
+            </div>
+            <h3 data-i18n="feat.f3Title">موازن المسافة المركزية التلقائي</h3>
+            <p data-i18n="feat.f3Desc">
+              في الترس الحلزوني وترس الدودة، أدخل المسافة المركزية المطلوبة وسيختبر التطبيق معاملات التعديل (-1.00 إلى +1.00) لاقتراح أنسب تطابق.
+            </p>
+          </article>
+
+          <article class="bento-card reveal-up">
+            <div class="bento-top">
+              <span class="bento-num mono-val">04</span>
+              <span class="bento-tag" data-i18n="feat.f4Tag">NO-SMS LOGIN</span>
+            </div>
+            <h3 data-i18n="feat.f4Title">دخول بالموبايل أو Google</h3>
+            <p data-i18n="feat.f4Desc">
+              تسجيل سريع بالاسم ورقم الموبايل المصري أو حساب Google مع ربط آمن بالجهاز واعتماد من الإدارة، بدون انتظار رسائل SMS.
+            </p>
+          </article>
+
+          <article class="bento-card bento-wide reveal-up">
+            <div class="bento-top">
+              <span class="bento-num mono-val">05</span>
+              <span class="bento-tag" data-i18n="feat.f5Tag">SMART UPDATES + WHATSAPP SUPPORT</span>
+            </div>
+            <h3 data-i18n="feat.f5Title">نظام تحديثات ذكي ودعم مباشر</h3>
+            <p data-i18n="feat.f5Desc">
+              يتحقق التطبيق تلقائيًا من توفر إصدارات أحدث لكل نظام (Android / Windows / iOS) ويوجهك فورًا لصفحة التحميل، مع زر تواصل مباشر عبر واتساب.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================================================================
+         SECTION 5: MULTI-PLATFORM DOWNLOAD HUB (ANDROID APK, WINDOWS, IOS)
+    ================================================================ -->
+    <section class="section-block download-section" id="download">
+      <div class="container">
+        <div class="download-banner reveal-up">
+          <div class="download-banner-head">
+            <div>
+              <span class="section-kicker mono-tag" data-i18n="dl.kicker">OFFICIAL RELEASES // ALL PLATFORMS</span>
+              <h2 class="section-title" data-i18n="dl.title">حمّل تطبيق ورشة لجهازك</h2>
+              <p class="section-subtitle" data-i18n="dl.subtitle">
+                اختر نظام التشغيل الخاص بك لتحميل النسخة الرسمية المجهزة بالكامل لأجهزة Android وWindows وiOS.
+              </p>
+            </div>
+            <div class="detected-os-box" id="detectedOsBox">
+              <span class="detected-dot"></span>
+              <div>
+                <small data-i18n="dl.detectedLabel">تم التعرف على جهازك:</small>
+                <strong id="detectedOsName" class="mono-val">Detecting...</strong>
+              </div>
+            </div>
+          </div>
+
+          <!-- 3 Platform Download Cards -->
+          <div class="platforms-grid" id="platformsGrid">
+            <!-- Rendered by app.js from downloads-config.js -->
+          </div>
+
+          <!-- 4-Step Quick Activation Bar -->
+          <div class="activation-steps">
+            <div class="act-step">
+              <span class="act-num mono-val">01</span>
+              <div>
+                <strong data-i18n="act.s1t">نزّل النسخة</strong>
+                <small data-i18n="act.s1d">اختر APK أو Windows أو iOS</small>
+              </div>
+            </div>
+            <div class="act-step">
+              <span class="act-num mono-val">02</span>
+              <div>
+                <strong data-i18n="act.s2t">سجّل بياناتك</strong>
+                <small data-i18n="act.s2d">رقم الموبايل والاسم أو Google</small>
+              </div>
+            </div>
+            <div class="act-step">
+              <span class="act-num mono-val">03</span>
+              <div>
+                <strong data-i18n="act.s3t">اعتماد الإدارة</strong>
+                <small data-i18n="act.s3d">تفعيل سريع وربط آمن بالجهاز</small>
+              </div>
+            </div>
+            <div class="act-step">
+              <span class="act-num mono-val">04</span>
+              <div>
+                <strong data-i18n="act.s4t">ابدأ الشغل فورًا</strong>
+                <small data-i18n="act.s4d">30 يوم عمل مستمر أوفلاين</small>
+              </div>
+            </div>
+          </div>
+
+          <!-- Direct WhatsApp Support Card (Real AdminContactService number) -->
+          <div class="whatsapp-strip">
+            <div class="wa-info">
+              <div class="wa-icon-circle" aria-hidden="true">
+                <svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91C21.95 6.45 17.5 2 12.04 2zm5.8 14.12c-.24.69-1.42 1.32-1.97 1.4-.52.08-1.18.11-1.91-.12-.45-.14-1.02-.34-1.75-.66-3.07-1.33-5.08-4.43-5.23-4.63-.15-.2-1.25-1.66-1.25-3.17s.79-2.25 1.07-2.55c.28-.3.61-.38.82-.38.2 0 .41 0 .59.01.19.01.44-.07.69.52.24.6.83 2.04.9 2.19.08.15.13.33.03.53-.1.2-.15.33-.3.5-.15.18-.32.4-.45.54-.15.15-.31.31-.13.61.18.3.79 1.3 1.7 2.11 1.17 1.04 2.15 1.36 2.45 1.52.3.15.48.13.66-.08.18-.2.75-.88.95-1.18.2-.3.4-.25.68-.15.28.1 1.76.83 2.06.98.3.15.5.22.58.35.07.12.07.72-.17 1.41z"/></svg>
+              </div>
+              <div>
+                <h3 data-i18n="wa.title">تحتاج مساعدة في التحميل أو تفعيل الحساب؟</h3>
+                <p data-i18n="wa.desc">تواصل مباشرة مع فريق ورشة عبر واتساب للحصول على النسخة أو تفعيل حساب جهازك.</p>
+              </div>
+            </div>
+            <a href="https://wa.me/201207847099" target="_blank" rel="noopener" class="btn-whatsapp" id="whatsappBtn">
+              <span data-i18n="wa.btn">تواصل واتساب</span>
+              <span class="mono-val">01207847099</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
   </main>
 
-  <!-- ====================== Footer ====================== -->
+  <!-- Footer -->
   <footer class="site-footer">
-    <div class="container footer__inner">
-      <div class="footer__brand">
-        <span class="footer__logo">WARSHA</span>
-        <span class="footer__tagline" data-i18n="footerTagline">أدوات هندسية بين يديك</span>
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <img src="./assets/images/warsha_logo_transparent.png" alt="WARSHA" class="footer-logo">
+        <p data-i18n="footer.tagline">تطبيق ورشة للأدوات الهندسية وحسابات الخراطة والتروس والمثقاب.</p>
       </div>
-
-      <nav class="footer__nav" aria-label="روابط سريعة">
-        <a href="#about" data-i18n="navAbout">عن التطبيق</a>
-        <a href="#features" data-i18n="navFeatures">المميزات</a>
-        <a href="#tools" data-i18n="navTools">الأدوات</a>
-        <a href="#download" data-i18n="navDownload">التحميل</a>
-      </nav>
-
-      <div class="footer__meta">
-        <p class="footer__copy">© <span id="year"></span> WARSHA. <span data-i18n="footerRights">جميع الحقوق محفوظة.</span></p>
-        <a href="#top" class="back-to-top" data-i18n="backToTop">↑ العودة للأعلى</a>
+      <div class="footer-links">
+        <a href="#tools" data-i18n="nav.tools">الأقسام والأدوات</a>
+        <a href="#lab" data-i18n="nav.lab">معاينة الأدوات</a>
+        <a href="#preview" data-i18n="nav.preview">شاشات التطبيق</a>
+        <a href="#download" data-i18n="nav.download">التحميل</a>
+      </div>
+      <div class="footer-meta">
+        <span class="mono-val" id="footerReleaseInfo">WARSHA v1.2.2+6</span>
+        <span data-i18n="footer.copy">© 2026 ورشة (WARSHA). جميع الحقوق محفوظة.</span>
       </div>
     </div>
   </footer>
 
-  <!-- WhatsApp contact button -->
-  <button class="whatsapp-float" id="whatsappToggle" type="button"
-          aria-label="Ask us on WhatsApp" aria-expanded="false" aria-controls="whatsappChat">
-    <svg viewBox="0 0 24 24" width="25" height="25" fill="currentColor" aria-hidden="true">
-      <path d="M20.52 3.48A11.82 11.82 0 0 0 12.08 0C5.5 0 .15 5.35.15 11.93c0 2.1.55 4.15 1.6 5.96L.05 24l6.27-1.64a11.9 11.9 0 0 0 5.76 1.47h.01c6.58 0 11.93-5.35 11.93-11.93 0-3.19-1.24-6.19-3.5-8.42ZM12.09 21.8h-.01a9.88 9.88 0 0 1-5.03-1.37l-.36-.21-3.72.98.99-3.63-.23-.37a9.86 9.86 0 0 1-1.51-5.27c0-5.47 4.45-9.92 9.93-9.92a9.86 9.86 0 0 1 7.02 2.91 9.86 9.86 0 0 1 2.9 7.02c0 5.48-4.45 9.93-9.92 9.93Zm5.45-7.43c-.3-.15-1.77-.87-2.04-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.17-.17.2-.35.22-.65.07-.3-.15-1.26-.46-2.4-1.47-.89-.79-1.49-1.77-1.66-2.07-.17-.3-.02-.46.13-.61.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.08-.15-.67-1.62-.92-2.22-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.79.37-.27.3-1.04 1.02-1.04 2.49s1.07 2.89 1.22 3.09c.15.2 2.1 3.21 5.09 4.5.71.31 1.27.5 1.7.64.71.23 1.36.2 1.87.12.57-.08 1.77-.72 2.02-1.42.25-.7.25-1.3.17-1.42-.07-.12-.27-.2-.57-.35Z"/>
-    </svg>
-    <span data-i18n="whatsappCta">اسألنا على واتساب</span>
-  </button>
-
-  <section class="whatsapp-chat" id="whatsappChat" data-open="false"
-           role="dialog" aria-modal="false" aria-labelledby="whatsappChatTitle" hidden>
-    <header class="whatsapp-chat__head">
-      <div>
-        <h2 id="whatsappChatTitle" data-i18n="whatsappTitle">اسأل فريق WARSHA</h2>
-        <p data-i18n="whatsappSubtitle">اكتب سؤالك وسنساعدك عبر واتساب</p>
-      </div>
-      <button class="whatsapp-chat__close" id="whatsappClose" type="button"
-              aria-label="Close chat" data-i18n="whatsappClose">×</button>
-    </header>
-    <form class="whatsapp-chat__form" id="whatsappForm">
-      <label for="whatsappMessage" data-i18n="whatsappMessageLabel">اكتب سؤالك</label>
-      <textarea id="whatsappMessage" name="message" rows="4" required
-                maxlength="1500" data-i18n-placeholder="whatsappPlaceholder"
-                placeholder="اكتب رسالتك هنا..."></textarea>
-      <button type="submit" class="whatsapp-chat__send" data-i18n="whatsappSend">إرسال عبر واتساب</button>
-      <p class="whatsapp-chat__hint" data-i18n="whatsappHint">سيتم فتح واتساب برسالتك لتأكيد الإرسال.</p>
-    </form>
-  </section>
-
-  <!-- ====================== Download Modal ====================== -->
-  <div class="modal" id="downloadModal" role="dialog" aria-modal="true" aria-labelledby="modalTitle"
-       data-open="false" hidden>
-    <div class="modal__overlay" data-close-modal tabindex="-1"></div>
-    <div class="modal__panel glass" role="document">
-      <button class="modal__close" type="button" data-close-modal aria-label="إغلاق النافذة">
-        <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
-      </button>
-
-      <header class="modal__head">
-        <h2 class="modal__title" id="modalTitle" data-i18n="modalTitle">اختر نظام التشغيل</h2>
-        <p class="modal__desc" data-i18n="modalDesc">التطبيق مدفوع. روابط التحميل أدناه، التفاصيل داخل التطبيق.</p>
-      </header>
-
-      <div class="modal__grid">
-        <a class="os-card" href="https://github.com/khaledelsayed33333/warsha-website/releases/download/v1.2.3%2B6/warsha-android.apk"
-           download data-os="android" aria-label="تحميل WARSHA لأندرويد">
-          <span class="os-card__icon" aria-hidden="true">
-            <svg viewBox="0 0 24 24" width="32" height="32" fill="currentColor"><path d="M17.6 9.48l1.84-3.18a.4.4 0 0 0-.69-.4l-1.86 3.22a11.43 11.43 0 0 0-9.78 0L5.25 5.9a.4.4 0 1 0-.69.4L6.4 9.48A10.81 10.81 0 0 0 1 18h22a10.81 10.81 0 0 0-5.4-8.52zM7 15.25a1.25 1.25 0 1 1 0-2.5 1.25 1.25 0 0 1 0 2.5zm10 0a1.25 1.25 0 1 1 0-2.5 1.25 1.25 0 0 1 0 2.5z"/></svg>
-          </span>
-          <span class="os-card__name">Android</span>
-          <span class="os-card__format" data-i18n="osFormatApk">APK</span>
-          <span class="os-card__cta" data-i18n="osDownload">تحميل</span>
-        </a>
-
-        <a class="os-card" href="https://github.com/khaledelsayed33333/warsha-website/releases/download/v1.2.3%2B6/warsha-windows.zip"
-           download data-os="windows" aria-label="تحميل WARSHA لويندوز">
-          <span class="os-card__icon" aria-hidden="true">
-            <svg viewBox="0 0 24 24" width="32" height="32" fill="currentColor"><path d="M3 5.5l8-1.1v7.6H3V5.5zm0 13l8 1.1v-7.5H3v6.4zm9-14.2L22 3v9H12V4.3zm0 15.4L22 21V12H12v7.7z"/></svg>
-          </span>
-          <span class="os-card__name">Windows</span>
-          <span class="os-card__format" data-i18n="osFormatZip">ZIP</span>
-          <span class="os-card__cta" data-i18n="osDownload">تحميل</span>
-        </a>
-
-        <div class="os-card os-card--soon" data-os="ios" aria-disabled="true">
-          <span class="os-card__icon" aria-hidden="true">
-            <svg viewBox="0 0 24 24" width="32" height="32" fill="currentColor"><path d="M16.5 1c.07 1.32-.48 2.6-1.27 3.5-.81.92-2.07 1.62-3.32 1.53-.13-1.27.5-2.62 1.25-3.46C14 1.7 15.34.97 16.5 1zM20 17.2c-.5 1.16-.74 1.68-1.39 2.71-.91 1.46-2.2 3.28-3.8 3.3-1.42.01-1.79-.93-3.72-.92-1.93.01-2.33.94-3.76.92-1.6-.02-2.82-1.66-3.74-3.12C1.16 17.39.86 13.41 2.4 11.3c.79-1.08 2.04-1.74 3.21-1.74 1.21 0 1.97.84 2.96.84.96 0 1.55-.84 2.94-.84 1.06 0 2.18.58 2.99 1.58-2.62 1.44-2.2 5.18.5 6.06z"/></svg>
-          </span>
-          <span class="os-card__name">iOS</span>
-          <span class="os-card__format" data-i18n="comingSoon">قريبًا</span>
-          <span class="os-card__cta" data-i18n="osComingSoon">قيد التطوير</span>
-        </div>
-      </div>
-
-      <p class="modal__note" data-i18n="modalNote">
-        التطبيق مدفوع. للاطلاع على التفاصيل والشراء، افتح التطبيق بعد التثبيت أو تواصل مع المصدر الذي حصلت منه على الرابط.
-      </p>
+  <!-- Modal for Installation Guide / File Placement Notice -->
+  <div class="modal-backdrop" id="infoModal" aria-hidden="true">
+    <div class="modal-card" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+      <button type="button" class="modal-close" id="modalCloseBtn" aria-label="إغلاق">✕</button>
+      <div class="modal-badge mono-tag" id="modalBadge">INSTALLATION GUIDE</div>
+      <h3 id="modalTitle">دليل التثبيت</h3>
+      <div class="modal-body" id="modalBody"></div>
+      <div class="modal-actions" id="modalActions"></div>
     </div>
   </div>
 
-  <!-- Toast (optional, for language toggle feedback) -->
-  <div class="toast" id="toast" role="status" aria-live="polite" hidden></div>
-
-  <script src="script.js?v=1.2.4" defer></script>
+  <script src="./downloads-config.js"></script>
+  <script src="./app.js"></script>
 </body>
 </html>
