@@ -2833,39 +2833,46 @@ input[type='range'] {
 }
 
 
-/* Recommended platform: clean elevation with a subtle LED edge */
+/* Recommended platform: perimeter LED that travels around the frame */
 .platform-card.is-recommended {
   position: relative;
-  z-index: 3;
-  transform: translateY(-7px);
-  transform-origin: center center;
-  border: 1.5px solid rgba(32, 214, 194, .9);
+  z-index: 2;
+  transform: none;
+  isolation: isolate;
+  border: 1px solid rgba(32, 214, 194, .58);
   box-shadow:
-    0 16px 38px rgba(0, 184, 169, .18),
-    0 0 0 1px rgba(32, 214, 194, .12),
-    0 0 25px rgba(32, 214, 194, .13);
-  animation: recommended-led-pulse 3.2s ease-in-out infinite;
+    0 12px 30px rgba(0, 184, 169, .13),
+    0 0 18px rgba(32, 214, 194, .09);
+  animation: recommended-soft-glow 3.6s ease-in-out infinite;
 }
 .platform-card.is-recommended::after {
   content: "";
   position: absolute;
-  top: 0;
-  left: 12%;
-  width: 76%;
-  height: 2px;
-  border-radius: 999px;
+  inset: 0;
+  z-index: 3;
+  padding: 2px;
+  border-radius: inherit;
   pointer-events: none;
-  background: linear-gradient(90deg, transparent, rgba(32,214,194,.35), #7ffff0, rgba(32,214,194,.35), transparent);
-  background-size: 220% 100%;
-  box-shadow: 0 0 8px rgba(32,214,194,.85), 0 0 18px rgba(32,214,194,.4);
-  animation: recommended-led-sweep 4s linear infinite;
+  background: conic-gradient(
+    from 0deg,
+    transparent 0deg 255deg,
+    rgba(32, 214, 194, .08) 278deg,
+    rgba(32, 214, 194, .65) 310deg,
+    #c4fff8 330deg,
+    #20d6c2 344deg,
+    transparent 360deg
+  );
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  filter: drop-shadow(0 0 4px rgba(32, 214, 194, .9)) drop-shadow(0 0 9px rgba(32, 214, 194, .48));
+  animation: recommended-led-orbit 4.2s linear infinite;
 }
 .platform-card.is-recommended:hover {
-  transform: translateY(-9px);
+  transform: translateY(-3px);
   box-shadow:
-    0 20px 44px rgba(0, 184, 169, .23),
-    0 0 0 1px rgba(32, 214, 194, .2),
-    0 0 32px rgba(32, 214, 194, .2);
+    0 16px 36px rgba(0, 184, 169, .18),
+    0 0 24px rgba(32, 214, 194, .15);
 }
 .platform-card.is-recommended .plat-rec-badge {
   top: -12px;
@@ -2875,23 +2882,18 @@ input[type='range'] {
   box-shadow: 0 5px 16px rgba(0, 184, 169, .25);
   transform: none;
 }
-@keyframes recommended-led-pulse {
+@keyframes recommended-led-orbit {
+  to { transform: rotate(360deg); }
+}
+@keyframes recommended-soft-glow {
   0%, 100% {
-    border-color: rgba(32, 214, 194, .72);
-    box-shadow: 0 16px 38px rgba(0,184,169,.15), 0 0 0 1px rgba(32,214,194,.1), 0 0 18px rgba(32,214,194,.1);
+    border-color: rgba(32, 214, 194, .48);
+    box-shadow: 0 12px 30px rgba(0,184,169,.1), 0 0 14px rgba(32,214,194,.07);
   }
   50% {
-    border-color: rgba(105, 255, 235, .98);
-    box-shadow: 0 18px 42px rgba(0,184,169,.22), 0 0 0 1px rgba(32,214,194,.22), 0 0 30px rgba(32,214,194,.22);
+    border-color: rgba(105, 255, 235, .78);
+    box-shadow: 0 14px 34px rgba(0,184,169,.17), 0 0 24px rgba(32,214,194,.14);
   }
-}
-@keyframes recommended-led-sweep {
-  from { background-position: 100% 0; }
-  to { background-position: -120% 0; }
-}
-@media (max-width: 1100px) {
-  .platform-card.is-recommended { transform: translateY(-4px); }
-  .platform-card.is-recommended:hover { transform: translateY(-6px); }
 }
 @media (max-width: 640px) {
   .platform-card.is-recommended,
