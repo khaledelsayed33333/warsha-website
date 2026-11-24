@@ -85,7 +85,7 @@ window.WARSHA_CONFIG = {
       arch: 'arm64 · iPhone & iPad',
       sizeAr: 'جاهز لوضع IPA أو رابط TestFlight',
       sizeEn: 'Drop IPA or set TestFlight URL',
-      status: 'available',
+      status: 'coming-soon',
       stepsAr: [
         'نزّل حزمة warsha-ios.ipa (أو افتح رابط TestFlight / التوقيع المعتمد عند إضافته).',
         'ثبّت الحزمة باستخدام أداة التوقيع المعتمدة (AltStore / Sideloadly / Apple Enterprise).',
