@@ -2833,41 +2833,71 @@ input[type='range'] {
 }
 
 
-/* Recommended platform: prominent hero card */
+/* Recommended platform: clean elevation with a subtle LED edge */
 .platform-card.is-recommended {
   position: relative;
-  z-index: 6;
-  transform: translateY(-18px) scale(1.08);
+  z-index: 3;
+  transform: translateY(-7px);
   transform-origin: center center;
-  border: 2px solid rgba(32, 214, 194, .95);
-  box-shadow: 0 30px 70px rgba(0,184,169,.34), 0 0 0 1px rgba(32,214,194,.28), 0 0 52px rgba(32,214,194,.28), inset 0 0 28px rgba(32,214,194,.055);
-  animation: recommended-arrive 750ms cubic-bezier(.18,.85,.25,1) both;
+  border: 1.5px solid rgba(32, 214, 194, .9);
+  box-shadow:
+    0 16px 38px rgba(0, 184, 169, .18),
+    0 0 0 1px rgba(32, 214, 194, .12),
+    0 0 25px rgba(32, 214, 194, .13);
+  animation: recommended-led-pulse 3.2s ease-in-out infinite;
+}
+.platform-card.is-recommended::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 12%;
+  width: 76%;
+  height: 2px;
+  border-radius: 999px;
+  pointer-events: none;
+  background: linear-gradient(90deg, transparent, rgba(32,214,194,.35), #7ffff0, rgba(32,214,194,.35), transparent);
+  background-size: 220% 100%;
+  box-shadow: 0 0 8px rgba(32,214,194,.85), 0 0 18px rgba(32,214,194,.4);
+  animation: recommended-led-sweep 4s linear infinite;
 }
 .platform-card.is-recommended:hover {
-  transform: translateY(-22px) scale(1.09);
-  box-shadow: 0 36px 82px rgba(0,184,169,.4), 0 0 0 1px rgba(32,214,194,.34), 0 0 62px rgba(32,214,194,.34);
+  transform: translateY(-9px);
+  box-shadow:
+    0 20px 44px rgba(0, 184, 169, .23),
+    0 0 0 1px rgba(32, 214, 194, .2),
+    0 0 32px rgba(32, 214, 194, .2);
 }
 .platform-card.is-recommended .plat-rec-badge {
-  top: -16px;
-  padding: 8px 19px;
-  font-size: .86rem;
+  top: -12px;
+  padding: 7px 17px;
+  font-size: .8rem;
   font-weight: 900;
-  box-shadow: 0 8px 24px rgba(0,184,169,.42);
-  transform: scale(1.06);
+  box-shadow: 0 5px 16px rgba(0, 184, 169, .25);
+  transform: none;
 }
-@keyframes recommended-arrive {
-  0% { opacity: .65; transform: translateY(8px) scale(.97); }
-  70% { transform: translateY(-21px) scale(1.095); }
-  100% { opacity: 1; transform: translateY(-18px) scale(1.08); }
+@keyframes recommended-led-pulse {
+  0%, 100% {
+    border-color: rgba(32, 214, 194, .72);
+    box-shadow: 0 16px 38px rgba(0,184,169,.15), 0 0 0 1px rgba(32,214,194,.1), 0 0 18px rgba(32,214,194,.1);
+  }
+  50% {
+    border-color: rgba(105, 255, 235, .98);
+    box-shadow: 0 18px 42px rgba(0,184,169,.22), 0 0 0 1px rgba(32,214,194,.22), 0 0 30px rgba(32,214,194,.22);
+  }
+}
+@keyframes recommended-led-sweep {
+  from { background-position: 100% 0; }
+  to { background-position: -120% 0; }
 }
 @media (max-width: 1100px) {
-  .platform-card.is-recommended { transform: translateY(-9px) scale(1.035); }
-  .platform-card.is-recommended:hover { transform: translateY(-12px) scale(1.045); }
+  .platform-card.is-recommended { transform: translateY(-4px); }
+  .platform-card.is-recommended:hover { transform: translateY(-6px); }
 }
 @media (max-width: 640px) {
   .platform-card.is-recommended,
   .platform-card.is-recommended:hover { transform: none; }
 }
 @media (prefers-reduced-motion: reduce) {
-  .platform-card.is-recommended { animation: none; }
+  .platform-card.is-recommended,
+  .platform-card.is-recommended::after { animation: none; }
 }
