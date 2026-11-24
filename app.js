@@ -287,7 +287,7 @@
       dept: 'gears',
       deptAr: 'التروس',
       deptEn: 'Gears',
-      image: './assets/gears/helical_gear.jpg',
+      image: './assets/helical_gear.jpg',
       titleAr: 'مجموعة الترس الحلزوني',
       titleEn: 'Helical Gear Train Solver',
       descAr: 'إيجاد أفضل 50 مجموعة تروس (2 أو 4 تروس من 23 إلى 100 سنة) حسب ثابت الماكينة والموديول وزاوية الميل.',
@@ -302,7 +302,7 @@
       dept: 'gears',
       deptAr: 'التروس',
       deptEn: 'Gears',
-      image: './assets/gears/helical_diameter.jpg',
+      image: './assets/helical_diameter.jpg',
       titleAr: 'حسابات الترس الحلزوني',
       titleEn: 'Helical Gear Dimensions',
       descAr: 'حساب قطر دائرة الخطوة والقطر الخارجي والعمق وعدد الأسنان المقاسة والمقاس وخطوة الفريزة والهوب، مع موازن المسافة المركزية.',
@@ -317,7 +317,7 @@
       dept: 'gears',
       deptAr: 'التروس',
       deptEn: 'Gears',
-      image: './assets/gears/gear_teeth.jpg',
+      image: './assets/gear_teeth.jpg',
       titleAr: 'حساب مجموعة التروس لعدد الأسنان',
       titleEn: 'Exact Teeth Indexing Gear Set',
       descAr: 'حساب مجموعة التروس المناسبة لثابت الماكينة وعدد الأسنان باستخدام كسور دقيقة حتى 10 خانات عشرية دون أي تقريب.',
@@ -332,7 +332,7 @@
       dept: 'gears',
       deptAr: 'التروس',
       deptEn: 'Gears',
-      image: './assets/gears/belt_gear.jpg',
+      image: './assets/belt_gear.jpg',
       titleAr: 'ترس السير',
       titleEn: 'Timing Belt Pulley (Metric & Inch)',
       descAr: 'حساب القطر الخارجي لترس السير بدقة لكل مقاسات الـ Pitch المترية (1 إلى 20 مم) والإنش (1/5, 3/8, 1/2, 2/25) مع ثوابت N.',
@@ -347,7 +347,7 @@
       dept: 'gears',
       deptAr: 'التروس',
       deptEn: 'Gears',
-      image: './assets/gears/bevel_gear.jpg',
+      image: './assets/bevel_gear.jpg',
       titleAr: 'ترس مخروطي عدل',
       titleEn: 'Straight Bevel Gear Geometry',
       descAr: 'حساب زاوية مخروط الخطوة وزاوية الخراطة وزاوية الفريزة وطول المخروط وأصغر قطر والقطر الخارجي لزوج التروس المخروطية.',
@@ -362,7 +362,7 @@
       dept: 'gears',
       deptAr: 'التروس',
       deptEn: 'Gears',
-      image: './assets/gears/spiral_bevel_gear.jpg',
+      image: './assets/spiral_bevel_gear.jpg',
       titleAr: 'ترس مخروطي حلزوني — Gleason',
       titleEn: 'Spiral Bevel Gear (Gleason System)',
       descAr: 'حساب كامل بيانات الترس الصغير والكبير بنظام Gleason: الزوايا، طول الرأس، التفريج، ارتفاع القمة والجذر، الخطوة الحلزونية ونسبة التخفيض.',
@@ -377,7 +377,7 @@
       dept: 'gears',
       deptAr: 'التروس',
       deptEn: 'Gears',
-      image: './assets/gears/timing_gear.jpg',
+      image: './assets/timing_gear.jpg',
       titleAr: 'ترس الكاتينة',
       titleEn: 'Roller Chain Sprocket',
       descAr: 'حساب القطر الخارجي والقطر الداخلي وعمق السنة لترس الكاتينة / السلسلة حسب عدد الأسنان وقيمة الإنش وقطر البلية.',
@@ -392,7 +392,7 @@
       dept: 'gears',
       deptAr: 'التروس',
       deptEn: 'Gears',
-      image: './assets/gears/worm_gear.jpg',
+      image: './assets/worm_gear.jpg',
       titleAr: 'ترس الدودة',
       titleEn: 'Worm & Worm Wheel Calculator',
       descAr: 'حساب قطر الخطوة للدودة والترس، زاوية الترس، الموديول الفعلي، القطر الصغير والكبير، والمسافة المركزية مع البحث في معامل التعديل.',
@@ -407,7 +407,7 @@
       dept: 'lathe',
       deptAr: 'المخرطة',
       deptEn: 'Lathe',
-      image: './assets/lathe/taper_rule.jpg',
+      image: './assets/taper_rule.jpg',
       titleAr: 'قانون السلبة',
       titleEn: 'Lathe Taper Angle (° ′ ″)',
       descAr: 'حساب زاوية السلبة بدقة بالدرجات والدقائق والثواني لضبط راسمة المخرطة مباشرة من القطر الكبير والقطر الصغير والطول.',
@@ -422,7 +422,7 @@
       dept: 'lathe',
       deptAr: 'المخرطة',
       deptEn: 'Lathe',
-      image: './assets/lathe/circle_part_diameter.jpg',
+      image: './assets/circle_part_diameter.jpg',
       titleAr: 'قطر جزء من دائرة',
       titleEn: 'Broken Arc / Segment Diameter',
       descAr: 'حساب القطر الكامل لأي قطعة دائرية أو ترس مكسور من قياس طول الوتر والارتفاع بالبوكليز فقط.',
@@ -437,7 +437,7 @@
       dept: 'drill',
       deptAr: 'المثقاب',
       deptEn: 'Drill',
-      image: './assets/drill/hole_division.jpg',
+      image: './assets/hole_division.jpg',
       titleAr: 'تقسيم الثقوب',
       titleEn: 'Bolt Circle Hole Division (PCD)',
       descAr: 'حساب المسافة المستقيمة بين كل ثقب واللي بعده أو حساب قطر الداير (PCD) بمعلومية عدد الثقوب والمسافة.',
@@ -2023,9 +2023,9 @@
 
         if (tab === 'home') {
           winCardsGrid.innerHTML = `
-            <div class="win-glow-card"><img src="./assets/home/gears.jpg" alt="التروس"><div class="win-card-overlay"><strong>${currentLang === 'ar' ? 'التروس' : 'Gears'}</strong><small>${currentLang === 'ar' ? 'كل حسابات التروس' : 'All gear tools'}</small></div></div>
-            <div class="win-glow-card"><img src="./assets/home/lathe.jpg" alt="المخرطة"><div class="win-card-overlay"><strong>${currentLang === 'ar' ? 'المخرطة' : 'Lathe'}</strong><small>${currentLang === 'ar' ? 'حسابات المخرطة والتشغيل' : 'Turning tools'}</small></div></div>
-            <div class="win-glow-card"><img src="./assets/home/drill.jpg" alt="المثقاب"><div class="win-card-overlay"><strong>${currentLang === 'ar' ? 'المثقاب' : 'Drill'}</strong><small>${currentLang === 'ar' ? 'حسابات الثقوب والبنط' : 'Drilling tools'}</small></div></div>
+            <div class="win-glow-card"><img src="./assets/gears.jpg" alt="التروس"><div class="win-card-overlay"><strong>${currentLang === 'ar' ? 'التروس' : 'Gears'}</strong><small>${currentLang === 'ar' ? 'كل حسابات التروس' : 'All gear tools'}</small></div></div>
+            <div class="win-glow-card"><img src="./assets/lathe.jpg" alt="المخرطة"><div class="win-card-overlay"><strong>${currentLang === 'ar' ? 'المخرطة' : 'Lathe'}</strong><small>${currentLang === 'ar' ? 'حسابات المخرطة والتشغيل' : 'Turning tools'}</small></div></div>
+            <div class="win-glow-card"><img src="./assets/drill.jpg" alt="المثقاب"><div class="win-card-overlay"><strong>${currentLang === 'ar' ? 'المثقاب' : 'Drill'}</strong><small>${currentLang === 'ar' ? 'حسابات الثقوب والبنط' : 'Drilling tools'}</small></div></div>
           `;
         } else {
           const subset = TOOLS_DATA.filter((t) => t.dept === tab).slice(0, 3);
