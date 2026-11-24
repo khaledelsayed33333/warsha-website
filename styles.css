@@ -214,7 +214,7 @@ select {
 .bg-home-texture {
   position: absolute;
   inset: 0;
-  background: url('./assets/home/home_bg_dark.png') center / cover no-repeat;
+  background: url('./assets/home_bg_dark.png') center / cover no-repeat;
   opacity: 0.22;
   mix-blend-mode: screen;
 }
